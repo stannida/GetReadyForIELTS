@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace GetReady
 {
     /// <summary>
-    /// Логика взаимодействия для SigningUp.xaml
+    /// Логика взаимодействия для SigningUp1.xaml
     /// </summary>
-    public partial class SigningUp : Window
+    public partial class SigningUp1 : Window
     {
-        public SigningUp()
+        public SigningUp1()
         {
             InitializeComponent();
         }
