@@ -24,5 +24,17 @@ namespace GetReady
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            SigningUp SigningUp = new SigningUp();
+            SigningUp.Show();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            SigningIn SigningIn = new SigningIn();
+            SigningIn.Show();
+        }
     }
 }
