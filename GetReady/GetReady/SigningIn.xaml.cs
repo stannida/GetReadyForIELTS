@@ -17,9 +17,9 @@ namespace GetReady
     /// <summary>
     /// Логика взаимодействия для Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class SigningIn : Window
     {
-        public Window1()
+        public SigningIn()
         {
             InitializeComponent();
         }
