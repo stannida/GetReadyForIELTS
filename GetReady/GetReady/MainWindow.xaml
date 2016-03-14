@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GetReady"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <CheckBox x:Name="checkBox" Content="CheckBox" HorizontalAlignment="Left" Margin="240,157,0,0" VerticalAlignment="Top"/>
-
+        Title="MainWindow" Height="646.154" Width="795.727">
+    <Grid Margin="0,0,-21,-3">
+        <Rectangle Fill="#FF2DB458" HorizontalAlignment="Center" Height="97" Stroke="#00000000" VerticalAlignment="Top" Width="797" IsHitTestVisible="False" Margin="0,0,11,0"/>
+        <Label x:Name="label" Content="Get Ready for IELTS" HorizontalAlignment="Center" Margin="241,42,241,0" VerticalAlignment="Top" Width="304" FontFamily="Aharoni" FontSize="32" Foreground="White"/>
+        <Button x:Name="SignUp" Content="Sign Up" HorizontalAlignment="Center" Height="63" Margin="274,167,275,0" VerticalAlignment="Top" Width="247" Click="button_Click" FontSize="24" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2"/>
+        <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Center" Height="63" Margin="274,257,275,0" VerticalAlignment="Top" Width="248" Click="button1_Click" FontSize="24" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2"/>
+        <Button x:Name="Rules" Content="What is it about?" HorizontalAlignment="Center" Height="53" Margin="269,482,270,0" VerticalAlignment="Center" Width="247" Click="button1_Click" BorderBrush="White" Background="White" FontSize="24"/>
     </Grid>
 </Window>
