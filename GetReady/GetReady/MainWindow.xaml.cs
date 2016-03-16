@@ -28,12 +28,15 @@ namespace GetReady
         private void button_Click(object sender, RoutedEventArgs e)
         {
             SigningUp SigningUp = new SigningUp();
+            SigningUp.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             SigningUp.Show();
+            
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             SigningIn SigningIn = new SigningIn();
+            SigningIn.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             SigningIn.Show();
         }
 
