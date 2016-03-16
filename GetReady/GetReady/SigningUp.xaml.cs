@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Data;
+//using System.Data;
 namespace GetReady
 {
     /// <summary>
@@ -45,8 +45,8 @@ namespace GetReady
             //    { hash += theByte.ToString("x2"); }
             //    return hash; }
 
-            StartPage Startpage = new StartPage();
-            Startpage.Show();
+            StartPage StartPage = new StartPage();
+            StartPage.Show();
         }
 
 
