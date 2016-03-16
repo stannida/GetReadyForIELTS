@@ -24,34 +24,32 @@ namespace GetReady
             InitializeComponent();
         }
 
-        //private void LetsStart_Click(object sender, RoutedEventArgs e)
-        //{
-        //    UsersEntities db = new UsersEntities();
-
-        //    db.UserTable.Add(new UserTable
-        //    {
-        //        username = Username.Text,
-        //        hash = GetHash(Password.Text)
-        //    });
-        //    db.SaveChanges();
-        //    StartPage StartPage = new StartPage();
-        //    StartPage.Show();
-        //}
-        //public string GetHash(string password)
-        //{ 
-        //    System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
-        //    string hash = String.Empty; byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(password), 0, Encoding.ASCII.GetByteCount(password));
-        //    foreach (byte theByte in crypto)
-        //    { hash += theByte.ToString("x2"); }
-        //    return hash; }
-
-        private void GotFocusUsername(object sender, RoutedEventArgs e)
+        private void LetsStart_Click(object sender, RoutedEventArgs e)
         {
-            if (Username.Text == "")
-                Username.Text = "";
+            //    UsersEntities db = new UsersEntities();
 
+            //    db.UserTable.Add(new UserTable
+            //    {
+            //        username = Username.Text,
+            //        hash = GetHash(Password.Text)
+            //    });
+            //    db.SaveChanges();
+            //    StartPage StartPage = new StartPage();
+            //    StartPage.Show();
+            //}
+            //public string GetHash(string password)
+            //{ 
+            //    System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
+            //    string hash = String.Empty; byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(password), 0, Encoding.ASCII.GetByteCount(password));
+            //    foreach (byte theByte in crypto)
+            //    { hash += theByte.ToString("x2"); }
+            //    return hash; }
+
+            StartPage Startpage = new StartPage();
+            Startpage.Show();
         }
+
+
     }
 }
-
 
