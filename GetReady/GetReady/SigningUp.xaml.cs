@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using System.Data;
 namespace GetReady
 {
     /// <summary>
@@ -24,28 +24,27 @@ namespace GetReady
             InitializeComponent();
         }
 
-        private void FocusUsernameDeleteText(object sender, RoutedEventArgs e)
+        private void LetsStart_Click(object sender, RoutedEventArgs e)
         {
-            if (username.Text == "Pick a username")
-                username.Text = "";
+            UsersEntities db = new UsersEntities();
+            
+            db.UserTable.Add(new UserTable
+            {
+                username = Username.Text,
+                hash = GetHash(Password.Text)
+            });
+            db.SaveChanges();
+            StartPage StartPage = new StartPage();
+            StartPage.Show();
         }
-
-        private void FocusPasswordDeleteText(object sender, RoutedEventArgs e)
-        {
-            if (password.Text == "Choose a password")
-                password.Text = "";
-        }
-
-        private void LostFocusUsername(object sender, RoutedEventArgs e)
-        {
-            if (username.Text == "")
-                username.Text = "Pick a username";
-        }
-
-        private void LostFocusPassword(object sender, RoutedEventArgs e)
-        {
-            if (password.Text == "")
-                password.Text = "Choose a password";
-        }
+        public string GetHash(string password)
+        { 
+            System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
+            string hash = String.Empty; byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(password), 0, Encoding.ASCII.GetByteCount(password));
+            foreach (byte theByte in crypto)
+            { hash += theByte.ToString("x2"); }
+            return hash; }
     }
-}
+    
+    }
+
