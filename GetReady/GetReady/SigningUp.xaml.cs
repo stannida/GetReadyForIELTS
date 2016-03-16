@@ -23,5 +23,33 @@ namespace GetReady
         {
             InitializeComponent();
         }
+
+        private void FocusUsernameDeleteText(object sender, RoutedEventArgs e)
+        {
+            if (username.Text == "Pick a username")
+                username.Text = "";
+        }
+
+        private void FocusPasswordDeleteText(object sender, RoutedEventArgs e)
+        {
+            if (password.Text == "Choose a password")
+                password.Text = "";
+
+        }
+
+        private void LostFocusUsername(object sender, RoutedEventArgs e)
+        {
+            if (username.Text == "")
+                username.Text = "Pick a username";
+        }
+
+        private void LostFocusPassword(object sender, RoutedEventArgs e)
+        {
+            if (password.Text == "")
+                password.Text = "Choose a password";
+        }
+
+
+
     }
 }
