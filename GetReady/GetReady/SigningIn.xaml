@@ -13,6 +13,6 @@
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Center" Margin="145,271,468,0" TextWrapping="Wrap" Text="Enter password" VerticalAlignment="Top" Height="30" Width="175" FontFamily="Levenim MT" FontSize="21.333"/>
         <TextBox x:Name="CheckUsername" HorizontalAlignment="Center" Height="30" Margin="405,223,144,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" FontSize="16" FontFamily="Levenim MT"/>
         <TextBox x:Name="CheckPassword" HorizontalAlignment="Center" Height="30" Margin="405,271,144,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" FontSize="16" FontFamily="Levenim MT"/>
-        <Button x:Name="LetsStart" Grid.ColumnSpan="2" Content="Let's start!" HorizontalAlignment="Center" Height="66" Margin="239,388,235,0" VerticalAlignment="Top" Width="314" FontFamily="Levenim MT" FontSize="29.333" Background="#FFB2F0C5" BorderThickness="2"/>
+        <Button x:Name="LetsStart" Grid.ColumnSpan="2" Content="Let's start!" HorizontalAlignment="Center" Height="66" Margin="239,388,235,0" VerticalAlignment="Top" Width="314" FontFamily="Levenim MT" FontSize="29.333" Background="#FFB2F0C5" BorderThickness="2" Click="LetsStart_Click"/>
     </Grid>
 </Window>

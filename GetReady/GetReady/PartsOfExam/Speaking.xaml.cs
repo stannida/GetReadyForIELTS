@@ -12,28 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GetReady
+namespace GetReady.PartsOfExam
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для Speaking.xaml
     /// </summary>
-    public partial class SigningIn : Window
+    public partial class Speaking : Window
     {
-        public SigningIn()
+        public Speaking()
         {
             InitializeComponent();
-
         }
-
-
-
-        private void LetsStart_Click (object sender, RoutedEventArgs e)
-        {
-            StartPage StartPage = new StartPage();
-            StartPage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            StartPage.Show();
-        }
-
-        
     }
 }
