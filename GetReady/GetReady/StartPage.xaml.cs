@@ -29,6 +29,7 @@ namespace GetReady
         {
             MainWindow MainWindow = new MainWindow();
             MainWindow.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.Close();
             MainWindow.Show();
         }
 

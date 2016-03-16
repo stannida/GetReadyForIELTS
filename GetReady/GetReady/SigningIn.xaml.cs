@@ -31,6 +31,7 @@ namespace GetReady
         {
             StartPage StartPage = new StartPage();
             StartPage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.Close();
             StartPage.Show();
         }
 

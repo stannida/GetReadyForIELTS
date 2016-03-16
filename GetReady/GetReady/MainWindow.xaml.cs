@@ -29,6 +29,7 @@ namespace GetReady
         {
             SigningUp SigningUp = new SigningUp();
             SigningUp.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.Close();
             SigningUp.Show();
             
         }
@@ -37,6 +38,7 @@ namespace GetReady
         {
             SigningIn SigningIn = new SigningIn();
             SigningIn.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.Close();
             SigningIn.Show();
         }
 
