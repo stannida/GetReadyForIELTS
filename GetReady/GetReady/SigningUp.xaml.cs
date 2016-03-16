@@ -48,9 +48,6 @@ namespace GetReady
                 password.Text = "Choose a password";
         }
 
-
-
-
         //private void LetsStart_Click(object sender, RoutedEventArgs e)
         //{
         //    UsersEntities db = new UsersEntities();
