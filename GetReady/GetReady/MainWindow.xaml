@@ -11,6 +11,6 @@
         <Label x:Name="label" Content="Get Ready for IELTS" HorizontalAlignment="Center" Margin="241,42,241,0" VerticalAlignment="Top" Width="304" FontFamily="Aharoni" FontSize="32" Foreground="White"/>
         <Button x:Name="SignUp" Content="Sign Up" HorizontalAlignment="Center" Height="63" Margin="274,167,275,0" VerticalAlignment="Top" Width="247" Click="button_Click" FontSize="24" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2"/>
         <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Center" Height="63" Margin="274,257,275,0" VerticalAlignment="Top" Width="248" Click="button1_Click" FontSize="24" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2"/>
-        <Button x:Name="Rules" Content="What is it about?" HorizontalAlignment="Center" Height="53" Margin="269,482,270,0" VerticalAlignment="Center" Width="247" Click="button1_Click" BorderBrush="White" Background="White" FontSize="24"/>
+        <Button x:Name="Rules" Content="What is it about?" HorizontalAlignment="Center" Height="53" Margin="269,482,270,0" VerticalAlignment="Center" Width="247" BorderBrush="White" Background="White" FontSize="24"/>
     </Grid>
 </Window>

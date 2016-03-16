@@ -48,8 +48,7 @@ namespace GetReady
                 password.Text = "Choose a password";
         }
 
-        //private void LetsStart_Click(object sender, RoutedEventArgs e)
-        //{
+       
             //    UsersEntities db = new UsersEntities();
 
             //    db.UserTable.Add(new UserTable
@@ -61,7 +60,7 @@ namespace GetReady
             //    StartPage StartPage = new StartPage();
             //    StartPage.Show();
             //}
-            //public string GetHash(string password)
+            //    public string GetHash(string password)
             //{ 
             //    System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
             //    string hash = String.Empty; byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(password), 0, Encoding.ASCII.GetByteCount(password));
@@ -69,9 +68,16 @@ namespace GetReady
             //    { hash += theByte.ToString("x2"); }
             //    return hash; }
 
+          
+       
+
+        public void LetsStart_Click_1(object sender, RoutedEventArgs e)
+        {
             StartPage Startpage = new StartPage();
+            Startpage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             Startpage.Show();
         }
+    }
 
     }
 

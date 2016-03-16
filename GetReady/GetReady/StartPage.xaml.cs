@@ -23,5 +23,12 @@ namespace GetReady
         {
             InitializeComponent();
         }
+
+        private void SignOut_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow MainWindow = new MainWindow();
+            MainWindow.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            MainWindow.Show();
+        }
     }
 }

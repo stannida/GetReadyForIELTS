@@ -6,7 +6,17 @@
         xmlns:local="clr-namespace:GetReady"
         mc:Ignorable="d"
         Title="StartPage" Height="646.154" Width="795.727">
-    <Grid>
-        
+    <Grid Margin="-17,0,-27,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="393*"/>
+            <ColumnDefinition Width="395*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FF2DB458" HorizontalAlignment="Center" Height="97" Stroke="#00000000" VerticalAlignment="Top" Width="788" IsHitTestVisible="False" Grid.ColumnSpan="2"/>
+        <Label x:Name="label" Content="Get Ready for IELTS" HorizontalAlignment="Center" Margin="242,42,242,0" VerticalAlignment="Top" Width="304" FontFamily="Aharoni" FontSize="32" Foreground="White" Grid.ColumnSpan="2" Height="42"/>
+        <Button x:Name="listening" Content="Listening" HorizontalAlignment="Center" Height="63" Margin="282,166,285,0" VerticalAlignment="Top" Width="238" FontSize="24" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="reading" Content="Reading" HorizontalAlignment="Center" Height="63" Margin="282,256,286,0" VerticalAlignment="Top" Width="238" FontSize="24" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="writing" Content="Writing" HorizontalAlignment="Center" Height="63" Margin="282,346,285,0" VerticalAlignment="Top" Width="238" FontSize="24" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="speaking" Content="Speaking" HorizontalAlignment="Center" Height="63" Margin="282,436,285,0" VerticalAlignment="Top" Width="238" FontSize="24" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="SignOut" Content="Sign Out" HorizontalAlignment="Center" Height="37" Margin="251,546,35,0" VerticalAlignment="Top" Width="118" FontSize="18.667" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Grid.Column="1" Click="SignOut_Click"/>
     </Grid>
 </Window>

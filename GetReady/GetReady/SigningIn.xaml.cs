@@ -25,6 +25,11 @@ namespace GetReady
 
         }
 
-        
+
+
+        //public override void LetsStart_Click_1 (object sender, RoutedEventArgs e)
+        //{
+            
+        //}
     }
 }
