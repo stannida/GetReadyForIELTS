@@ -23,5 +23,10 @@ namespace GetReady.PartsOfExam
         {
             InitializeComponent();
         }
+
+        private void FirstVariant_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

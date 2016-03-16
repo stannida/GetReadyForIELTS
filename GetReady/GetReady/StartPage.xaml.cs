@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GetReady.PartsOfExam;
 
 namespace GetReady
 {
@@ -29,6 +30,12 @@ namespace GetReady
             MainWindow MainWindow = new MainWindow();
             MainWindow.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             MainWindow.Show();
+        }
+
+        private void writing_Click(object sender, RoutedEventArgs e)
+        {
+            Writing Writing = new Writing();
+            Writing.Show();
         }
     }
 }
