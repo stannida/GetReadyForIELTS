@@ -34,7 +34,6 @@ namespace GetReady
         {
             if (password.Text == "Choose a password")
                 password.Text = "";
-
         }
 
         private void LostFocusUsername(object sender, RoutedEventArgs e)
@@ -48,8 +47,5 @@ namespace GetReady
             if (password.Text == "")
                 password.Text = "Choose a password";
         }
-
-
-
     }
 }
