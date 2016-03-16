@@ -24,32 +24,75 @@ namespace GetReady
             InitializeComponent();
         }
 
-        private void LetsStart_Click(object sender, RoutedEventArgs e)
+        private void GotFocusUsername(object sender, RoutedEventArgs e)
         {
-            //    UsersEntities db = new UsersEntities();
+            if (username.Text == "Pick a username")
+                username.Text = "";
+        }
 
-            //    db.UserTable.Add(new UserTable
-            //    {
-            //        username = Username.Text,
-            //        hash = GetHash(Password.Text)
-            //    });
-            //    db.SaveChanges();
-            //    StartPage StartPage = new StartPage();
-            //    StartPage.Show();
-            //}
-            //public string GetHash(string password)
-            //{ 
-            //    System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
-            //    string hash = String.Empty; byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(password), 0, Encoding.ASCII.GetByteCount(password));
-            //    foreach (byte theByte in crypto)
-            //    { hash += theByte.ToString("x2"); }
-            //    return hash; }
+        private void LostFocusUsername(object sender, RoutedEventArgs e)
+        {
+            if (username.Text == "")
+                username.Text = "Pick a username";
+        }
 
-            StartPage Startpage = new StartPage();
-            Startpage.Show();
+        private void GotFocusPassword(object sender, RoutedEventArgs e)
+        {
+            if (password.Text == "Choose a password")
+                password.Text = "";
+        }
+
+        private void LostFocusPassword(object sender, RoutedEventArgs e)
+        {
+            if (password.Text == "")
+                password.Text = "Choose a password";
         }
 
 
+
+
+        //private void LetsStart_Click(object sender, RoutedEventArgs e)
+        //{
+        //    UsersEntities db = new UsersEntities();
+
+        //    db.UserTable.Add(new UserTable
+        //    {
+        //        username = Username.Text,
+        //        hash = GetHash(Password.Text)
+        //    });
+        //    db.SaveChanges();
+        //    StartPage StartPage = new StartPage();
+        //    StartPage.Show();
+        //}
+        //public string GetHash(string password)
+        //{ 
+        //    System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
+        //    string hash = String.Empty; byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(password), 0, Encoding.ASCII.GetByteCount(password));
+        //    foreach (byte theByte in crypto)
+        //    { hash += theByte.ToString("x2"); }
+        //    return hash; }
+
+        //private void GotFocusUsername(object sender, RoutedEventArgs e)
+        //{
+        //    UsersEntities db = new UsersEntities();
+            
+        //    db.UserTable.Add(new UserTable
+        //    {
+        //        username = Username.Text,
+        //        hash = GetHash(Password.Text)
+        //    });
+        //    db.SaveChanges();
+        //    StartPage StartPage = new StartPage();
+        //    StartPage.Show();
+        //}
+        //public string GetHash(string password)
+        //{ 
+        //    System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
+        //    string hash = String.Empty; byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(password), 0, Encoding.ASCII.GetByteCount(password));
+        //    foreach (byte theByte in crypto)
+        //    { hash += theByte.ToString("x2"); }
+        //    return hash; }
     }
-}
+    
+    }
 
