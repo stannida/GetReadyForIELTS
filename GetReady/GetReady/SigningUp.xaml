@@ -13,9 +13,9 @@
         </Grid.ColumnDefinitions>
         <Rectangle Fill="#FF2DB458" HorizontalAlignment="Center" Height="97" Stroke="#00000000" VerticalAlignment="Top" Width="804" IsHitTestVisible="False" Grid.ColumnSpan="2" Margin="6,0,0,0"/>
         <Label x:Name="label" Content="Get Ready for IELTS" HorizontalAlignment="Center" Margin="242,42,242,0" VerticalAlignment="Top" Width="304" FontFamily="Aharoni" FontSize="32" Foreground="White" Grid.ColumnSpan="2" Height="42"/>
-        <TextBox x:Name="Username" HorizontalAlignment="Center" Height="28" Margin="303,199,300,0" TextWrapping="Wrap" Text="Pick a username" VerticalAlignment="Top" Width="185" FontSize="16" FontFamily="Levenim MT" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="Password" HorizontalAlignment="Center" Height="28" Margin="303,244,300,0" TextWrapping="Wrap" Text="Choose a password" VerticalAlignment="Top" Width="185" Grid.ColumnSpan="2" FontSize="16" FontFamily="Levenim MT"/>
-        <Button x:Name="LetsStart" Grid.ColumnSpan="2" Content="Let's start!" HorizontalAlignment="Center" Height="66" Margin="239,388,235,0" VerticalAlignment="Top" Width="314" FontFamily="Levenim MT" FontSize="29.333" Background="#FFB2F0C5" BorderThickness="2" Click="LetsStart_Click"/>
+        <TextBox x:Name="username" HorizontalAlignment="Center" Height="28" Margin="303,199,300,0" TextWrapping="Wrap" Text="Pick a username" VerticalAlignment="Top" Width="185" FontSize="16" FontFamily="Levenim MT" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="password" HorizontalAlignment="Center" Height="28" Margin="303,244,300,0" TextWrapping="Wrap" Text="Choose a password" VerticalAlignment="Top" Width="185" Grid.ColumnSpan="2" FontSize="16" FontFamily="Levenim MT"/>
+        <Button x:Name="LetsStart" Grid.ColumnSpan="2" Content="Let's start!" HorizontalAlignment="Center" Height="66" Margin="239,388,235,0" VerticalAlignment="Top" Width="314" FontFamily="Levenim MT" FontSize="29.333" Background="#FFB2F0C5" BorderThickness="2"/>
 
     </Grid>
 </Window>
