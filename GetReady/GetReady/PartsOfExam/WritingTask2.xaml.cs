@@ -75,11 +75,86 @@ namespace GetReady.PartsOfExam
 
         private void UserText_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (UserText.Text == "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task2_Var1'. You can click on the button '1' to see the task again.")
+            if (UserText.Text == "Here you can write your essay. The file will be automatically created on your computer and named 'Writing_Task2_Var1'. You can click on the button '1' to see the task again.")
                 UserText.Text = "";
         }
 
-        
+        private async void SecondVariant_Click(object sender, RoutedEventArgs e)
+        {
+            _task.Visibility = Visibility.Hidden;
+            next.Visibility = Visibility.Visible;
+            UserText.Visibility = Visibility.Hidden;
+            var1Task.Visibility = Visibility.Visible;
+            using (StreamReader sr = new StreamReader("../../../var2Task2.txt"))
+            {
+                string line = await sr.ReadToEndAsync();
+                var1Task.Text = line;
+            }
+            next.Click += Next_Click;
+        }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            var1Task.Visibility = Visibility.Hidden;
+            UserText.Text = "Here you can write your essay. The file will be automatically created on your computer and named 'Writing_Task2_Var2'. You can click on the button '2' to see the task again.";
+            UserText.Visibility = Visibility.Visible;
+            UserText.GotFocus += UserText_GotFocus1;
+            UserText.TextChanged += UserText_TextChanged1;
+            next.Visibility = Visibility.Hidden;
+        }
+
+        private async void UserText_TextChanged1(object sender, TextChangedEventArgs e)
+        {
+            using (StreamWriter sw = new StreamWriter("../../../Writing_Task2_Var2.txt"))
+            {
+                await sw.WriteAsync(UserText.Text);
+            }
+        }
+
+        private void UserText_GotFocus1(object sender, RoutedEventArgs e)
+        {
+            if (UserText.Text == "Here you can write your essay. The file will be automatically created on your computer and named 'Writing_Task2_Var2'. You can click on the button '2' to see the task again.")
+                UserText.Text = "";
+        }
+
+        private async void ThirdVariant_Click(object sender, RoutedEventArgs e)
+        {
+            _task.Visibility = Visibility.Hidden;
+            next.Visibility = Visibility.Visible;
+
+            UserText.Visibility = Visibility.Hidden;
+            var1Task.Visibility = Visibility.Visible;
+            using (StreamReader sr = new StreamReader("../../../var3Task2.txt"))
+            {
+                string line = await sr.ReadToEndAsync();
+                var1Task.Text = line;
+            }
+            next.Click += Next_Click1;
+        }
+
+        private void Next_Click1(object sender, RoutedEventArgs e)
+        {
+            var1Task.Visibility = Visibility.Hidden;
+            UserText.Text = "Here you can write your essay. The file will be automatically created on your computer and named 'Writing_Task2_Var3'. You can click on the button '3' to see the task again.";
+            UserText.Visibility = Visibility.Visible;
+            UserText.GotFocus += UserText_GotFocus2;
+            UserText.TextChanged += UserText_TextChanged2;
+            next.Visibility = Visibility.Hidden;
+        }
+
+        private async void UserText_TextChanged2(object sender, TextChangedEventArgs e)
+        {
+            using (StreamWriter sw = new StreamWriter("../../../Writing_Task2_Var3.txt"))
+            {
+                await sw.WriteAsync(UserText.Text);
+            }
+        }
+
+        private void UserText_GotFocus2(object sender, RoutedEventArgs e)
+        {
+            if (UserText.Text == "Here you can write your essay. The file will be automatically created on your computer and named 'Writing_Task2_Var3'. You can click on the button '3' to see the task again.")
+                UserText.Text = "";
+        }
     }
     }
 

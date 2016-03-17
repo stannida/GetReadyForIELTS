@@ -44,6 +44,7 @@
         <TextBlock x:Name="counter" HorizontalAlignment="Center" Text ="Number of words" Margin="130,581,191,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="17" Width="156" Visibility="Hidden" FontFamily="Levenim MT"/>
         <Image x:Name="Writing_Task_1_3" Grid.ColumnSpan="2" Margin="284,340,278,17" Source="/GetReady;component/Writing_Task_1_3.png" Stretch="Fill" Visibility="Hidden"/>
         <Image x:Name="Writing_Task_1_2" Grid.ColumnSpan="2" Margin="291,347,286,17" Source="/GetReady;component/Writing_Task_1_2.png" Stretch="Fill" Visibility="Hidden"/>
+        <Image x:Name="Writing_Task_1_0" HorizontalAlignment="Center" Grid.ColumnSpan="2" Height="241" Margin="2,347,0,0" VerticalAlignment="Top" Width="475"/>
 
 
     </Grid>
