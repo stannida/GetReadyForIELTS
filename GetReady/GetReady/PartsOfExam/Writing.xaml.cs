@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -41,13 +42,45 @@ namespace GetReady.PartsOfExam
 
         private async void FirstVariant_Click(object sender, RoutedEventArgs e)
         {
+
             _task.Visibility = Visibility.Hidden;
+            next.Visibility = Visibility.Visible;
+            UserText.Visibility = Visibility.Hidden;
+            var1Task.Visibility = Visibility.Visible;
             using (StreamReader sr = new StreamReader("../../../var1Task1.txt"))
             {
                 string line = await sr.ReadToEndAsync();
                 var1Task.Text = line;
             }
             Writing_Task_1_1.Visibility = Visibility.Visible;
+        }
+
+        private void next_Click(object sender, RoutedEventArgs e)
+        {
+            var1Task.Visibility = Visibility.Hidden;
+            Writing_Task_1_1.Visibility = Visibility.Hidden;
+            UserText.Visibility = Visibility.Visible;
+            next.Visibility = Visibility.Hidden;
+        }
+        
+
+        private async void UserText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            using (StreamWriter sw = new StreamWriter("../../../Writing_Task1_Var1.txt"))
+            {
+                await sw.WriteAsync(UserText.Text);
+            }
+            if (UserText.Text != "")
+            {
+                string count = UserText.Text.Length.ToString();
+                counter.Text = "Number of words: " + count;
+            }
+        }
+
+        private void UserText_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (UserText.Text == "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var1'. You can click on the button '1' to see the task again.")
+                UserText.Text = "";
         }
 
         

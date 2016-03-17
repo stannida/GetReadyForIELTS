@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GetReady.PartsOfExam"
         mc:Ignorable="d"
         Title="Writing" Height="646.154" Width="795.727" WindowStartupLocation="CenterScreen">
-    <Grid Margin="-57,0,-46,0">
+    <Grid Margin="-87,0,-74,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="102*"/>
             <ColumnDefinition Width="101*"/>
@@ -36,7 +36,12 @@
         </Button>
         <TextBlock x:Name="_task" HorizontalAlignment="Center" Margin="82,205,74,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="346" Width="697" FontFamily="Levenim MT" FontSize="16" TextAlignment="Justify"/>
         <TextBlock x:Name="var1Task" HorizontalAlignment="Center" Height="173" Margin="122,205,115,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="654" Grid.ColumnSpan="2" TextAlignment="Justify" FontFamily="Levenim MT" FontSize="16" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
-        
+
         <Image x:Name="Writing_Task_1_1" Grid.ColumnSpan="2" Margin="254,347,247,10" Source="/GetReady;component/Writing_Task_1_1.png" Stretch="Fill" Visibility="Hidden"/>
+        <Button x:Name="next" Content="I want to try" Grid.Column="1" HorizontalAlignment="Center" Height="35" Margin="263,516,77,0" VerticalAlignment="Top" Width="123" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Padding="1" Click="next_Click" Visibility="Hidden"/>
+        <TextBox x:Name="UserText" HorizontalAlignment="Center" Height="362" Margin="110,196,104,0" TextWrapping="Wrap" Text="Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var1'. You can click on the button '1' to see the task again." VerticalAlignment="Top" Width="694" Grid.ColumnSpan="2" TextChanged="UserText_TextChanged" FontFamily="Levenim MT" Padding="2,0" GotFocus="UserText_GotFocus" Visibility="Hidden"/>
+        <Button x:Name="butTask2" Content="Move on to Task 2" Grid.Column="1" HorizontalAlignment="Center" Height="35" Margin="263,563,77,0" VerticalAlignment="Top" Width="123" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Padding="1"/>
+        <TextBlock x:Name="counter" HorizontalAlignment="Center" Text ="Number of words" Margin="130,581,191,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="17" Width="156" Visibility="Hidden" FontFamily="Levenim MT"/>
+
     </Grid>
 </Window>
