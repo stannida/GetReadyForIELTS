@@ -13,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 namespace GetReady.PartsOfExam
 {
     /// <summary>
@@ -113,6 +112,7 @@ namespace GetReady.PartsOfExam
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
+            _task.Visibility = Visibility.Hidden;
             UserText.Visibility = Visibility.Visible;
             UserText.Text = "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var2'. You can click on the button '2' to see the task again.";
             UserText.GotFocus += UserText_GotFocus1;
@@ -151,6 +151,7 @@ namespace GetReady.PartsOfExam
 
         private void Next_Click1(object sender, RoutedEventArgs e)
         {
+            _task.Visibility = Visibility.Hidden;
             UserText.Visibility = Visibility.Visible;
             UserText.Text = "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var3'. You can click on the button '3' to see the task again.";
             UserText.GotFocus += UserText_GotFocus2;
@@ -169,6 +170,14 @@ namespace GetReady.PartsOfExam
         {
             if (UserText.Text == "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var3'. You can click on the button '3' to see the task again.")
                 UserText.Text = "";
+        }
+
+        private void Help_Click(object sender, RoutedEventArgs e)
+        {
+            var1Task.Visibility = Visibility.Hidden;
+            UserText.Visibility = Visibility.Hidden;
+            Writing_Task_1_0.Visibility = Visibility.Hidden;
+            _task.Visibility = Visibility.Visible;
         }
     }
 }

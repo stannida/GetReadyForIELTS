@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:GetReady"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="DictionaryIcons.xaml"/>
+
+
     </Application.Resources>
 </Application>

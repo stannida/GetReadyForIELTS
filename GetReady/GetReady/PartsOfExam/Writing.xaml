@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GetReady.PartsOfExam"
+        xmlns:local="clr-namespace:GetReady.PartsOfExam"    
         mc:Ignorable="d"
         Title="Writing" Height="646.154" Width="795.727" WindowStartupLocation="CenterScreen">
     <Grid Margin="-87,0,-74,0">
@@ -45,7 +45,15 @@
         <Image x:Name="Writing_Task_1_3" Grid.ColumnSpan="2" Margin="284,340,278,17" Source="/GetReady;component/Writing_Task_1_3.png" Stretch="Fill" Visibility="Hidden"/>
         <Image x:Name="Writing_Task_1_2" Grid.ColumnSpan="2" Margin="291,347,286,17" Source="/GetReady;component/Writing_Task_1_2.png" Stretch="Fill" Visibility="Hidden"/>
         <Image x:Name="Writing_Task_1_0" HorizontalAlignment="Center" Grid.ColumnSpan="2" Height="241" Margin="2,347,0,0" VerticalAlignment="Top" Width="475"/>
+        <Button 
+            x:Name="Help"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" Grid.Column="1" Margin="293,14,113,535" Height="66" Width="66" Background="#FF2DB458" Click="Help_Click" >
+            <StackPanel Orientation="Horizontal" Height="56" Width="56">
+                <ContentControl Width="50" Margin="4,5" Content="{StaticResource IconConfused}"  />
 
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Window>
