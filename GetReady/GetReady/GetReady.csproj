@@ -193,6 +193,7 @@
       <DependentUpon>Usersdb.edmx</DependentUpon>
       <LastGenOutput>Usersdb.cs</LastGenOutput>
     </Content>
+    <Resource Include="Writing_Task_1_1.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

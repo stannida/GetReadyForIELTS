@@ -37,6 +37,7 @@ namespace GetReady
         {
             Writing Writing = new Writing();
             Writing.Show();
+            this.Close();
         }
     }
 }

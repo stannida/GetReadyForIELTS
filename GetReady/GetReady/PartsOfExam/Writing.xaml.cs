@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,11 +23,33 @@ namespace GetReady.PartsOfExam
         public Writing()
         {
             InitializeComponent();
+            
+            LoadingTask();
+
         }
 
-        private void FirstVariant_Click(object sender, RoutedEventArgs e)
+        private async void LoadingTask ()
         {
+            using (StreamReader sr = new StreamReader("../../../taskWriting.txt"))
+            {
 
+                string line = await sr.ReadToEndAsync();
+                _task.Text = line;
+
+            }
         }
+
+        private async void FirstVariant_Click(object sender, RoutedEventArgs e)
+        {
+            _task.Visibility = Visibility.Hidden;
+            using (StreamReader sr = new StreamReader("../../../var1Task1.txt"))
+            {
+                string line = await sr.ReadToEndAsync();
+                var1Task.Text = line;
+            }
+            Writing_Task_1_1.Visibility = Visibility.Visible;
+        }
+
+        
     }
 }
