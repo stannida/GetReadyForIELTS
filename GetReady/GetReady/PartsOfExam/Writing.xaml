@@ -20,14 +20,14 @@
             Rect="4,4,50,50"/>
             </Button.Clip>
         </Button>
-        <Button x:Name="SecondVariant" Content="2" HorizontalAlignment="Center" Margin="376,127,376,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Grid.ColumnSpan="2">
+        <Button x:Name="SecondVariant" Content="2" HorizontalAlignment="Center" Margin="376,127,376,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Grid.ColumnSpan="2" Click="SecondVariant_Click">
             <Button.Clip>
                 <RectangleGeometry RadiusX="30" 
             RadiusY="30" 
             Rect="4,4,50,50"/>
             </Button.Clip>
         </Button>
-        <Button x:Name="ThirdVariant" Content="3" HorizontalAlignment="Center" Margin="172,127,171,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Grid.Column="1">
+        <Button x:Name="ThirdVariant" Content="3" HorizontalAlignment="Center" Margin="172,127,171,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Grid.Column="1" Click="ThirdVariant_Click">
             <Button.Clip>
                 <RectangleGeometry RadiusX="30" 
             RadiusY="30" 
@@ -40,8 +40,11 @@
         <Image x:Name="Writing_Task_1_1" Grid.ColumnSpan="2" Margin="254,347,247,10" Source="/GetReady;component/Writing_Task_1_1.png" Stretch="Fill" Visibility="Hidden"/>
         <Button x:Name="next" Content="I want to try" Grid.Column="1" HorizontalAlignment="Center" Height="35" Margin="263,516,77,0" VerticalAlignment="Top" Width="123" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Padding="1" Click="next_Click" Visibility="Hidden"/>
         <TextBox x:Name="UserText" HorizontalAlignment="Center" Height="362" Margin="110,196,104,0" TextWrapping="Wrap" Text="Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var1'. You can click on the button '1' to see the task again." VerticalAlignment="Top" Width="694" Grid.ColumnSpan="2" TextChanged="UserText_TextChanged" FontFamily="Levenim MT" Padding="2,0" GotFocus="UserText_GotFocus" Visibility="Hidden"/>
-        <Button x:Name="butTask2" Content="Move on to Task 2" Grid.Column="1" HorizontalAlignment="Center" Height="35" Margin="263,563,77,0" VerticalAlignment="Top" Width="123" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Padding="1"/>
+        <Button x:Name="butTask2" Content="Move on to Task 2" Grid.Column="1" HorizontalAlignment="Center" Height="35" Margin="263,563,77,0" VerticalAlignment="Top" Width="123" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Padding="1" Click="butTask2_Click"/>
         <TextBlock x:Name="counter" HorizontalAlignment="Center" Text ="Number of words" Margin="130,581,191,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="17" Width="156" Visibility="Hidden" FontFamily="Levenim MT"/>
+        <Image x:Name="Writing_Task_1_3" Grid.ColumnSpan="2" Margin="284,340,278,17" Source="/GetReady;component/Writing_Task_1_3.png" Stretch="Fill" Visibility="Hidden"/>
+        <Image x:Name="Writing_Task_1_2" Grid.ColumnSpan="2" Margin="291,347,286,17" Source="/GetReady;component/Writing_Task_1_2.png" Stretch="Fill" Visibility="Hidden"/>
+
 
     </Grid>
 </Window>

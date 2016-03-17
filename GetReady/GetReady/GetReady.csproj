@@ -79,6 +79,9 @@
     <Compile Include="PartsOfExam\Writing.xaml.cs">
       <DependentUpon>Writing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PartsOfExam\WritingTask2.xaml.cs">
+      <DependentUpon>WritingTask2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SigningUp.xaml.cs">
       <DependentUpon>SigningUp.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PartsOfExam\Writing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PartsOfExam\WritingTask2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +200,8 @@
       <DependentUpon>Usersdb.edmx</DependentUpon>
       <LastGenOutput>Usersdb.cs</LastGenOutput>
     </Content>
+    <Resource Include="Writing_Task_1_3.png" />
+    <Resource Include="Writing_Task_1_2.png" />
     <Resource Include="Writing_Task_1_1.png" />
   </ItemGroup>
   <ItemGroup>

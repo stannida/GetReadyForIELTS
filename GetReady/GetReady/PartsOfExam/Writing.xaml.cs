@@ -70,11 +70,11 @@ namespace GetReady.PartsOfExam
             {
                 await sw.WriteAsync(UserText.Text);
             }
-            if (UserText.Text != "")
-            {
-                string count = UserText.Text.Length.ToString();
-                counter.Text = "Number of words: " + count;
-            }
+            //if (UserText.Text != "")
+            //{
+                //string count = UserText.Text.Length.ToString();
+                //counter.Text = "Number of words: " + count;
+            //}
         }
 
         private void UserText_GotFocus(object sender, RoutedEventArgs e)
@@ -83,6 +83,41 @@ namespace GetReady.PartsOfExam
                 UserText.Text = "";
         }
 
-        
+        private void butTask2_Click(object sender, RoutedEventArgs e)
+        {
+            WritingTask2 WT2 = new WritingTask2();
+            WT2.Show();
+            this.Close();
+            
+        }
+
+        private async void SecondVariant_Click(object sender, RoutedEventArgs e)
+        {
+            _task.Visibility = Visibility.Hidden;
+            next.Visibility = Visibility.Visible;
+            UserText.Visibility = Visibility.Hidden;
+            var1Task.Visibility = Visibility.Visible;
+            using (StreamReader sr = new StreamReader("../../../var2Task1.txt"))
+            {
+                string line = await sr.ReadToEndAsync();
+                var1Task.Text = line;
+            }
+            Writing_Task_1_1.Source = Writing_Task_1_2.Source;
+        }
+
+        private async void ThirdVariant_Click(object sender, RoutedEventArgs e)
+        {
+            _task.Visibility = Visibility.Hidden;
+            next.Visibility = Visibility.Visible;
+            UserText.Visibility = Visibility.Hidden;
+            var1Task.Visibility = Visibility.Visible;
+            using (StreamReader sr = new StreamReader("../../../var3Task1.txt"))
+            {
+                string line = await sr.ReadToEndAsync();
+                var1Task.Text = line;
+            }
+            Writing_Task_1_1.Source = Writing_Task_1_3.Source;
+
+        }
     }
 }
