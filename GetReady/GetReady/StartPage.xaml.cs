@@ -39,5 +39,13 @@ namespace GetReady
             Writing.Show();
             this.Close();
         }
+
+        private void speaking_Click(object sender, RoutedEventArgs e)
+        {
+            Speaking Speaking = new Speaking();
+            Speaking.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.Close();
+            Speaking.Show();
+        }
     }
 }

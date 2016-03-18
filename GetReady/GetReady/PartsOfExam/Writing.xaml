@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GetReady.PartsOfExam"    
         mc:Ignorable="d"
-        Title="Writing" Height="646.154" Width="795.727" WindowStartupLocation="CenterScreen">
+        Title="Writing" Height="646" Width="796" WindowStartupLocation="CenterScreen">
     <Grid Margin="-87,0,-74,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="102*"/>
