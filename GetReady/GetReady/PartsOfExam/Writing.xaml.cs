@@ -204,9 +204,12 @@ namespace GetReady.PartsOfExam
             var1Task.Visibility = Visibility.Visible;
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+
+        private void GoTask2_Click(object sender, RoutedEventArgs e)
         {
-            
+            WritingTask2 WritingTask2 = new WritingTask2();
+            WritingTask2.Show();
+            this.Close();
         }
     }
 }

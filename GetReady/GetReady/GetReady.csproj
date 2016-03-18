@@ -73,6 +73,9 @@
     <Compile Include="PartsOfExam\Reading.xaml.cs">
       <DependentUpon>Reading.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PartsOfExam\ReadingAnswerBox.xaml.cs">
+      <DependentUpon>ReadingAnswerBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PartsOfExam\Speaking.xaml.cs">
       <DependentUpon>Speaking.xaml</DependentUpon>
     </Compile>
@@ -133,6 +136,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PartsOfExam\Reading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PartsOfExam\ReadingAnswerBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

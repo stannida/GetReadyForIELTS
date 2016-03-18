@@ -39,5 +39,11 @@ namespace GetReady
             Writing.Show();
             this.Close();
         }
+        private void reading_Click(object sender, RoutedEventArgs e)
+        {
+            Reading Reading = new Reading();
+            Reading.Show();
+            this.Close();
+        }
     }
 }
