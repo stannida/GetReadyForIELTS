@@ -6,41 +6,44 @@
         xmlns:local="clr-namespace:GetReady.PartsOfExam"    
         mc:Ignorable="d"
         Title="Writing" Height="646.154" Width="795.727" WindowStartupLocation="CenterScreen">
-    <Grid Margin="-87,0,-74,0">
+
+    <Grid Margin="0,0,-8,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="102*"/>
             <ColumnDefinition Width="101*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Fill="#FF2DB458" HorizontalAlignment="Center" Height="97" Stroke="#00000000" VerticalAlignment="Top" Width="800" IsHitTestVisible="False" Margin="12,0,0,0" Grid.ColumnSpan="2"/>
-        <Label x:Name="label" Content="Writing" HorizontalAlignment="Center" Margin="347,34,344,0" VerticalAlignment="Top" Width="121" FontFamily="Aharoni" FontSize="32" Foreground="White" Height="42" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <Button x:Name="FirstVariant" Content="1" HorizontalAlignment="Center" Margin="173,127,173,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Click="FirstVariant_Click">
+
+        <Rectangle Fill="#FF2DB458" HorizontalAlignment="Center" Height="97" Stroke="#00000000" VerticalAlignment="Top" Width="800" IsHitTestVisible="False" Margin="-3,0,-9,0" Grid.ColumnSpan="2"/>
+        <Label x:Name="label" Content="Writing" HorizontalAlignment="Center" Margin="323,34,317,0" VerticalAlignment="Top" Width="148" FontFamily="Aharoni" FontSize="32" Foreground="White" Height="42" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <Button x:Name="FirstVariant" Content="1" HorizontalAlignment="Center" Margin="170,127,171,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Click="FirstVariant_Click">
             <Button.Clip>
                 <RectangleGeometry RadiusX="30" 
             RadiusY="30" 
             Rect="4,4,50,50"/>
             </Button.Clip>
         </Button>
-        <Button x:Name="SecondVariant" Content="2" HorizontalAlignment="Center" Margin="376,127,376,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Grid.ColumnSpan="2" Click="SecondVariant_Click">
+        <Button x:Name="SecondVariant" Content="2" HorizontalAlignment="Center" Margin="367,127,365,0" VerticalAlignment="Top" Width="56" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Grid.ColumnSpan="2" Click="SecondVariant_Click">
             <Button.Clip>
                 <RectangleGeometry RadiusX="30" 
             RadiusY="30" 
             Rect="4,4,50,50"/>
             </Button.Clip>
         </Button>
-        <Button x:Name="ThirdVariant" Content="3" HorizontalAlignment="Center" Margin="172,127,171,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Grid.Column="1" Click="ThirdVariant_Click">
+        <Button x:Name="ThirdVariant" Content="3" HorizontalAlignment="Center" Margin="174,127,163,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Grid.Column="1" Click="ThirdVariant_Click" Padding="0">
             <Button.Clip>
                 <RectangleGeometry RadiusX="30" 
             RadiusY="30" 
             Rect="4,4,50,50"/>
             </Button.Clip>
         </Button>
-        <TextBlock x:Name="_task" HorizontalAlignment="Center" Margin="82,205,74,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="346" Width="697" FontFamily="Levenim MT" FontSize="16" TextAlignment="Justify"/>
-        <TextBlock x:Name="var1Task" HorizontalAlignment="Center" Height="173" Margin="122,205,115,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="654" Grid.ColumnSpan="2" TextAlignment="Justify" FontFamily="Levenim MT" FontSize="16" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
+        <TextBlock x:Name="_task" HorizontalAlignment="Center" Margin="51,205,47,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="346" Width="698" FontFamily="Levenim MT" FontSize="16" TextAlignment="Justify" Padding="4,2"/>
+        <TextBlock x:Name="var1Task" HorizontalAlignment="Center" Height="173" Margin="73,205,69,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="654" Grid.ColumnSpan="2" TextAlignment="Justify" FontFamily="Levenim MT" FontSize="16" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="4,0"/>
 
         <Image x:Name="Writing_Task_1_1" Grid.ColumnSpan="2" Margin="254,347,247,10" Source="/GetReady;component/Writing_Task_1_1.png" Stretch="Fill" Visibility="Hidden"/>
-        <Button x:Name="next" Content="I want to try" Grid.Column="1" HorizontalAlignment="Center" Height="35" Margin="263,516,77,0" VerticalAlignment="Top" Width="123" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Padding="1" Click="next_Click" Visibility="Hidden"/>
+        <Button x:Name="next" Content="I want to try" Grid.Column="1" HorizontalAlignment="Center" Height="35" Margin="242,516,26,0" VerticalAlignment="Top" Width="124" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Padding="1" Click="next_Click" HorizontalContentAlignment="Center"/>
         <TextBox x:Name="UserText" HorizontalAlignment="Center" Height="362" Margin="110,196,104,0" TextWrapping="Wrap" Text="Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var#'. You can click on the variant button to see the task again." VerticalAlignment="Top" Width="694" Grid.ColumnSpan="2" FontFamily="Levenim MT" Padding="2,0" GotFocus="UserText_GotFocus" Visibility="Hidden"/>
-        <Button x:Name="butTask2" Content="Move on to Task 2" Grid.Column="1" HorizontalAlignment="Center" Height="35" Margin="263,563,77,0" VerticalAlignment="Top" Width="123" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Padding="1" Click="butTask2_Click"/>
+
+
         <TextBlock x:Name="counter" HorizontalAlignment="Center" Text ="Number of words" Margin="130,581,191,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="17" Width="156" Visibility="Hidden" FontFamily="Levenim MT"/>
         <Image x:Name="Writing_Task_1_3" Grid.ColumnSpan="2" Margin="284,340,278,17" Source="/GetReady;component/Writing_Task_1_3.png" Stretch="Fill" Visibility="Hidden"/>
         <Image x:Name="Writing_Task_1_2" Grid.ColumnSpan="2" Margin="291,347,286,17" Source="/GetReady;component/Writing_Task_1_2.png" Stretch="Fill" Visibility="Hidden"/>
@@ -48,12 +51,13 @@
         <Button 
             x:Name="Help"
             HorizontalAlignment="Center" 
-            VerticalAlignment="Center" Grid.Column="1" Margin="293,14,113,535" Height="66" Width="66" Background="#FF2DB458" MouseEnter="Help_MouseEnter" >
+            VerticalAlignment="Center" Grid.Column="1" Margin="244,22,86,527" Height="66" Width="66" Background="#FF2DB458" MouseEnter="Help_MouseEnter" >
             <StackPanel Orientation="Horizontal" Height="56" Width="56">
-                <ContentControl Width="50" Margin="4,5" Content="{StaticResource IconConfused}"  />
+                <ContentControl Width="50" Margin="1,1,1,1" Content="{StaticResource IconConfused}"  />
 
             </StackPanel>
         </Button>
+        <Button x:Name="GoTask2" Content="Go to Task 2" Grid.Column="1" HorizontalAlignment="Left" Margin="244,563,0,0" VerticalAlignment="Top" Width="124" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000"/>
 
     </Grid>
 </Window>

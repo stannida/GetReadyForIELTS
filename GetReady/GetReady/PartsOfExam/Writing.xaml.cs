@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Navigation;
 namespace GetReady.PartsOfExam
 {
     /// <summary>
@@ -101,10 +102,8 @@ namespace GetReady.PartsOfExam
 
         private void butTask2_Click(object sender, RoutedEventArgs e)
         {
-            WritingTask2 WT2 = new WritingTask2();
-            WT2.Show();
-            this.Close();
             
+
         }
 
         private async void SecondVariant_Click(object sender, RoutedEventArgs e)
@@ -203,6 +202,11 @@ namespace GetReady.PartsOfExam
             _task.Visibility = Visibility.Hidden;
             Writing_Task_1_0.Visibility = Visibility.Visible;
             var1Task.Visibility = Visibility.Visible;
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
