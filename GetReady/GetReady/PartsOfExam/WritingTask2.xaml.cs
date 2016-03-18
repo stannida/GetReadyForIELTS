@@ -155,6 +155,13 @@ namespace GetReady.PartsOfExam
             if (UserText.Text == "Here you can write your essay. The file will be automatically created on your computer and named 'Writing_Task2_Var3'. You can click on the button '3' to see the task again.")
                 UserText.Text = "";
         }
+
+        private void Help_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var1Task.Visibility = Visibility.Hidden;
+            UserText.Visibility = Visibility.Hidden;
+            _task.Visibility = Visibility.Visible;
+        }
     }
     }
 

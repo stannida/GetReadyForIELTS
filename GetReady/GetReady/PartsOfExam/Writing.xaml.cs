@@ -31,7 +31,7 @@ namespace GetReady.PartsOfExam
 
         private async void LoadingTask ()
         {
-            using (StreamReader sr = new StreamReader("../../../taskWriting.txt"))
+            using (StreamReader sr = new StreamReader("../../../Writing/taskWriting.txt"))
             {
 
                 string line = await sr.ReadToEndAsync();
@@ -47,14 +47,19 @@ namespace GetReady.PartsOfExam
             next.Visibility = Visibility.Visible;
             UserText.Visibility = Visibility.Hidden;
             var1Task.Visibility = Visibility.Visible;
-            using (StreamReader sr = new StreamReader("../../../var1Task1.txt"))
+            using (StreamReader sr = new StreamReader("../../../Writing/var1Task1.txt"))
             {
                 string line = await sr.ReadToEndAsync();
                 var1Task.Text = line;
             }
             Writing_Task_1_0.Source = Writing_Task_1_1.Source;
             Writing_Task_1_0.Visibility = Visibility.Visible;
+            Help.MouseLeave += Help_MouseLeave;
+            next.Click += next_Click;
+            UserText.TextChanged += UserText_TextChanged;
         }
+
+
 
         private void next_Click(object sender, RoutedEventArgs e)
         {
@@ -62,15 +67,23 @@ namespace GetReady.PartsOfExam
             Writing_Task_1_0.Visibility = Visibility.Hidden;
             UserText.Visibility = Visibility.Visible;
             next.Visibility = Visibility.Hidden;
+            Help.MouseLeave += Help_MouseLeave1;
         }
-        
+
+        private void Help_MouseLeave1(object sender, MouseEventArgs e)
+        {
+            _task.Visibility = Visibility.Hidden;
+            Writing_Task_1_0.Visibility = Visibility.Hidden;
+            UserText.Visibility = Visibility.Visible;
+        }
 
         private async void UserText_TextChanged(object sender, TextChangedEventArgs e)
         {
-            using (StreamWriter sw = new StreamWriter("../../../Writing_Task1_Var1.txt"))
+            using (StreamWriter sw = new StreamWriter("../../../Writing/Writing_Task1_Var1.txt"))
             {
                 await sw.WriteAsync(UserText.Text);
             }
+
             //if (UserText.Text != "")
             //{
                 //string count = UserText.Text.Length.ToString();
@@ -80,7 +93,7 @@ namespace GetReady.PartsOfExam
 
         private void UserText_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (UserText.Text == "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var1'. You can click on the button '1' to see the task again.")
+            if (UserText.Text == "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var#'. You can click on the variant button to see the task again.")
                 UserText.Text = "";
         }
 
@@ -98,7 +111,7 @@ namespace GetReady.PartsOfExam
             next.Visibility = Visibility.Visible;
             UserText.Visibility = Visibility.Hidden;
             var1Task.Visibility = Visibility.Visible;
-            using (StreamReader sr = new StreamReader("../../../var2Task1.txt"))
+            using (StreamReader sr = new StreamReader("../../../Writing/var2Task1.txt"))
             {
                 string line = await sr.ReadToEndAsync();
                 var1Task.Text = line;
@@ -114,24 +127,18 @@ namespace GetReady.PartsOfExam
         {
             _task.Visibility = Visibility.Hidden;
             UserText.Visibility = Visibility.Visible;
-            UserText.Text = "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var2'. You can click on the button '2' to see the task again.";
-            UserText.GotFocus += UserText_GotFocus1;
             UserText.TextChanged += UserText_TextChanged1;
+            Help.MouseLeave += Help_MouseLeave1;
         }
 
         private async void UserText_TextChanged1(object sender, TextChangedEventArgs e)
         {
-            using (StreamWriter sw = new StreamWriter("../../../Writing_Task1_Var2.txt"))
+            using (StreamWriter sw = new StreamWriter("../../../Writing/Writing_Task1_Var2.txt"))
             {
                 await sw.WriteAsync(UserText.Text);
             }
         }
 
-        private void UserText_GotFocus1(object sender, RoutedEventArgs e)
-        {
-            if (UserText.Text == "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var2'. You can click on the button '2' to see the task again.")
-                UserText.Text = "";
-        }
 
         private async void ThirdVariant_Click(object sender, RoutedEventArgs e)
         {
@@ -139,7 +146,7 @@ namespace GetReady.PartsOfExam
             next.Visibility = Visibility.Visible;
             UserText.Visibility = Visibility.Hidden;
             var1Task.Visibility = Visibility.Visible;
-            using (StreamReader sr = new StreamReader("../../../var3Task1.txt"))
+            using (StreamReader sr = new StreamReader("../../../Writing/var3Task1.txt"))
             {
                 string line = await sr.ReadToEndAsync();
                 var1Task.Text = line;
@@ -147,37 +154,49 @@ namespace GetReady.PartsOfExam
             Writing_Task_1_0.Source = Writing_Task_1_3.Source;
             Writing_Task_1_0.Visibility = Visibility.Visible;
             next.Click += Next_Click1;
+             
         }
 
         private void Next_Click1(object sender, RoutedEventArgs e)
         {
             _task.Visibility = Visibility.Hidden;
             UserText.Visibility = Visibility.Visible;
-            UserText.Text = "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var3'. You can click on the button '3' to see the task again.";
-            UserText.GotFocus += UserText_GotFocus2;
             UserText.TextChanged += UserText_TextChanged2;
+            Help.MouseLeave += Help_MouseLeave1;
         }
 
         private async void UserText_TextChanged2(object sender, TextChangedEventArgs e)
         {
-            using (StreamWriter sw = new StreamWriter("../../../Writing_Task1_Var3.txt"))
+            using (StreamWriter sw = new StreamWriter("../../../Writing/Writing_Task1_Var3.txt"))
             {
                 await sw.WriteAsync(UserText.Text);
             }
         }
 
-        private void UserText_GotFocus2(object sender, RoutedEventArgs e)
-        {
-            if (UserText.Text == "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var3'. You can click on the button '3' to see the task again.")
-                UserText.Text = "";
-        }
 
-        private void Help_Click(object sender, RoutedEventArgs e)
+        
+        //СОНЯ ЭТО НЕ РАБОТАЕТ
+        private void UserText_DragLeave(object sender, DragEventArgs e)
+        {
+            if (UserText.Text == "")
+                UserText.Text = "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var#'. You can click on the variant button to see the task again.";
+        
+    }
+
+
+
+        private void Help_MouseEnter(object sender, MouseEventArgs e)
         {
             var1Task.Visibility = Visibility.Hidden;
             UserText.Visibility = Visibility.Hidden;
             Writing_Task_1_0.Visibility = Visibility.Hidden;
             _task.Visibility = Visibility.Visible;
+        }
+        private void Help_MouseLeave(object sender, MouseEventArgs e)
+        {
+            _task.Visibility = Visibility.Hidden;
+            Writing_Task_1_0.Visibility = Visibility.Visible;
+            var1Task.Visibility = Visibility.Visible;
         }
     }
 }
