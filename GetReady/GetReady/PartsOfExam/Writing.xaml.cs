@@ -56,6 +56,8 @@ namespace GetReady.PartsOfExam
             Writing_Task_1_0.Visibility = Visibility.Visible;
             Help.MouseLeave += Help_MouseLeave;
             next.Click += next_Click;
+            UserText.TextChanged -= UserText_TextChanged1;
+            UserText.TextChanged -= UserText_TextChanged2;
             UserText.TextChanged += UserText_TextChanged;
         }
 
@@ -120,14 +122,16 @@ namespace GetReady.PartsOfExam
             Writing_Task_1_0.Source = Writing_Task_1_2.Source;
             Writing_Task_1_0.Visibility = Visibility.Visible;
             next.Click += Next_Click;
-
-    }
+            UserText.TextChanged -= UserText_TextChanged;
+            UserText.TextChanged -= UserText_TextChanged;
+            UserText.TextChanged += UserText_TextChanged1;
+        }
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
             _task.Visibility = Visibility.Hidden;
             UserText.Visibility = Visibility.Visible;
-            UserText.TextChanged += UserText_TextChanged1;
+            
             Help.MouseLeave += Help_MouseLeave1;
         }
 
@@ -161,6 +165,8 @@ namespace GetReady.PartsOfExam
         {
             _task.Visibility = Visibility.Hidden;
             UserText.Visibility = Visibility.Visible;
+            UserText.TextChanged -= UserText_TextChanged;
+            UserText.TextChanged -= UserText_TextChanged1;
             UserText.TextChanged += UserText_TextChanged2;
             Help.MouseLeave += Help_MouseLeave1;
         }
