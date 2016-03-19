@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,13 +20,20 @@ namespace GetReady.PartsOfExam
     /// </summary>
     public partial class ReadingAnswerBox : Window
     {
-
+        public TextBox[] answerBoxes;
         public ReadingAnswerBox(int NumQuest)
         {
             InitializeComponent();
-            createAnswerBoxes(NumQuest);
+            answerBoxes = createAnswerBoxes(NumQuest);
+            
         }
-        private void createAnswerBoxes(int NumQuest)
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private TextBox[] createAnswerBoxes(int NumQuest)
         {
             TextBox[] answerBoxes = new TextBox[NumQuest];
             for (int i = 0; i < answerBoxes.Length; i++)
@@ -42,17 +50,38 @@ namespace GetReady.PartsOfExam
                 this.SP.Children.Add(answerBoxes[i]);
                 if ((answerBoxes[i].IsFocused == true) && (answerBoxes[i].Text == i.ToString()))
                     answerBoxes[i].Text = "";
+                
             }
+            return answerBoxes;
             
 
 
         }
 
-        private void save_Click(object sender, RoutedEventArgs e)
+        
+
+        private void check_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Answers are saved!");
-            ReadingAnswerBox RAB = new ReadingAnswerBox(0);
-            RAB.Close();
+            string[] R_answers = new string[answerBoxes.Length];
+            using (StreamReader sr = new StreamReader("../../../Reading/ReadingAnswers1.txt"))
+                {
+                for (int i = 0; i < answerBoxes.Length; i++)  
+                    R_answers[i] = sr.ReadLine();
+                }
+            
+            for (int i = 0; i < answerBoxes.Length; i++)
+            {
+                string U_answer = answerBoxes[i].Text;
+                if(U_answer==R_answers[i])
+                {
+                    answerBoxes[i].Background = Brushes.Green;
+                }
+                else
+                {
+                    answerBoxes[i].Background = Brushes.Red;
+                    answerBoxes[i].Text = R_answers[i];
+                }
+            }
         }
     }
 }
