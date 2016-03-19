@@ -211,5 +211,13 @@ namespace GetReady.PartsOfExam
             WritingTask2.Show();
             this.Close();
         }
+
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage StartPage = new StartPage();
+            StartPage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            StartPage.Show();
+            this.Close();
+        }
     }
 }
