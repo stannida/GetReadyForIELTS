@@ -88,14 +88,8 @@
     <Compile Include="PartsOfExam\WritingTask2.xaml.cs">
       <DependentUpon>WritingTask2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SigningUp.xaml.cs">
-      <DependentUpon>SigningUp.xaml</DependentUpon>
-    </Compile>
     <Compile Include="StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SigningIn.xaml.cs">
-      <DependentUpon>SigningIn.xaml</DependentUpon>
     </Compile>
     <Compile Include="Usersdb.Context.cs">
       <AutoGen>True</AutoGen>
@@ -159,15 +153,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SigningUp.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="StartPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SigningIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
