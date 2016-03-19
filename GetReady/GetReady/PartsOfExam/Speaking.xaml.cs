@@ -38,11 +38,9 @@ namespace GetReady.PartsOfExam
 
         private void SpeakingLoad()
         {
-            TextBlockTask.Width = 655;
             using (StreamReader sr = new StreamReader("../../../taskSpeaking.txt"))
             {
-                TextBlockTask.Text = sr.ReadToEnd();
-                //TaskDescription.
+                TaskDescription.Text = sr.ReadToEnd();
             }
 
             RadioButtonPart1.Visibility = Visibility.Hidden;
@@ -52,18 +50,17 @@ namespace GetReady.PartsOfExam
 
         private void FirstVariant_Click(object sender, RoutedEventArgs e)
         {
-            TextBlockTask.Width = 535;
-
+            
             if (_variant == 0)
                 TextBlockTask.Text = "";
 
             _variant = 1;
 
+            TaskDescription.Visibility = Visibility.Hidden;
+
             RadioButtonPart1.Visibility = Visibility.Visible;
             RadioButtonPart2.Visibility = Visibility.Visible;
             RadioButtonPart3.Visibility = Visibility.Visible;
-
-            //TaskDescription.Text = "";
 
             FirstVariant.Background = System.Windows.Media.Brushes.PaleTurquoise;
 
@@ -71,7 +68,10 @@ namespace GetReady.PartsOfExam
                 Var1 = sr.ReadToEnd();
 
             if (_checkedPart == 0)
-               RadioButtonPart1.IsChecked = true;
+            {
+                RadioButtonPart1.IsChecked = true;
+                _checkedPart = 1;
+            }
 
             for (int i = 0; i < Var1.Length; i++)
                 if (Var1[i] == ';')
@@ -94,17 +94,20 @@ namespace GetReady.PartsOfExam
         {
             _variant = 2;
 
+            TaskDescription.Visibility = Visibility.Hidden;
+
             RadioButtonPart1.Visibility = Visibility.Visible;
             RadioButtonPart2.Visibility = Visibility.Visible;
             RadioButtonPart3.Visibility = Visibility.Visible;
 
-            TaskDescription.Text = "";
 
         }
 
         private void ThirdVariant_Click(object sender, RoutedEventArgs e)
         {
             _variant = 3;
+
+            TaskDescription.Visibility = Visibility.Hidden;
 
             RadioButtonPart1.Visibility = Visibility.Visible;
             RadioButtonPart2.Visibility = Visibility.Visible;
@@ -114,7 +117,6 @@ namespace GetReady.PartsOfExam
 
         private void ButtonPart1_Click(object sender, RoutedEventArgs e)
         {
-            //TaskDescription.Height = 
 
         }
 
@@ -134,7 +136,7 @@ namespace GetReady.PartsOfExam
 
             TextBlockTask.Text = "";
             for (int i = 0; i < TheEndOf1; i++)
-                    TextBlockTask.Text += Var1[i];
+                TextBlockTask.Text += Var1[i];
         }
 
         private void CheckedPart2(object sender, RoutedEventArgs e)
@@ -154,6 +156,24 @@ namespace GetReady.PartsOfExam
             TextBlockTask.Text = "";
             for (int i = TheEndOf2 + 1; i < Var1.Length; i++)
                 TextBlockTask.Text += Var1[i];
+        }
+
+        private void MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBlockTask.Visibility = Visibility.Hidden;
+            RadioButtonPart1.Visibility = Visibility.Hidden;
+            RadioButtonPart2.Visibility = Visibility.Hidden;
+            RadioButtonPart3.Visibility = Visibility.Hidden;
+            TaskDescription.Visibility = Visibility.Visible;
+        }
+
+        private void MouseLeave(object sender, MouseEventArgs e)
+        {
+            TextBlockTask.Visibility = Visibility.Visible;
+            RadioButtonPart1.Visibility = Visibility.Visible;
+            RadioButtonPart2.Visibility = Visibility.Visible;
+            RadioButtonPart3.Visibility = Visibility.Visible;
+            TaskDescription.Visibility = Visibility.Hidden;
         }
     }
 }
