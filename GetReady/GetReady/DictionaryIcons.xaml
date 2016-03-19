@@ -13,5 +13,25 @@
             </TransformGroup>
         </Path.RenderTransform>
     </Path>
+    <Path x:Key="ArrowNext" Data="M0,0L8.5539884,0 17.246985,10.709991 17.32099,10.799011 17.359992,10.752991 21.637002,16.022003 17.359992,21.291992 8.6659879,32 0.11099243,32 9.9780006,19.847992 13.043004,16.069 12.970006,15.977997 9.8639869,12.153992z" Stretch="Uniform" Fill="#000000" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+        <Path.RenderTransform>
+            <TransformGroup>
+                <TransformGroup.Children>
+                    <RotateTransform Angle="0" />
+                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                </TransformGroup.Children>
+            </TransformGroup>
+        </Path.RenderTransform>
+    </Path>
+    <Path x:Key="ArrowPrev" Data="M12.970992,0L21.524992,0 11.658996,12.152008 8.5930022,15.931 8.6660002,16.020996 11.772003,19.846008 21.636,32 13.082,32 4.3889922,21.290009 4.3150023,21.200989 4.2769927,21.247009 0,15.977997 4.2769927,10.708008z" Stretch="Uniform" Fill="#000000" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+        <Path.RenderTransform>
+            <TransformGroup>
+                <TransformGroup.Children>
+                    <RotateTransform Angle="0" />
+                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                </TransformGroup.Children>
+            </TransformGroup>
+        </Path.RenderTransform>
+    </Path>
 
 </ResourceDictionary>

@@ -21,9 +21,13 @@ namespace GetReady.PartsOfExam
     public partial class ReadingAnswerBox : Window
     {
         public TextBox[] answerBoxes;
-        public ReadingAnswerBox(int NumQuest)
+        public int j, VarNum;
+        public string[] R_answers = new string[15];
+        public ReadingAnswerBox(int NumQuest, int j1, int VarNum1)
         {
             InitializeComponent();
+            j = j1;
+            VarNum = VarNum1;
             answerBoxes = createAnswerBoxes(NumQuest);
             
         }
@@ -41,7 +45,6 @@ namespace GetReady.PartsOfExam
                 answerBoxes[i] = new TextBox();
                 string Name = "AnswerNum" + i.ToString();
                 answerBoxes[i].Name = Name;
-                answerBoxes[i].Text = (i + 1).ToString();
                 if(i==0)
                     answerBoxes[0].Margin = new Thickness(20, 60, 20, 0);
                 else
@@ -58,12 +61,19 @@ namespace GetReady.PartsOfExam
 
         }
 
-        
+        private void show_Click(object sender, RoutedEventArgs e)
+        {
+            
+            for (int i = 0; i < answerBoxes.Length; i++)
+            {
+                answerBoxes[i].Text = R_answers[i];
+            }
+        }
 
         private void check_Click(object sender, RoutedEventArgs e)
         {
-            string[] R_answers = new string[answerBoxes.Length];
-            using (StreamReader sr = new StreamReader("../../../Reading/ReadingAnswers1_1.txt"))
+
+            using (StreamReader sr = new StreamReader("../../../Reading/ReadingAnswers" + VarNum + "_" + j + ".txt"))
                 {
                 for (int i = 0; i < answerBoxes.Length; i++)  
                     R_answers[i] = sr.ReadLine();
@@ -73,15 +83,11 @@ namespace GetReady.PartsOfExam
             {
                 string U_answer = answerBoxes[i].Text;
                 if(U_answer==R_answers[i])
-                {
                     answerBoxes[i].Background = Brushes.Green;
-                }
                 else
-                {
-                    answerBoxes[i].Background = Brushes.Red;
-                    answerBoxes[i].Text = R_answers[i];
-                }
+                    answerBoxes[i].Background = Brushes.Red;                  
             }
+            show.Visibility = Visibility.Visible;
         }
     }
 }
