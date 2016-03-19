@@ -74,14 +74,26 @@ namespace GetReady.PartsOfExam
 
         private void Help_MouseEnter(object sender, MouseEventArgs e)
         {
-
+            VarTask.Visibility = Visibility.Hidden;
+            answer.Visibility = Visibility.Hidden;
+            _task.Visibility = Visibility.Visible;
         }
+
 
         private void answer_Click(object sender, RoutedEventArgs e)
         {
-            ReadingAnswerBox RAB = new ReadingAnswerBox();
-            RAB.NumQuest = this.NumQuest;
+            ReadingAnswerBox RAB = new ReadingAnswerBox(NumQuest);
+            
             RAB.Show();
+        }
+
+
+
+        private void Help_MouseLeave(object sender, MouseEventArgs e)
+        {
+            _task.Visibility = Visibility.Hidden;
+            answer.Visibility = Visibility.Visible;
+            VarTask.Visibility = Visibility.Visible;
         }
     }
 }

@@ -47,5 +47,12 @@ namespace GetReady
             this.Close();
             Speaking.Show();
         }
+
+        private void reading_Click(object sender, RoutedEventArgs e)
+        {
+            Reading reading = new Reading();
+            reading.Show();
+            this.Close();
+        }
     }
 }

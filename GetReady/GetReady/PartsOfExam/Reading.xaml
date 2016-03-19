@@ -42,7 +42,7 @@
         <Button 
             x:Name="Help"
             HorizontalAlignment="Center" 
-            VerticalAlignment="Center" Grid.Column="1" Margin="244,22,86,527" Height="66" Width="66" Background="#FF2DB458" MouseEnter="Help_MouseEnter" >
+            VerticalAlignment="Center" Grid.Column="1" Margin="244,22,86,527" Height="66" Width="66" Background="#FF2DB458" MouseEnter="Help_MouseEnter" MouseLeave="Help_MouseLeave" >
             <StackPanel Orientation="Horizontal" Height="56" Width="56">
                 <ContentControl Width="50" Margin="1,1,1,1" Content="{StaticResource IconConfused}"  />
 

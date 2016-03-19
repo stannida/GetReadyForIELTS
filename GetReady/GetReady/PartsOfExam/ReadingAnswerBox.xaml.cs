@@ -19,26 +19,40 @@ namespace GetReady.PartsOfExam
     /// </summary>
     public partial class ReadingAnswerBox : Window
     {
-        public int NumQuest;
-        public ReadingAnswerBox()
+
+        public ReadingAnswerBox(int NumQuest)
         {
             InitializeComponent();
-            createAnswerBoxes();
+            createAnswerBoxes(NumQuest);
         }
-        private void createAnswerBoxes()
+        private void createAnswerBoxes(int NumQuest)
         {
-            TextBox[] answerBoxes = new TextBox[3];
-            int i = 0;
-            foreach (TextBox answer in answerBoxes)
+            TextBox[] answerBoxes = new TextBox[NumQuest];
+            for (int i = 0; i < answerBoxes.Length; i++)
             {
+                answerBoxes[i] = new TextBox();
                 string Name = "AnswerNum" + i.ToString();
-                answer.Name = Name;
-                answer.Text = (i + 1).ToString();
-                answer.Margin = new Thickness(20, 0, i * 28, 0);
-                answer.Visibility = Visibility.Visible;
-                i++;
-
+                answerBoxes[i].Name = Name;
+                answerBoxes[i].Text = (i + 1).ToString();
+                if(i==0)
+                    answerBoxes[0].Margin = new Thickness(20, 60, 20, 0);
+                else
+                    answerBoxes[i].Margin = new Thickness(20, 20, 20, 0);
+                answerBoxes[i].Visibility = Visibility.Visible;
+                this.SP.Children.Add(answerBoxes[i]);
+                if ((answerBoxes[i].IsFocused == true) && (answerBoxes[i].Text == i.ToString()))
+                    answerBoxes[i].Text = "";
             }
+            
+
+
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Answers are saved!");
+            ReadingAnswerBox RAB = new ReadingAnswerBox(0);
+            RAB.Close();
         }
     }
 }
