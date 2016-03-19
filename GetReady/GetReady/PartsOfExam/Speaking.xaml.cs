@@ -20,7 +20,8 @@ namespace GetReady.PartsOfExam
     /// </summary>
     public partial class Speaking : Window
     {
-        private int _variant = 0;
+        int _variant = 0;
+        int _checkedPart = 0; 
 
         private string Var1;
         private string Var2;
@@ -32,16 +33,16 @@ namespace GetReady.PartsOfExam
         public Speaking()
         {
             InitializeComponent();
-
-            SpeakingLoad();
-            
+            SpeakingLoad();   
         }
 
         private void SpeakingLoad()
         {
+            TextBlockTask.Width = 655;
             using (StreamReader sr = new StreamReader("../../../taskSpeaking.txt"))
             {
-                TaskDescription.Text = sr.ReadToEnd();
+                TextBlockTask.Text = sr.ReadToEnd();
+                //TaskDescription.
             }
 
             RadioButtonPart1.Visibility = Visibility.Hidden;
@@ -51,20 +52,26 @@ namespace GetReady.PartsOfExam
 
         private void FirstVariant_Click(object sender, RoutedEventArgs e)
         {
+            TextBlockTask.Width = 535;
+
+            if (_variant == 0)
+                TextBlockTask.Text = "";
+
             _variant = 1;
 
             RadioButtonPart1.Visibility = Visibility.Visible;
             RadioButtonPart2.Visibility = Visibility.Visible;
             RadioButtonPart3.Visibility = Visibility.Visible;
 
-            TaskDescription.Text = "";
+            //TaskDescription.Text = "";
 
             FirstVariant.Background = System.Windows.Media.Brushes.PaleTurquoise;
 
             using (StreamReader sr = new StreamReader("../../../Speaking_Var1.txt"))
-            {
                 Var1 = sr.ReadToEnd();
-            }
+
+            if (_checkedPart == 0)
+               RadioButtonPart1.IsChecked = true;
 
             for (int i = 0; i < Var1.Length; i++)
                 if (Var1[i] == ';')
@@ -107,6 +114,7 @@ namespace GetReady.PartsOfExam
 
         private void ButtonPart1_Click(object sender, RoutedEventArgs e)
         {
+            //TaskDescription.Height = 
 
         }
 
@@ -122,6 +130,8 @@ namespace GetReady.PartsOfExam
 
         private void CheckedPart1(object sender, RoutedEventArgs e)
         {
+            _checkedPart = 1;
+
             TextBlockTask.Text = "";
             for (int i = 0; i < TheEndOf1; i++)
                     TextBlockTask.Text += Var1[i];
@@ -129,6 +139,8 @@ namespace GetReady.PartsOfExam
 
         private void CheckedPart2(object sender, RoutedEventArgs e)
         {
+            _checkedPart = 2;
+
             TextBlockTask.Text = "";
             for (int i = TheEndOf1+1; i < TheEndOf2; i++)
                 TextBlockTask.Text += Var1[i];
@@ -137,12 +149,11 @@ namespace GetReady.PartsOfExam
 
         private void CheckedPart3(object sender, RoutedEventArgs e)
         {
+            _checkedPart = 3;
+
             TextBlockTask.Text = "";
             for (int i = TheEndOf2 + 1; i < Var1.Length; i++)
                 TextBlockTask.Text += Var1[i];
-
         }
-
- 
     }
 }
