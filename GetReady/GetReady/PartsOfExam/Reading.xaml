@@ -47,8 +47,11 @@
                 <ContentControl Width="50" Margin="1,1,1,1" Content="{StaticResource IconConfused}"  />
 
             </StackPanel>
+            
         </Button>
-        <Button x:Name="answer" Content="Answer" HorizontalAlignment="Center" Margin="358,556,355,0" VerticalAlignment="Top" Width="74" Grid.ColumnSpan="2" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000" Visibility="Hidden" Click="answer_Click"/>
+        <Button x:Name="GoBack" Content="Go to the start page" HorizontalAlignment="Center" Margin="21,556,170,0" VerticalAlignment="Top" Width="146" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000" Click="GoBack_Click"/>
+
+        <Button x:Name="answer" Content="Answer" HorizontalAlignment="Center" Margin="358,556,355,0" VerticalAlignment="Top" Width="74" Grid.ColumnSpan="2" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000" Click="answer_Click" Visibility="Hidden"/>
         <TextBlock x:Name="link" HorizontalAlignment="Left" Margin="282,184,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Grid.ColumnSpan="2" Width="239" TextAlignment="Center" FontFamily="Levenim MT" Visibility="Hidden"><Hyperlink Click="Hyperlink_Click">Click to see this Reading Passage</Hyperlink></TextBlock>
     </Grid>
 </Window>

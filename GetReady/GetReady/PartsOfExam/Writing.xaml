@@ -57,7 +57,8 @@
 
             </StackPanel>
         </Button>
-        <Button x:Name="GoTask2" Content="Go to Task 2" Grid.Column="1" HorizontalAlignment="Center" Margin="242,563,30,0" VerticalAlignment="Top" Width="124" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000" Click="GoTask2_Click"/>
+        <Button x:Name="GoTask2" Content="Go to Task 2" Grid.Column="1" HorizontalAlignment="Center" Margin="240,563,24,0" VerticalAlignment="Top" Width="124" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000" Click="GoTask2_Click"/>
+        <Button x:Name="GoBack" Content="Go to the start page" HorizontalAlignment="Center" Margin="24,563,225,0" VerticalAlignment="Top" Width="146" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000" Click="GoBack_Click"/>
 
     </Grid>
 </Window>

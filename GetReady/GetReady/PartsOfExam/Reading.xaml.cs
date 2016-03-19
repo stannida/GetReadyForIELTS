@@ -105,5 +105,13 @@ namespace GetReady.PartsOfExam
             ReadingPassage RP = new ReadingPassage();
             RP.Show();
         }
+
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage StartPage = new StartPage();
+            StartPage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            StartPage.Show();
+            this.Close();
+        }
     }
 }

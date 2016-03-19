@@ -164,6 +164,14 @@ namespace GetReady.PartsOfExam
             UserText.Visibility = Visibility.Hidden;
             _task.Visibility = Visibility.Visible;
         }
+
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage StartPage = new StartPage();
+            StartPage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            StartPage.Show();
+            this.Close();
+        }
     }
     }
 
