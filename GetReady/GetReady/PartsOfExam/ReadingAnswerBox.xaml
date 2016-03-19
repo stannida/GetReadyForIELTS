@@ -14,7 +14,9 @@
         <Rectangle Fill="#FF2DB458" HorizontalAlignment="Center" Height="47" Stroke="#00000000" VerticalAlignment="Top" Width="292" IsHitTestVisible="False" Grid.ColumnSpan="2"/>
         <Label x:Name="label" Content="My Answers" HorizontalAlignment="Center" Margin="42,10,41,0" VerticalAlignment="Top" Width="209" FontFamily="Aharoni" FontSize="24" Foreground="White" Height="30" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
         <StackPanel x:Name="SP"></StackPanel>
-        <Button x:Name="check" Content="Check" Grid.Column="1" HorizontalAlignment="Center" Height="34" Margin="42,58,18,0" VerticalAlignment="Top" Width="79" FontFamily="Levenim MT" Background="#FFB2F0C5"  BorderThickness="2" BorderBrush="#FF020000" Click="check_Click"/>
+        <Button x:Name="check" Content="Check" Grid.Column="1" HorizontalAlignment="Center" Height="34" Margin="5,67,5,0" VerticalAlignment="Top" Width="126" FontFamily="Levenim MT" Background="#FFB2F0C5"  BorderThickness="2" BorderBrush="#FF020000" Click="check_Click"/>
+        <Button x:Name="show" Content="Show Right Answers" Grid.Column="1" HorizontalAlignment="Center" Height="34" Margin="5,110,5,0" VerticalAlignment="Top" Width="126" FontFamily="Levenim MT" Background="#FFB2F0C5"  BorderThickness="2" BorderBrush="#FF020000" Click="show_Click" Visibility="Hidden"/>
+
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="1,45,0,0" TextWrapping="Wrap" Text="Please write all the answers in capital letters" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="231" FontFamily="Levenim MT" FontSize="10.667"/>
     </Grid>
 </Window>
