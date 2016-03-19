@@ -45,7 +45,7 @@ namespace GetReady.PartsOfExam
         private async void FirstVariant_Click(object sender, RoutedEventArgs e)
         {
             _task.Visibility = Visibility.Hidden;
-            using (StreamReader sr = new StreamReader("../../../Reading/ReadingVar1.txt"))
+            using (StreamReader sr = new StreamReader("../../../Reading/ReadingVar1_1.txt"))
             {
                 
                 var line = sr.ReadLine();
@@ -57,9 +57,11 @@ namespace GetReady.PartsOfExam
                     NumQuest = int.Parse(items2[1]) - int.Parse(items2[0]) + 1;
                 string text = await sr.ReadToEndAsync();
                 VarTask.Text = text;
+                link.Visibility = Visibility.Visible;
             }
             answer.Visibility = Visibility.Visible;
-            
+            Help.MouseLeave += Help_MouseLeave;
+
         }
 
         private void SecondVariant_Click(object sender, RoutedEventArgs e)
@@ -77,6 +79,7 @@ namespace GetReady.PartsOfExam
             VarTask.Visibility = Visibility.Hidden;
             answer.Visibility = Visibility.Hidden;
             _task.Visibility = Visibility.Visible;
+            link.Visibility = Visibility.Hidden;
         }
 
 
@@ -92,8 +95,15 @@ namespace GetReady.PartsOfExam
         private void Help_MouseLeave(object sender, MouseEventArgs e)
         {
             _task.Visibility = Visibility.Hidden;
+            link.Visibility = Visibility.Visible;
             answer.Visibility = Visibility.Visible;
             VarTask.Visibility = Visibility.Visible;
+        }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            ReadingPassage RP = new ReadingPassage();
+            RP.Show();
         }
     }
 }

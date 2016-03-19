@@ -76,6 +76,9 @@
     <Compile Include="PartsOfExam\ReadingAnswerBox.xaml.cs">
       <DependentUpon>ReadingAnswerBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PartsOfExam\ReadingPassage.xaml.cs">
+      <DependentUpon>ReadingPassage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PartsOfExam\Speaking.xaml.cs">
       <DependentUpon>Speaking.xaml</DependentUpon>
     </Compile>
@@ -84,9 +87,6 @@
     </Compile>
     <Compile Include="PartsOfExam\WritingTask2.xaml.cs">
       <DependentUpon>WritingTask2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PartsOfExam\WritingTask21.xaml.cs">
-      <DependentUpon>WritingTask21.xaml</DependentUpon>
     </Compile>
     <Compile Include="SigningUp.xaml.cs">
       <DependentUpon>SigningUp.xaml</DependentUpon>
@@ -143,6 +143,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PartsOfExam\ReadingPassage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PartsOfExam\Speaking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -152,10 +156,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PartsOfExam\WritingTask2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PartsOfExam\WritingTask21.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

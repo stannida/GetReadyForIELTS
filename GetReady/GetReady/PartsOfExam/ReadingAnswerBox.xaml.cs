@@ -63,7 +63,7 @@ namespace GetReady.PartsOfExam
         private void check_Click(object sender, RoutedEventArgs e)
         {
             string[] R_answers = new string[answerBoxes.Length];
-            using (StreamReader sr = new StreamReader("../../../Reading/ReadingAnswers1.txt"))
+            using (StreamReader sr = new StreamReader("../../../Reading/ReadingAnswers1_1.txt"))
                 {
                 for (int i = 0; i < answerBoxes.Length; i++)  
                     R_answers[i] = sr.ReadLine();
