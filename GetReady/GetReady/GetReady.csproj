@@ -67,7 +67,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ListeningAnswerBox.xaml.cs">
+    <Compile Include="PartsOfExam\ListeningAnswerBox.xaml.cs">
       <DependentUpon>ListeningAnswerBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="PartsOfExam\Listening.xaml.cs">
@@ -116,7 +116,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListeningAnswerBox.xaml">
+    <Page Include="PartsOfExam\ListeningAnswerBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,6 +205,7 @@
     <Resource Include="PartsOfExam\SpeakingFiles\Stop.png" />
     <Resource Include="PartsOfExam\SpeakingFiles\Pause.png" />
     <Resource Include="PartsOfExam\ListeningFiles\Listening_Var1_1.png" />
+    <Resource Include="Listening_Var1_1.png" />
     <Content Include="Usersdb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Usersdb.edmx</DependentUpon>
