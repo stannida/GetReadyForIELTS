@@ -35,13 +35,17 @@ namespace GetReady.PartsOfExam
             for (int i = 1; i < 5; i++)
                 comboBoxSections.Items.Add("Section " + i);
             comboBoxSections.SelectedIndex = 0;
-            
+
         }
 
         private void FirstVariant_Click(object sender, RoutedEventArgs e)
         {
             comboBoxSections.Visibility = Visibility.Visible;
             taskDescription.Visibility = Visibility.Hidden;
+
+            FirstVariant.IsEnabled = false;
+            SecondVariant.IsEnabled = true;
+            ThirdVariant.IsEnabled = true;
 
 
         }
@@ -50,12 +54,45 @@ namespace GetReady.PartsOfExam
         {
             comboBoxSections.Visibility = Visibility.Visible;
             taskDescription.Visibility = Visibility.Hidden;
+
+            FirstVariant.IsEnabled = true;
+            SecondVariant.IsEnabled = false;
+            ThirdVariant.IsEnabled = true;
         }
 
         private void ThirdVariant_Click(object sender, RoutedEventArgs e)
         {
             comboBoxSections.Visibility = Visibility.Visible;
             taskDescription.Visibility = Visibility.Hidden;
+
+            FirstVariant.IsEnabled = true;
+            SecondVariant.IsEnabled = true;
+            ThirdVariant.IsEnabled = false;
+
+        }
+
+        private void SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboBoxSections.SelectedIndex == 0)
+            {
+                textBlockQuestions.Text = "Questions 1-10";
+            }
+
+            if (comboBoxSections.SelectedIndex == 1)
+            {
+                textBlockQuestions.Text = "Questions 11-20";
+            }
+
+            if (comboBoxSections.SelectedIndex == 2)
+            {
+                textBlockQuestions.Text = "Questions 21-30";
+            }
+
+            if (comboBoxSections.SelectedIndex == 3)
+            {
+                textBlockQuestions.Text = "Questions 31-40";
+            }
+
 
         }
 

@@ -418,5 +418,13 @@ namespace GetReady.PartsOfExam
             timeNow = 0;
             LabelTime.Content = "";
         }
+
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage StartPage = new StartPage();
+            StartPage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.Close();
+            StartPage.Show();
+        }
     }
 }

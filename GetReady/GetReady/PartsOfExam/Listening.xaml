@@ -31,8 +31,8 @@
         			Rect="4,4,50,50"/>
             </Button.Clip>
         </Button>
-        <TextBlock x:Name="TextBlockTask" HorizontalAlignment="Left" Margin="270,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="128" Width="470" FontFamily="Levenim MT" FontSize="18" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
-        <ComboBox x:Name="comboBoxSections" HorizontalAlignment="Left" Margin="23,221,0,0" VerticalAlignment="Top" Width="129" Height="37" FontSize="22" FontFamily="Levenim MT"/>
+        <TextBlock x:Name="textBlockQuestions" HorizontalAlignment="Left" Margin="270,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="470" FontFamily="Levenim MT" FontSize="18" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
+        <ComboBox x:Name="comboBoxSections" HorizontalAlignment="Left" Margin="23,221,0,0" VerticalAlignment="Top" Width="129" Height="37" FontSize="22" FontFamily="Levenim MT" SelectionChanged="SelectionChanged"/>
 
     </Grid>
 </Window>
