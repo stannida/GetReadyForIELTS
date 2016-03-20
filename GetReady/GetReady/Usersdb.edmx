@@ -12,6 +12,7 @@
           <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="username" Type="nvarchar" MaxLength="1000" Nullable="false" />
           <Property Name="hash" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="score" Type="int" />
         </EntityType>
         <EntityContainer Name="Хранилище UsersModelContainer">
           <EntitySet Name="UserTable" EntityType="Self.UserTable" Schema="dbo" store:Type="Tables" />
@@ -27,6 +28,7 @@
           <Property Name="id" Type="Int64" Nullable="false" />
           <Property Name="username" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="hash" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="score" Type="Int32" />
         </EntityType>
         <EntityContainer Name="UsersEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UserTable" EntityType="Self.UserTable" />
@@ -40,6 +42,7 @@
           <EntitySetMapping Name="UserTable">
             <EntityTypeMapping TypeName="UsersModel.UserTable">
               <MappingFragment StoreEntitySet="UserTable">
+                <ScalarProperty Name="score" ColumnName="score" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="hash" ColumnName="hash" />

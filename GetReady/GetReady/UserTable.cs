@@ -17,5 +17,6 @@ namespace GetReady
         public long id { get; set; }
         public string username { get; set; }
         public string hash { get; set; }
+        public Nullable<int> score { get; set; }
     }
 }
