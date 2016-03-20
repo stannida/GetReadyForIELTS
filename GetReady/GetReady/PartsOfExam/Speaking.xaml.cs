@@ -43,9 +43,6 @@ namespace GetReady.PartsOfExam
 
         private void SpeakingLoad()
         {
-            using (StreamReader sr = new StreamReader("../../../Speaking/taskSpeaking.txt"))
-                TaskDescription.Text = sr.ReadToEnd();
-            
             RadioButtonPart1.Visibility = Visibility.Hidden;
             RadioButtonPart2.Visibility = Visibility.Hidden;
             RadioButtonPart3.Visibility = Visibility.Hidden;
@@ -57,14 +54,24 @@ namespace GetReady.PartsOfExam
             ButtonPause.Visibility = Visibility.Hidden;
             ButtonStop.Visibility = Visibility.Hidden;
 
-            using (StreamReader sr1 = new StreamReader("../../../Speaking/Speaking_Var1.txt"))
-                Variant1 = sr1.ReadToEnd();
+            try
+            {
+                using (StreamReader sr = new StreamReader("../../../Speaking/taskSpeaking.txt"))
+                    TaskDescription.Text = sr.ReadToEnd();
 
-            using (StreamReader sr2 = new StreamReader("../../../Speaking/Speaking_Var2.txt"))
-                Variant2 = sr2.ReadToEnd();
+                using (StreamReader sr1 = new StreamReader("../../../Speaking/Speaking_Var1.txt"))
+                    Variant1 = sr1.ReadToEnd();
 
-            using (StreamReader sr3 = new StreamReader("../../../Speaking/Speaking_Var3.txt"))
-                Variant3 = sr3.ReadToEnd();
+                using (StreamReader sr2 = new StreamReader("../../../Speaking/Speaking_Var2.txt"))
+                    Variant2 = sr2.ReadToEnd();
+
+                using (StreamReader sr3 = new StreamReader("../../../Speaking/Speaking_Var3.txt"))
+                    Variant3 = sr3.ReadToEnd();
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("File not found");
+            }
         }
 
         private void FirstVariant_Click(object sender, RoutedEventArgs e)
@@ -89,26 +96,32 @@ namespace GetReady.PartsOfExam
                 _checkedPart = 1;
             }
 
-            for (int i = 0; i < Variant1.Length; i++)
-                if (Variant1[i] == ';')
-                {
-                    TheEndOf1 = i;
-                    break;
-                }
+            try
+            {
+                for (int i = 0; i < Variant1.Length; i++)
+                    if (Variant1[i] == ';')
+                    {
+                        TheEndOf1 = i;
+                        break;
+                    }
 
-            for (int i=TheEndOf1+1; i<Variant1.Length; i++)
-                if (Variant1[i] == ';')
-                {
-                    TheEndOf2 = i;
-                    break;
-                }
-
-            if (_checkedPart == 1)
-                Variant1Part1();
-            if (_checkedPart == 2)
-                Variant1Part2();
-            if (_checkedPart == 3)
-                Variant1Part3();
+                for (int i = TheEndOf1 + 1; i < Variant1.Length; i++)
+                    if (Variant1[i] == ';')
+                    {
+                        TheEndOf2 = i;
+                        break;
+                    }
+                if (_checkedPart == 1)
+                    Variant1Part1();
+                if (_checkedPart == 2)
+                    Variant1Part2();
+                if (_checkedPart == 3)
+                    Variant1Part3();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error!" + ex);
+            }
         }
 
         private void SecondVariant_Click(object sender, RoutedEventArgs e)
@@ -133,26 +146,32 @@ namespace GetReady.PartsOfExam
                 _checkedPart = 1;
             }
 
-            for (int i = 0; i < Variant2.Length; i++)
-                if (Variant2[i] == ';')
-                {
-                    TheEndOf1 = i;
-                    break;
-                }
+            try
+            {
+                for (int i = 0; i < Variant2.Length; i++)
+                    if (Variant2[i] == ';')
+                    {
+                        TheEndOf1 = i;
+                        break;
+                    }
 
-            for (int i = TheEndOf1 + 1; i < Variant2.Length; i++)
-                if (Variant2[i] == ';')
-                {
-                    TheEndOf2 = i;
-                    break;
-                }
-
-            if (_checkedPart == 1)
-                Variant2Part1();
-            if (_checkedPart == 2)
-                Variant2Part2();
-            if (_checkedPart == 3)
-                Variant2Part3();
+                for (int i = TheEndOf1 + 1; i < Variant2.Length; i++)
+                    if (Variant2[i] == ';')
+                    {
+                        TheEndOf2 = i;
+                        break;
+                    }
+                if (_checkedPart == 1)
+                    Variant2Part1();
+                if (_checkedPart == 2)
+                    Variant2Part2();
+                if (_checkedPart == 3)
+                    Variant2Part3();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error!" + ex);
+            }          
         }
 
         private void ThirdVariant_Click(object sender, RoutedEventArgs e)
@@ -177,26 +196,32 @@ namespace GetReady.PartsOfExam
                 _checkedPart = 1;
             }
 
-            for (int i = 0; i < Variant3.Length; i++)
-                if (Variant3[i] == ';')
-                {
-                    TheEndOf1 = i;
-                    break;
-                }
+            try
+            {
+                for (int i = 0; i < Variant3.Length; i++)
+                    if (Variant3[i] == ';')
+                    {
+                        TheEndOf1 = i;
+                        break;
+                    }
 
-            for (int i = TheEndOf1 + 1; i < Variant3.Length; i++)
-                if (Variant3[i] == ';')
-                {
-                    TheEndOf2 = i;
-                    break;
-                }
-
-            if (_checkedPart == 1)
-                Variant3Part1();
-            if (_checkedPart == 2)
-                Variant3Part2();
-            if (_checkedPart == 3)
-                Variant3Part3();
+                for (int i = TheEndOf1 + 1; i < Variant3.Length; i++)
+                    if (Variant3[i] == ';')
+                    {
+                        TheEndOf2 = i;
+                        break;
+                    }
+                if (_checkedPart == 1)
+                    Variant3Part1();
+                if (_checkedPart == 2)
+                    Variant3Part2();
+                if (_checkedPart == 3)
+                    Variant3Part3();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error!" + ex);
+            }       
         }
 
         private void CheckedPart1(object sender, RoutedEventArgs e)
@@ -204,14 +229,22 @@ namespace GetReady.PartsOfExam
             _checkedPart = 1;
             TextBlockTask.Text = "";
 
-            if (_variant == 1)
-                Variant1Part1();
+            try
+            {
+                if (_variant == 1)
+                    Variant1Part1();
 
-            if (_variant == 2)
-                Variant2Part1();
+                if (_variant == 2)
+                    Variant2Part1();
 
-            if (_variant == 3)
-                Variant3Part1();
+                if (_variant == 3)
+                    Variant3Part1();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error!" + ex);
+            }  
+
         }
 
         private void CheckedPart2(object sender, RoutedEventArgs e)
@@ -219,14 +252,21 @@ namespace GetReady.PartsOfExam
             _checkedPart = 2;
             TextBlockTask.Text = "";
 
-            if (_variant == 1)
-                Variant1Part2();
+            try
+            {
+                if (_variant == 1)
+                    Variant1Part2();
 
-            if (_variant == 2)
-                Variant2Part2();
+                if (_variant == 2)
+                    Variant2Part2();
 
-            if (_variant == 3)
-                Variant3Part2();
+                if (_variant == 3)
+                    Variant3Part2();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error!" + ex);
+            }  
         }
 
         private void CheckedPart3(object sender, RoutedEventArgs e)
@@ -234,14 +274,21 @@ namespace GetReady.PartsOfExam
             _checkedPart = 3;
             TextBlockTask.Text = "";
 
-            if (_variant == 1)
-                Variant1Part3();
+            try
+            {
+                if (_variant == 1)
+                    Variant1Part3();
 
-            if (_variant == 2)
-                Variant2Part3();
+                if (_variant == 2)
+                    Variant2Part3();
 
-            if (_variant == 3)
-                Variant3Part3();
+                if (_variant == 3)
+                    Variant3Part3();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error!" + ex);
+            }  
         }
 
         private void MouseEnter(object sender, MouseEventArgs e)

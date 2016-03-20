@@ -37,11 +37,19 @@ namespace GetReady.PartsOfExam
 
         private void ListeningLoad()
         {
-            using (StreamReader sr = new StreamReader("../../../Listening/taskListening.txt"))
-                taskDescription.Text = sr.ReadToEnd();
+            try
+            {
+                using (StreamReader sr = new StreamReader("../../../Listening/taskListening.txt"))
+                    taskDescription.Text = sr.ReadToEnd();
 
-            using (StreamReader sr1 = new StreamReader("../../../Listening/Listening_Var1.txt"))
-                variant1 = sr1.ReadToEnd();           
+                using (StreamReader sr1 = new StreamReader("../../../Listening/Listening_Var1.txt"))
+                    variant1 = sr1.ReadToEnd();
+            }
+
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("File not found");
+            }
 
             textBlockQuestions.Visibility = Visibility.Hidden;
 
@@ -56,7 +64,6 @@ namespace GetReady.PartsOfExam
             //player.SoundLocation = "../../../Listening/Listening_Var1.wav";
             //player.Load();
             //player.Play();
-
         }
 
         private void TheFirstDownload()
@@ -110,7 +117,15 @@ namespace GetReady.PartsOfExam
         private void FirstVariant_Click(object sender, RoutedEventArgs e)
         {
             textBlockTask.Text = "";
-            TheFirstDownload();
+
+            try
+            {
+                TheFirstDownload();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error!" + ex);
+            }  
             
             variant = 1;
 
@@ -190,6 +205,13 @@ namespace GetReady.PartsOfExam
             StartPage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             this.Close();
             StartPage.Show();
+        }
+
+        private void buttonAnswer_Click(object sender, RoutedEventArgs e)
+        {
+            ListeningAnswerBox answerbox = new ListeningAnswerBox();
+            answerbox.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            answerbox.Show();
         }
 
     }
