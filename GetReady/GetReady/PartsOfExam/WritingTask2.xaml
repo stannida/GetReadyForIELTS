@@ -40,7 +40,7 @@
         
         <Button x:Name="next" Content="I want to try" Grid.Column="1" HorizontalAlignment="Center" Height="35" Margin="242,563,100,0" VerticalAlignment="Top" Width="122" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Padding="1" Click="next_Click" Visibility="Hidden"/>
         <TextBox x:Name="UserText" HorizontalAlignment="Center" Height="362" Margin="110,196,104,0" TextWrapping="Wrap" Text="Here you can write your essay. The file will be automatically created on your computer and named 'Writing_Task2_Var1'. You can click on the button '1' to see the task again." VerticalAlignment="Top" Width="694" Grid.ColumnSpan="2" FontFamily="Levenim MT" Padding="2,0" Visibility="Hidden" GotFocus="UserText_GotFocus" TextChanged="UserText_TextChanged"/>
-        <TextBlock x:Name="counter" HorizontalAlignment="Center" Text ="Number of words" Margin="130,581,191,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="17" Width="156" Visibility="Hidden" FontFamily="Levenim MT"/>
+        <TextBlock x:Name="counter" HorizontalAlignment="Center" Text ="Number of words" Margin="276,581,45,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="17" Width="156" FontFamily="Levenim MT" Visibility="Hidden"/>
         <Button 
             x:Name="Help"
             HorizontalAlignment="Center" 

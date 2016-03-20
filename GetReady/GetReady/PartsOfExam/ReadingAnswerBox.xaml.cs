@@ -32,28 +32,31 @@ namespace GetReady.PartsOfExam
             
         }
 
-        private void Save_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private TextBox[] createAnswerBoxes(int NumQuest)
         {
             TextBox[] answerBoxes = new TextBox[NumQuest];
-            for (int i = 0; i < answerBoxes.Length; i++)
+            try
             {
-                answerBoxes[i] = new TextBox();
-                string Name = "AnswerNum" + i.ToString();
-                answerBoxes[i].Name = Name;
-                if(i==0)
-                    answerBoxes[0].Margin = new Thickness(20, 60, 3, 0);
-                else
-                    answerBoxes[i].Margin = new Thickness(20, 20, 3, 0);
-                answerBoxes[i].Visibility = Visibility.Visible;
-                this.SP.Children.Add(answerBoxes[i]);
-                if ((answerBoxes[i].IsFocused == true) && (answerBoxes[i].Text == i.ToString()))
-                    answerBoxes[i].Text = "";
-                
+                for (int i = 0; i < answerBoxes.Length; i++)
+                {
+                    answerBoxes[i] = new TextBox();
+                    string Name = "AnswerNum" + i.ToString();
+                    answerBoxes[i].Name = Name;
+                    if (i == 0)
+                        answerBoxes[0].Margin = new Thickness(20, 60, 3, 0);
+                    else
+                        answerBoxes[i].Margin = new Thickness(20, 20, 3, 0);
+                    answerBoxes[i].Visibility = Visibility.Visible;
+                    this.SP.Children.Add(answerBoxes[i]);
+                    if ((answerBoxes[i].IsFocused == true) && (answerBoxes[i].Text == i.ToString()))
+                        answerBoxes[i].Text = "";
+
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Oops, something went wrong " + ex);
             }
             return answerBoxes;
             
