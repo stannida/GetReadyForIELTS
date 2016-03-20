@@ -31,14 +31,17 @@ namespace GetReady.PartsOfExam
 
         int TheEndOf1;
         int TheEndOf2;
-
-        int timeLeft = 120;
+        int timeNow = 0;
         System.Windows.Threading.DispatcherTimer timer;
 
         public Speaking()
         {
             InitializeComponent();
-            SpeakingLoad();   
+            SpeakingLoad();
+
+            ProgressBarTime.Maximum = 120;
+            ProgressBarTime.Value = 0;
+            
         }
 
         private void SpeakingLoad()
@@ -298,21 +301,24 @@ namespace GetReady.PartsOfExam
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            if (timeLeft > 0)
+            if (timeNow < 120)
             {
-                timeLeft = timeLeft - 1;
-                LabelTime.Content = timeLeft + " seconds";
+                timeNow = timeNow + 1;
+                ProgressBarTime.Value += 1;
 
+                if (timeNow < 60)
+                    LabelTime.Content = timeNow + " seconds";
+
+                if (timeNow == 60)              
+                    LabelTime.Content = "1 minute";
+
+                if (timeNow > 60)
+                    timeNow = timeNow + 1;
+                    LabelTime.Content = "1 minute " + (timeNow - 60) + " seconds";
             }
             else
             {
                 timer.Stop();
-
-                //timeLabel.Text = "Time's up!";
-                //LabelTime.Content = "";
-                //MessageBox.Show("You didn't finish in time.", "Sorry!");
-                //sum.Value = addend1 + addend2;
-                //startButton.Enabled = true;
             }
         }
 
@@ -321,9 +327,7 @@ namespace GetReady.PartsOfExam
             timer = new System.Windows.Threading.DispatcherTimer();
             timer.Tick += new EventHandler(timer_Tick);
             timer.Interval = new TimeSpan(0, 0, 1);
-
             timer.Start();
-
         }
     }
 }
