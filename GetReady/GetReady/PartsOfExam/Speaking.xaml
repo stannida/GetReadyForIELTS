@@ -36,6 +36,15 @@
         <RadioButton x:Name="RadioButtonPart2" Content="Part 2" FontFamily="Levenim MT" FontWeight="Bold" HorizontalAlignment="Left" Margin="37,313,0,0" VerticalAlignment="Top" Background="#FFFCFDAC" FontSize="22" Checked="CheckedPart2"/>
         <RadioButton x:Name="RadioButtonPart3" Content="Part 3" FontFamily="Levenim MT" FontWeight="Bold" HorizontalAlignment="Left" Margin="37,375,0,0" VerticalAlignment="Top" Background="#FFFCFDAC" FontSize="22" Checked="CheckedPart3"/>
         <ContentControl Margin="278,22,68,542.5" Content="{StaticResource IconConfused}" RenderTransformOrigin="13.318,1.191" Grid.Column="1" MouseEnter="MouseEnter" MouseLeave="MouseLeave"  />
+        <Label x:Name="LabelTime"  HorizontalAlignment="Left" Margin="161,529,0,0" VerticalAlignment="Top" Width="173" FontSize="20" Height="31"/>
+        <Button x:Name="ButtonTime" Content="Timer" HorizontalAlignment="Left" Margin="37,529,0,0" VerticalAlignment="Top" Width="80" Height="61" Click="ButtonTime_Click">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+            <Button.OpacityMask>
+                <ImageBrush />
+            </Button.OpacityMask>
+        </Button>
 
     </Grid>
 </Window>

@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using System.Threading;
+
 namespace GetReady.PartsOfExam
 {
     /// <summary>
@@ -29,6 +31,9 @@ namespace GetReady.PartsOfExam
 
         int TheEndOf1;
         int TheEndOf2;
+
+        int timeLeft = 120;
+        System.Windows.Threading.DispatcherTimer timer;
 
         public Speaking()
         {
@@ -289,6 +294,36 @@ namespace GetReady.PartsOfExam
         {
             for (int i = TheEndOf2 + 1; i < Variant3.Length; i++)
                 TextBlockTask.Text += Variant3[i];
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if (timeLeft > 0)
+            {
+                timeLeft = timeLeft - 1;
+                LabelTime.Content = timeLeft + " seconds";
+
+            }
+            else
+            {
+                timer.Stop();
+
+                //timeLabel.Text = "Time's up!";
+                //LabelTime.Content = "";
+                //MessageBox.Show("You didn't finish in time.", "Sorry!");
+                //sum.Value = addend1 + addend2;
+                //startButton.Enabled = true;
+            }
+        }
+
+        private void ButtonTime_Click(object sender, RoutedEventArgs e)
+        {
+            timer = new System.Windows.Threading.DispatcherTimer();
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = new TimeSpan(0, 0, 1);
+
+            timer.Start();
+
         }
     }
 }
