@@ -29,6 +29,7 @@ namespace GetReady.PartsOfExam
 
         string variant1;
         int section = 1;
+        int variant = 0;
 
         int TheEndOf1;
         int TheEndOf2;
@@ -40,9 +41,7 @@ namespace GetReady.PartsOfExam
                 taskDescription.Text = sr.ReadToEnd();
 
             using (StreamReader sr1 = new StreamReader("../../../Listening/Listening_Var1.txt"))
-                variant1 = sr1.ReadToEnd();
-
-            TheFirstDownload();
+                variant1 = sr1.ReadToEnd();           
 
             textBlockQuestions.Visibility = Visibility.Hidden;
 
@@ -82,19 +81,6 @@ namespace GetReady.PartsOfExam
                     TheEndOf3 = i;
                     break;
                 }
-        }
-
-        private void FirstVariant_Click(object sender, RoutedEventArgs e)
-        {
-            comboBoxSections.Visibility = Visibility.Visible;
-            taskDescription.Visibility = Visibility.Hidden;
-            textBlockQuestions.Visibility = Visibility.Visible;
-
-            textBlockTask.Visibility = Visibility.Visible;
-
-            FirstVariant.IsEnabled = false;
-            SecondVariant.IsEnabled = true;
-            ThirdVariant.IsEnabled = true;
 
             if (section == 1)
                 for (int i = 0; i < TheEndOf1; i++)
@@ -119,7 +105,24 @@ namespace GetReady.PartsOfExam
                 {
                     textBlockTask.Text += variant1[i];
                 }
+        }
 
+        private void FirstVariant_Click(object sender, RoutedEventArgs e)
+        {
+            textBlockTask.Text = "";
+            TheFirstDownload();
+            
+            variant = 1;
+
+            comboBoxSections.Visibility = Visibility.Visible;
+            taskDescription.Visibility = Visibility.Hidden;
+            textBlockQuestions.Visibility = Visibility.Visible;
+
+            textBlockTask.Visibility = Visibility.Visible;
+
+            FirstVariant.IsEnabled = false;
+            SecondVariant.IsEnabled = true;
+            ThirdVariant.IsEnabled = true;
         }
 
         private void SecondVariant_Click(object sender, RoutedEventArgs e)
@@ -151,6 +154,8 @@ namespace GetReady.PartsOfExam
 
         private void SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            textBlockTask.Text = "";
+
             if (comboBoxSections.SelectedIndex == 0)
             {
                 textBlockQuestions.Text = "Questions 1-10";
@@ -174,10 +179,9 @@ namespace GetReady.PartsOfExam
                 textBlockQuestions.Text = "Questions 31-40";
                 section = 4;
             }
-        }
 
-        private void Variant1Section1()
-        { 
+            if (variant == 1)
+                TheFirstDownload();  
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
