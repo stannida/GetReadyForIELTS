@@ -23,7 +23,7 @@
         			Rect="4,4,50,50"/>
             </Button.Clip>
         </Button>
-        <TextBlock x:Name="taskDescription" Height="300" Margin="68,221,50.5,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Justify" FontFamily="Levenim MT" FontSize="18" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
+        <TextBlock x:Name="taskDescription" Height="300" Margin="43,221,57.5,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Justify" FontFamily="Levenim MT" FontSize="18" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
         <Button x:Name="FirstVariant" Content="1" Margin="148,127,580.5,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="White" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Click="FirstVariant_Click">
             <Button.Clip>
                 <RectangleGeometry RadiusX="30" 
@@ -31,8 +31,11 @@
         			Rect="4,4,50,50"/>
             </Button.Clip>
         </Button>
-        <TextBlock x:Name="textBlockQuestions" HorizontalAlignment="Left" Margin="270,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="470" FontFamily="Levenim MT" FontSize="18" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
-        <ComboBox x:Name="comboBoxSections" HorizontalAlignment="Left" Margin="23,221,0,0" VerticalAlignment="Top" Width="129" Height="37" FontSize="22" FontFamily="Levenim MT" SelectionChanged="SelectionChanged"/>
+        <TextBlock x:Name="textBlockQuestions" HorizontalAlignment="Left" Margin="255,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="470" FontFamily="Levenim MT" FontSize="21" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
+        <ComboBox x:Name="comboBoxSections" HorizontalAlignment="Left" Margin="43,221,0,0" VerticalAlignment="Top" Width="146" Height="32" FontSize="21" FontFamily="Levenim MT" SelectionChanged="SelectionChanged"/>
+        <Button x:Name="GoBack" Content="Go to the start page" HorizontalAlignment="Center" Margin="37,546,595.5,0" VerticalAlignment="Top" Width="146" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000" Click="GoBack_Click"/>
+        <Image x:Name="imageTask" HorizontalAlignment="Left" Height="234" Margin="255,287,0,0" VerticalAlignment="Top" Width="478"/>
+        <Button x:Name="buttonAnswer" Content="Answer" HorizontalAlignment="Center" Margin="255,546,389.5,0" VerticalAlignment="Top" Width="146" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000" Click="GoBack_Click"/>
 
     </Grid>
 </Window>

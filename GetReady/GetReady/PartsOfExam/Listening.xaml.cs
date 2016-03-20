@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,6 +36,14 @@ namespace GetReady.PartsOfExam
             for (int i = 1; i < 5; i++)
                 comboBoxSections.Items.Add("Section " + i);
             comboBoxSections.SelectedIndex = 0;
+
+            SoundPlayer player = new SoundPlayer();
+
+            //player.Stream = "../../../Listening/Listening_Var1.wav";
+
+            player.SoundLocation = "../../../Listening/Listening_Var1.wav";
+            player.Load();
+            player.Play();
 
         }
 
@@ -96,6 +105,13 @@ namespace GetReady.PartsOfExam
 
         }
 
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage StartPage = new StartPage();
+            StartPage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.Close();
+            StartPage.Show();
+        }
 
     }
 }
