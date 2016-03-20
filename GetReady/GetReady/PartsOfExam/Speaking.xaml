@@ -35,7 +35,14 @@
         <RadioButton x:Name="RadioButtonPart1" FontFamily="Levenim MT" FontWeight="Bold" Content="Part 1" HorizontalAlignment="Left" Margin="37,253,0,0" VerticalAlignment="Top" Background="#FFFCFDAC" FontSize="22" RenderTransformOrigin="0.5,0.5" Checked="CheckedPart1"/>
         <RadioButton x:Name="RadioButtonPart2" Content="Part 2" FontFamily="Levenim MT" FontWeight="Bold" HorizontalAlignment="Left" Margin="37,313,0,0" VerticalAlignment="Top" Background="#FFFCFDAC" FontSize="22" Checked="CheckedPart2"/>
         <RadioButton x:Name="RadioButtonPart3" Content="Part 3" FontFamily="Levenim MT" FontWeight="Bold" HorizontalAlignment="Left" Margin="37,375,0,0" VerticalAlignment="Top" Background="#FFFCFDAC" FontSize="22" Checked="CheckedPart3"/>
-        <ContentControl Margin="278,22,68,542.5" Content="{StaticResource IconConfused}" RenderTransformOrigin="13.318,1.191" Grid.Column="1" MouseEnter="MouseEnter" MouseLeave="MouseLeave"  />
+        <Button 
+            x:Name="Help"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" Grid.Column="1" Margin="244,22,86,527" Height="66" Width="66" Background="#FF2DB458" MouseEnter="MouseEnter" MouseLeave="MouseLeave" >
+            <StackPanel Orientation="Horizontal" Height="56" Width="56">
+                <ContentControl  Margin ="1,1,1,1" Content="{StaticResource IconConfused}" RenderTransformOrigin="13.318,1.191" Grid.Column="1" Width="58"  />
+            </StackPanel>
+        </Button>
         <Label x:Name="LabelTime" HorizontalAlignment="Left" Margin="148,513,0,0" VerticalAlignment="Top" Width="237" FontSize="18" Height="30" FontFamily="Levenim MT"/>
         <Button x:Name="ButtonTime" HorizontalAlignment="Left" Margin="37,513,0,0" VerticalAlignment="Top" Width="80" Height="59" BorderBrush="White" Click="ButtonTime_Click">
             <Button.Background>
