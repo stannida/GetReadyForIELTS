@@ -54,5 +54,13 @@ namespace GetReady
             reading.Show();
             this.Close();
         }
+
+        private void listening_Click(object sender, RoutedEventArgs e)
+        {
+            Listening Listening = new Listening();
+            Listening.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.Close();
+            Listening.Show();
+        }
     }
 }
