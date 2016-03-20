@@ -60,6 +60,9 @@ namespace GetReady.PartsOfExam
             UserText.TextChanged -= UserText_TextChanged1;
             UserText.TextChanged -= UserText_TextChanged2;
             UserText.TextChanged += UserText_TextChanged;
+            FirstVariant.IsEnabled = false;
+            SecondVariant.IsEnabled = true;
+            ThirdVariant.IsEnabled = true;
         }
 
 
@@ -124,6 +127,9 @@ namespace GetReady.PartsOfExam
             UserText.TextChanged -= UserText_TextChanged;
             UserText.TextChanged -= UserText_TextChanged;
             UserText.TextChanged += UserText_TextChanged1;
+            SecondVariant.IsEnabled = false;
+            FirstVariant.IsEnabled = true;
+            ThirdVariant.IsEnabled = true;
         }
 
         private void Next_Click(object sender, RoutedEventArgs e)
@@ -157,7 +163,9 @@ namespace GetReady.PartsOfExam
             Writing_Task_1_0.Source = Writing_Task_1_3.Source;
             Writing_Task_1_0.Visibility = Visibility.Visible;
             next.Click += Next_Click1;
-             
+            ThirdVariant.IsEnabled = false;
+            SecondVariant.IsEnabled = true;
+            FirstVariant.IsEnabled = true;
         }
 
         private void Next_Click1(object sender, RoutedEventArgs e)

@@ -37,16 +37,14 @@ namespace GetReady.PartsOfExam
                 
             }
         }
-        private void OpeningVariantTask(int NumQuest)
-        {
-
-        }
+        
 
         private async void FirstVariant_Click(object sender, RoutedEventArgs e)
         {
             VarNum = 1;
+            j = 1;
             _task.Visibility = Visibility.Hidden;
-            using (StreamReader sr = new StreamReader("../../../Reading/ReadingVar1_" + j + ".txt"))
+            using (StreamReader sr = new StreamReader("../../../Reading/ReadingVar" + VarNum + "_" + j + ".txt"))
             {
                 
                 var line = sr.ReadLine();
@@ -63,17 +61,66 @@ namespace GetReady.PartsOfExam
             answer.Visibility = Visibility.Visible;
             Help.MouseLeave += Help_MouseLeave;
             next.Visibility = Visibility.Visible;
-
+            prev.Visibility = Visibility.Hidden;
+            FirstVariant.IsEnabled = false;
+            SecondVariant.IsEnabled = true;
+            ThirdVariant.IsEnabled = true;
         }
 
-        private void SecondVariant_Click(object sender, RoutedEventArgs e)
+        private async void SecondVariant_Click(object sender, RoutedEventArgs e)
         {
+            VarNum = 2;
+            j = 1;
+            _task.Visibility = Visibility.Hidden;
+            using (StreamReader sr = new StreamReader("../../../Reading/ReadingVar" + VarNum + "_" + j + ".txt"))
+            {
 
+                var line = sr.ReadLine();
+                var items = line.Split(' ');
+                var items2 = items[1].Split('-');
+                if (items2.Length == 1)
+                    NumQuest = int.Parse(items2[0]);
+                else
+                    NumQuest = int.Parse(items2[1]) - int.Parse(items2[0]) + 1;
+                string text = await sr.ReadToEndAsync();
+                VarTask.Text = text;
+                link.Visibility = Visibility.Visible;
+            }
+            answer.Visibility = Visibility.Visible;
+            Help.MouseLeave += Help_MouseLeave;
+            next.Visibility = Visibility.Visible;
+            prev.Visibility = Visibility.Hidden;
+            FirstVariant.IsEnabled = true;
+            SecondVariant.IsEnabled = false;
+            ThirdVariant.IsEnabled = true;
         }
 
-        private void ThirdVariant_Click(object sender, RoutedEventArgs e)
+        private async void ThirdVariant_Click(object sender, RoutedEventArgs e)
         {
+            VarNum = 3;
+            j = 1;
+            _task.Visibility = Visibility.Hidden;
+            using (StreamReader sr = new StreamReader("../../../Reading/ReadingVar" + VarNum + "_" + j + ".txt"))
+            {
 
+                var line = sr.ReadLine();
+                var items = line.Split(' ');
+                var items2 = items[1].Split('-');
+                if (items2.Length == 1)
+                    NumQuest = int.Parse(items2[0]);
+                else
+                    NumQuest = int.Parse(items2[1]) - int.Parse(items2[0]) + 1;
+                string text = await sr.ReadToEndAsync();
+                VarTask.Text = text;
+                link.Visibility = Visibility.Visible;
+            }
+            answer.Visibility = Visibility.Visible;
+            Help.MouseLeave += Help_MouseLeave;
+            next.Visibility = Visibility.Visible;
+            prev.Visibility = Visibility.Hidden;
+            FirstVariant.IsEnabled = true;
+            SecondVariant.IsEnabled = true;
+            ThirdVariant.IsEnabled = false;
         }
 
         private void Help_MouseEnter(object sender, MouseEventArgs e)

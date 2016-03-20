@@ -41,7 +41,7 @@
 
         <Image x:Name="Writing_Task_1_1" Grid.ColumnSpan="2" Margin="254,347,247,10" Source="/GetReady;component/Writing_Task_1_1.png" Stretch="Fill" Visibility="Hidden"/>
         <Button x:Name="next" Content="I want to try" Grid.Column="1" HorizontalAlignment="Center" Height="35" Margin="242,516,26,0" VerticalAlignment="Top" Width="124" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Padding="1" Click="next_Click" HorizontalContentAlignment="Center" Visibility="Hidden"/>
-        <TextBox x:Name="UserText" HorizontalAlignment="Center" Height="362" Margin="110,196,104,0" TextWrapping="Wrap" Text="Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var#'. You can click on the variant button to see the task again." VerticalAlignment="Top" Width="694" Grid.ColumnSpan="2" FontFamily="Levenim MT" Padding="2,0" GotFocus="UserText_GotFocus" Visibility="Hidden"/>
+        <TextBox x:Name="UserText" HorizontalAlignment="Center" Height="362" Margin="52,196,46,0" TextWrapping="Wrap" Text="Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var#'. You can click on the variant button to see the task again." VerticalAlignment="Top" Width="694" Grid.ColumnSpan="2" FontFamily="Levenim MT" Padding="2,0" GotFocus="UserText_GotFocus" Visibility="Hidden"/>
 
 
         <TextBlock x:Name="counter" HorizontalAlignment="Center" Text ="Number of words" Margin="130,581,191,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="17" Width="156" Visibility="Hidden" FontFamily="Levenim MT"/>
