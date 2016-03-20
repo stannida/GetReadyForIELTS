@@ -67,11 +67,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ListeningAnswerBox.xaml.cs">
+      <DependentUpon>ListeningAnswerBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PartsOfExam\Listening.xaml.cs">
       <DependentUpon>Listening.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PartsOfExam\ListeningAnswer.xaml.cs">
-      <DependentUpon>ListeningAnswer.xaml</DependentUpon>
     </Compile>
     <Compile Include="PartsOfExam\Reading.xaml.cs">
       <DependentUpon>Reading.xaml</DependentUpon>
@@ -116,6 +116,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ListeningAnswerBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -129,10 +133,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PartsOfExam\Listening.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PartsOfExam\ListeningAnswer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

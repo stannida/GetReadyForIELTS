@@ -12,25 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GetReady.PartsOfExam
+namespace GetReady
 {
     /// <summary>
-    /// Interaction logic for ListeningAnswer.xaml
+    /// Interaction logic for ListeningAnswerBox.xaml
     /// </summary>
-    public partial class ListeningAnswer : Window
+    public partial class ListeningAnswerBox : Window
     {
-        private int variant;
-        private int section;
-
-        public ListeningAnswer()
+        public ListeningAnswerBox()
         {
             InitializeComponent();
-        }
-
-        public ListeningAnswer(int variant, int section)
-        {
-            this.variant = variant;
-            this.section = section;
         }
     }
 }

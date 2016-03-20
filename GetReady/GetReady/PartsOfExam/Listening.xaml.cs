@@ -194,6 +194,10 @@ namespace GetReady.PartsOfExam
 
         private void buttonAnswer_Click(object sender, RoutedEventArgs e)
         {
+            ListeningAnswerBox answerbox = new ListeningAnswerBox();
+            answerbox.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            answerbox.Show();
+
             ListeningAnswer ListeningAnswer = new ListeningAnswer(variant, section);
             ListeningAnswer.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             ListeningAnswer.Show();
