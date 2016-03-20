@@ -79,7 +79,9 @@ namespace GetReady.PartsOfExam
             RadioButtonPart2.Visibility = Visibility.Visible;
             RadioButtonPart3.Visibility = Visibility.Visible;
 
-            FirstVariant.Background = System.Windows.Media.Brushes.PaleTurquoise;
+            FirstVariant.IsEnabled = false;
+            SecondVariant.IsEnabled = true;
+            ThirdVariant.IsEnabled = true;
 
             if (_checkedPart == 0)
             {
@@ -121,6 +123,10 @@ namespace GetReady.PartsOfExam
             RadioButtonPart2.Visibility = Visibility.Visible;
             RadioButtonPart3.Visibility = Visibility.Visible;
 
+            FirstVariant.IsEnabled = true;
+            SecondVariant.IsEnabled = false;
+            ThirdVariant.IsEnabled = true;
+
             if (_checkedPart == 0)
             {
                 RadioButtonPart1.IsChecked = true;
@@ -160,6 +166,10 @@ namespace GetReady.PartsOfExam
             RadioButtonPart1.Visibility = Visibility.Visible;
             RadioButtonPart2.Visibility = Visibility.Visible;
             RadioButtonPart3.Visibility = Visibility.Visible;
+
+            FirstVariant.IsEnabled = true;
+            SecondVariant.IsEnabled = true;
+            ThirdVariant.IsEnabled = false;
 
             if (_checkedPart == 0)
             {
