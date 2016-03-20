@@ -37,13 +37,10 @@ namespace GetReady.PartsOfExam
                 comboBoxSections.Items.Add("Section " + i);
             comboBoxSections.SelectedIndex = 0;
 
-            SoundPlayer player = new SoundPlayer();
-
-            //player.Stream = "../../../Listening/Listening_Var1.wav";
-
-            player.SoundLocation = "../../../Listening/Listening_Var1.wav";
-            player.Load();
-            player.Play();
+            //SoundPlayer player = new SoundPlayer();
+            //player.SoundLocation = "../../../Listening/Listening_Var1.wav";
+            //player.Load();
+            //player.Play();
 
         }
 
@@ -55,6 +52,8 @@ namespace GetReady.PartsOfExam
             FirstVariant.IsEnabled = false;
             SecondVariant.IsEnabled = true;
             ThirdVariant.IsEnabled = true;
+
+            
 
 
         }
