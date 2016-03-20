@@ -194,9 +194,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="timer.png" />
-    <Resource Include="PartsOfExam\Stop.png" />
-    <Resource Include="PartsOfExam\Pause.png" />
+    <Resource Include="PartsOfExam\SpeakingFiles\Timer.png" />
+    <Resource Include="PartsOfExam\SpeakingFiles\Stop.png" />
+    <Resource Include="PartsOfExam\SpeakingFiles\Pause.png" />
     <Content Include="Usersdb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Usersdb.edmx</DependentUpon>

@@ -38,10 +38,7 @@ namespace GetReady.PartsOfExam
         public Speaking()
         {
             InitializeComponent();
-            SpeakingLoad();
-
-            ProgressBarTime.Maximum = 120;
-            
+            SpeakingLoad();        
         }
 
         private void SpeakingLoad()
@@ -52,6 +49,8 @@ namespace GetReady.PartsOfExam
             RadioButtonPart1.Visibility = Visibility.Hidden;
             RadioButtonPart2.Visibility = Visibility.Hidden;
             RadioButtonPart3.Visibility = Visibility.Hidden;
+
+            ProgressBarTime.Maximum = 120;
 
             ButtonTime.Visibility = Visibility.Hidden;
             ProgressBarTime.Visibility = Visibility.Hidden;
