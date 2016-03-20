@@ -39,7 +39,6 @@ namespace GetReady.PartsOfExam
 
             SoundPlayer player = new SoundPlayer();
 
-            //player.Stream = "../../../Listening/Listening_Var1.wav";
 
             player.SoundLocation = "../../../Listening/Listening_Var1.wav";
             player.Load();

@@ -29,35 +29,56 @@ namespace GetReady.PartsOfExam
         }
         private async void LoadingTask()
         {
-            using (StreamReader sr = new StreamReader("../../../Reading/taskReading.txt"))
+            try
             {
+                using (StreamReader sr = new StreamReader("../../../Reading/taskReading.txt"))
+                {
 
-                string line = await sr.ReadToEndAsync();
-                _task.Text = line;
-                
+                    string line = await sr.ReadToEndAsync();
+                    _task.Text = line;
+
+                }
+            }
+            catch(FileNotFoundException)
+            {
+                MessageBox.Show("File with reading task not found");
             }
         }
-        
+        private async void OpeningVariant(int VarNum, int j)
+        {
+            try
+            {
+                using (StreamReader sr = new StreamReader("../../../Reading/ReadingVar" + VarNum + "_" + j + ".txt"))
+                {
 
-        private async void FirstVariant_Click(object sender, RoutedEventArgs e)
+                    var line = sr.ReadLine();
+                    var items = line.Split(' ');
+                    var items2 = items[1].Split('-');
+                    if (items2.Length == 1)
+                        NumQuest = int.Parse(items2[0]);
+                    else
+                        NumQuest = int.Parse(items2[1]) - int.Parse(items2[0]) + 1;
+                    string text = await sr.ReadToEndAsync();
+                    VarTask.Text = text;
+                    link.Visibility = Visibility.Visible;
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("File with reading task not found");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Oops, something went wrong /n" + ex);
+            }
+        }
+
+        private void FirstVariant_Click(object sender, RoutedEventArgs e)
         {
             VarNum = 1;
             j = 1;
             _task.Visibility = Visibility.Hidden;
-            using (StreamReader sr = new StreamReader("../../../Reading/ReadingVar" + VarNum + "_" + j + ".txt"))
-            {
-                
-                var line = sr.ReadLine();
-                var items = line.Split(' ');
-                var items2 = items[1].Split('-');
-                if (items2.Length == 1)
-                    NumQuest = int.Parse(items2[0]);
-                else
-                    NumQuest = int.Parse(items2[1]) - int.Parse(items2[0]) + 1;
-                string text = await sr.ReadToEndAsync();
-                VarTask.Text = text;
-                link.Visibility = Visibility.Visible;
-            }
+            OpeningVariant(VarNum, j);
             answer.Visibility = Visibility.Visible;
             Help.MouseLeave += Help_MouseLeave;
             next.Visibility = Visibility.Visible;
@@ -67,25 +88,12 @@ namespace GetReady.PartsOfExam
             ThirdVariant.IsEnabled = true;
         }
 
-        private async void SecondVariant_Click(object sender, RoutedEventArgs e)
+        private void SecondVariant_Click(object sender, RoutedEventArgs e)
         {
             VarNum = 2;
             j = 1;
             _task.Visibility = Visibility.Hidden;
-            using (StreamReader sr = new StreamReader("../../../Reading/ReadingVar" + VarNum + "_" + j + ".txt"))
-            {
-
-                var line = sr.ReadLine();
-                var items = line.Split(' ');
-                var items2 = items[1].Split('-');
-                if (items2.Length == 1)
-                    NumQuest = int.Parse(items2[0]);
-                else
-                    NumQuest = int.Parse(items2[1]) - int.Parse(items2[0]) + 1;
-                string text = await sr.ReadToEndAsync();
-                VarTask.Text = text;
-                link.Visibility = Visibility.Visible;
-            }
+            OpeningVariant(VarNum, j);   
             answer.Visibility = Visibility.Visible;
             Help.MouseLeave += Help_MouseLeave;
             next.Visibility = Visibility.Visible;
@@ -95,25 +103,12 @@ namespace GetReady.PartsOfExam
             ThirdVariant.IsEnabled = true;
         }
 
-        private async void ThirdVariant_Click(object sender, RoutedEventArgs e)
+        private void ThirdVariant_Click(object sender, RoutedEventArgs e)
         {
             VarNum = 3;
             j = 1;
             _task.Visibility = Visibility.Hidden;
-            using (StreamReader sr = new StreamReader("../../../Reading/ReadingVar" + VarNum + "_" + j + ".txt"))
-            {
-
-                var line = sr.ReadLine();
-                var items = line.Split(' ');
-                var items2 = items[1].Split('-');
-                if (items2.Length == 1)
-                    NumQuest = int.Parse(items2[0]);
-                else
-                    NumQuest = int.Parse(items2[1]) - int.Parse(items2[0]) + 1;
-                string text = await sr.ReadToEndAsync();
-                VarTask.Text = text;
-                link.Visibility = Visibility.Visible;
-            }
+            OpeningVariant(VarNum, j);
             answer.Visibility = Visibility.Visible;
             Help.MouseLeave += Help_MouseLeave;
             next.Visibility = Visibility.Visible;
@@ -134,15 +129,6 @@ namespace GetReady.PartsOfExam
         }
 
 
-        private void answer_Click(object sender, RoutedEventArgs e)
-        {
-            ReadingAnswerBox RAB = new ReadingAnswerBox(NumQuest, j, VarNum);
-            
-            RAB.Show();
-        }
-
-
-
         private void Help_MouseLeave(object sender, MouseEventArgs e)
         {
             _task.Visibility = Visibility.Hidden;
@@ -155,29 +141,22 @@ namespace GetReady.PartsOfExam
                 prev.Visibility = Visibility.Visible;
         }
 
+        private void answer_Click(object sender, RoutedEventArgs e)
+        {
+            ReadingAnswerBox RAB = new ReadingAnswerBox(NumQuest, j, VarNum);
+            RAB.Show();
+        }
+
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
             ReadingPassage RP = new ReadingPassage(VarNum);
             RP.Show();
         }
 
-        private async void prev_Click(object sender, RoutedEventArgs e)
+        private void prev_Click(object sender, RoutedEventArgs e)
         {
             j--;
-            using (StreamReader sr = new StreamReader("../../../Reading/ReadingVar" + VarNum + "_" + j + ".txt"))
-            {
-
-                var line = sr.ReadLine();
-                var items = line.Split(' ');
-                var items2 = items[1].Split('-');
-                if (items2.Length == 1)
-                    NumQuest = int.Parse(items2[0]);
-                else
-                    NumQuest = int.Parse(items2[1]) - int.Parse(items2[0]) + 1;
-                string text = await sr.ReadToEndAsync();
-                VarTask.Text = text;
-                link.Visibility = Visibility.Visible;
-            }
+            OpeningVariant(VarNum, j);
             if (j == 1)
                 prev.Visibility = Visibility.Hidden;
             next.Visibility = Visibility.Visible;
@@ -191,25 +170,12 @@ namespace GetReady.PartsOfExam
             this.Close();
         }
 
-        private async void next_Click(object sender, RoutedEventArgs e)
+        private void next_Click(object sender, RoutedEventArgs e)
         {
             j++;
             if (j == 4)
                 next.Visibility = Visibility.Hidden;
-            using (StreamReader sr = new StreamReader("../../../Reading/ReadingVar" + VarNum + "_" + j + ".txt"))
-            {
-
-                var line = sr.ReadLine();
-                var items = line.Split(' ');
-                var items2 = items[1].Split('-');
-                if (items2.Length == 1)
-                    NumQuest = 1;
-                else
-                    NumQuest = int.Parse(items2[1]) - int.Parse(items2[0]) + 1;
-                string text = await sr.ReadToEndAsync();
-                VarTask.Text = text;
-                link.Visibility = Visibility.Visible;
-            }
+            OpeningVariant(VarNum, j);
             prev.Visibility = Visibility.Visible;
             
             

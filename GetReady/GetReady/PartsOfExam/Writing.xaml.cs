@@ -32,12 +32,19 @@ namespace GetReady.PartsOfExam
 
         private async void LoadingTask ()
         {
-            using (StreamReader sr = new StreamReader("../../../Writing/taskWriting.txt"))
+            try
             {
+                using (StreamReader sr = new StreamReader("../../../Writing/taskWriting.txt"))
+                {
 
-                string line = await sr.ReadToEndAsync();
-                _task.Text = line;
+                    string line = await sr.ReadToEndAsync();
+                    _task.Text = line;
 
+                }
+            }
+            catch(FileNotFoundException)
+            {
+                MessageBox.Show("File with writing task not found");
             }
         }
 
@@ -48,10 +55,17 @@ namespace GetReady.PartsOfExam
             next.Visibility = Visibility.Visible;
             UserText.Visibility = Visibility.Hidden;
             var1Task.Visibility = Visibility.Visible;
-            using (StreamReader sr = new StreamReader("../../../Writing/var1Task1.txt"))
+            try
             {
-                string line = await sr.ReadToEndAsync();
-                var1Task.Text = line;
+                using (StreamReader sr = new StreamReader("../../../Writing/var1Task1.txt"))
+                {
+                    string line = await sr.ReadToEndAsync();
+                    var1Task.Text = line;
+                }
+            }
+            catch(FileNotFoundException)
+            {
+                MessageBox.Show("File with writing task not found");
             }
             Writing_Task_1_0.Source = Writing_Task_1_1.Source;
             Writing_Task_1_0.Visibility = Visibility.Visible;
@@ -63,6 +77,7 @@ namespace GetReady.PartsOfExam
             FirstVariant.IsEnabled = false;
             SecondVariant.IsEnabled = true;
             ThirdVariant.IsEnabled = true;
+            Help.MouseLeave -= Help_MouseLeave1;
         }
 
 
@@ -85,16 +100,27 @@ namespace GetReady.PartsOfExam
 
         private async void UserText_TextChanged(object sender, TextChangedEventArgs e)
         {
-            using (StreamWriter sw = new StreamWriter("../../../Writing/Writing_Task1_Var1.txt"))
+            try
             {
-                await sw.WriteAsync(UserText.Text);
+                using (StreamWriter sw = new StreamWriter("../../../Writing/Writing_Task1_Var1.txt"))
+                {
+                    await sw.WriteAsync(UserText.Text);
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("File with writing task not found");
             }
 
-            //if (UserText.Text != "")
-            //{
-                //string count = UserText.Text.Length.ToString();
-                //counter.Text = "Number of words: " + count;
-            //}
+            if (UserText.Text != "")
+            {
+                char[] delimiters = new char[] { ' ', ',', '.', '\n' };
+                string count = UserText.Text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length.ToString();
+                counter.Visibility = Visibility.Visible;
+                counter.Text = "Number of words: " + count;
+            }
+            else
+                counter.Visibility = Visibility.Hidden;
         }
 
         private void UserText_GotFocus(object sender, RoutedEventArgs e)
@@ -103,11 +129,6 @@ namespace GetReady.PartsOfExam
                 UserText.Text = "";
         }
 
-        private void butTask2_Click(object sender, RoutedEventArgs e)
-        {
-            
-
-        }
 
         private async void SecondVariant_Click(object sender, RoutedEventArgs e)
         {
@@ -115,12 +136,18 @@ namespace GetReady.PartsOfExam
             next.Visibility = Visibility.Visible;
             UserText.Visibility = Visibility.Hidden;
             var1Task.Visibility = Visibility.Visible;
-            using (StreamReader sr = new StreamReader("../../../Writing/var2Task1.txt"))
+            try
             {
-                string line = await sr.ReadToEndAsync();
-                var1Task.Text = line;
+                using (StreamReader sr = new StreamReader("../../../Writing/var2Task1.txt"))
+                {
+                    string line = await sr.ReadToEndAsync();
+                    var1Task.Text = line;
+                }
             }
-
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("File with writing task not found");
+            }
             Writing_Task_1_0.Source = Writing_Task_1_2.Source;
             Writing_Task_1_0.Visibility = Visibility.Visible;
             next.Click += Next_Click;
@@ -130,6 +157,8 @@ namespace GetReady.PartsOfExam
             SecondVariant.IsEnabled = false;
             FirstVariant.IsEnabled = true;
             ThirdVariant.IsEnabled = true;
+            Help.MouseLeave += Help_MouseLeave;
+            Help.MouseLeave -= Help_MouseLeave1;
         }
 
         private void Next_Click(object sender, RoutedEventArgs e)
@@ -142,10 +171,27 @@ namespace GetReady.PartsOfExam
 
         private async void UserText_TextChanged1(object sender, TextChangedEventArgs e)
         {
-            using (StreamWriter sw = new StreamWriter("../../../Writing/Writing_Task1_Var2.txt"))
+            try
             {
-                await sw.WriteAsync(UserText.Text);
+
+                using (StreamWriter sw = new StreamWriter("../../../Writing/Writing_Task1_Var2.txt"))
+                {
+                    await sw.WriteAsync(UserText.Text);
+                }
             }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("File with writing task not found");
+            }
+            if (UserText.Text != "")
+            {
+                char[] delimiters = new char[] { ' ', ',', '.', '\n' };
+                string count = UserText.Text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length.ToString();
+                counter.Visibility = Visibility.Visible;
+                counter.Text = "Number of words: " + count;
+            }
+            else
+                counter.Visibility = Visibility.Hidden;
         }
 
 
@@ -155,10 +201,17 @@ namespace GetReady.PartsOfExam
             next.Visibility = Visibility.Visible;
             UserText.Visibility = Visibility.Hidden;
             var1Task.Visibility = Visibility.Visible;
-            using (StreamReader sr = new StreamReader("../../../Writing/var3Task1.txt"))
+            try
             {
-                string line = await sr.ReadToEndAsync();
-                var1Task.Text = line;
+                using (StreamReader sr = new StreamReader("../../../Writing/var3Task1.txt"))
+                {
+                    string line = await sr.ReadToEndAsync();
+                    var1Task.Text = line;
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("File with writing task not found");
             }
             Writing_Task_1_0.Source = Writing_Task_1_3.Source;
             Writing_Task_1_0.Visibility = Visibility.Visible;
@@ -166,6 +219,8 @@ namespace GetReady.PartsOfExam
             ThirdVariant.IsEnabled = false;
             SecondVariant.IsEnabled = true;
             FirstVariant.IsEnabled = true;
+            Help.MouseLeave += Help_MouseLeave;
+            Help.MouseLeave -= Help_MouseLeave1;
         }
 
         private void Next_Click1(object sender, RoutedEventArgs e)
@@ -180,24 +235,27 @@ namespace GetReady.PartsOfExam
 
         private async void UserText_TextChanged2(object sender, TextChangedEventArgs e)
         {
-            using (StreamWriter sw = new StreamWriter("../../../Writing/Writing_Task1_Var3.txt"))
+            try
             {
-                await sw.WriteAsync(UserText.Text);
+                using (StreamWriter sw = new StreamWriter("../../../Writing/Writing_Task1_Var3.txt"))
+                {
+                    await sw.WriteAsync(UserText.Text);
+                }
             }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("File with writing task not found");
+            }
+            if (UserText.Text != "")
+            {
+                char[] delimiters = new char[] { ' ', ',', '.', '\n' };
+                string count = UserText.Text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length.ToString();
+                counter.Visibility = Visibility.Visible;
+                counter.Text = "Number of words: " + count;
+            }
+            else
+                counter.Visibility = Visibility.Hidden;
         }
-
-
-        
-        //СОНЯ ЭТО НЕ РАБОТАЕТ
-        private void UserText_DragLeave(object sender, DragEventArgs e)
-        {
-            if (UserText.Text == "")
-                UserText.Text = "Here you can write your graph description. The file will be automatically created on your computer and named 'Writing_Task1_Var#'. You can click on the variant button to see the task again.";
-        
-    }
-
-
-
         private void Help_MouseEnter(object sender, MouseEventArgs e)
         {
             var1Task.Visibility = Visibility.Hidden;
@@ -210,6 +268,7 @@ namespace GetReady.PartsOfExam
             _task.Visibility = Visibility.Hidden;
             Writing_Task_1_0.Visibility = Visibility.Visible;
             var1Task.Visibility = Visibility.Visible;
+            UserText.Visibility = Visibility.Hidden;
         }
 
 

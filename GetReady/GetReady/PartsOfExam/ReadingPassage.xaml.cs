@@ -28,11 +28,18 @@ namespace GetReady.PartsOfExam
 
         private async void OpeningData(int VarNum)
         {
-            using (StreamReader sr = new StreamReader("../../../Reading/TextPassage" + VarNum + ".txt"))
+            try
             {
-                headline.Text = sr.ReadLine();
-                string line = await sr.ReadToEndAsync();
-                passage.Text = line;
+                using (StreamReader sr = new StreamReader("../../../Reading/TextPassage" + VarNum + ".txt"))
+                {
+                    headline.Text = sr.ReadLine();
+                    string line = await sr.ReadToEndAsync();
+                    passage.Text = line;
+                }
+            }
+            catch(FileNotFoundException)
+            {
+                MessageBox.Show("File with Reading Passage not found");
             }
         }
     }
