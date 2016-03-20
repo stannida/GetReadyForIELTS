@@ -70,6 +70,9 @@
     <Compile Include="PartsOfExam\Listening.xaml.cs">
       <DependentUpon>Listening.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PartsOfExam\ListeningAnswer.xaml.cs">
+      <DependentUpon>ListeningAnswer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PartsOfExam\Reading.xaml.cs">
       <DependentUpon>Reading.xaml</DependentUpon>
     </Compile>
@@ -126,6 +129,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PartsOfExam\Listening.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PartsOfExam\ListeningAnswer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
