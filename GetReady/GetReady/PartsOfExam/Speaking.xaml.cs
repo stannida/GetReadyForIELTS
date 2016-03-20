@@ -40,7 +40,6 @@ namespace GetReady.PartsOfExam
             SpeakingLoad();
 
             ProgressBarTime.Maximum = 120;
-            ProgressBarTime.Value = 0;
             
         }
 
@@ -52,6 +51,9 @@ namespace GetReady.PartsOfExam
             RadioButtonPart1.Visibility = Visibility.Hidden;
             RadioButtonPart2.Visibility = Visibility.Hidden;
             RadioButtonPart3.Visibility = Visibility.Hidden;
+
+            ButtonTime.Visibility = Visibility.Hidden;
+            ProgressBarTime.Visibility = Visibility.Hidden;
 
             using (StreamReader sr1 = new StreamReader("../../../Speaking_Var1.txt"))
                 Variant1 = sr1.ReadToEnd();
@@ -67,6 +69,7 @@ namespace GetReady.PartsOfExam
         {
             _variant = 1;
             TextBlockTask.Text = "";
+            ButtonTime.Visibility = Visibility.Visible;
 
             TaskDescription.Visibility = Visibility.Hidden;
 
@@ -108,6 +111,7 @@ namespace GetReady.PartsOfExam
         {
             _variant = 2;
             TextBlockTask.Text = "";
+            ButtonTime.Visibility = Visibility.Visible;
 
             TaskDescription.Visibility = Visibility.Hidden;
 
@@ -147,6 +151,7 @@ namespace GetReady.PartsOfExam
         {
             _variant = 3;
             TextBlockTask.Text = "";
+            ButtonTime.Visibility = Visibility.Visible;
 
             TaskDescription.Visibility = Visibility.Hidden;
 
@@ -319,11 +324,17 @@ namespace GetReady.PartsOfExam
             else
             {
                 timer.Stop();
+                ProgressBarTime.Visibility = Visibility.Hidden;
             }
         }
 
         private void ButtonTime_Click(object sender, RoutedEventArgs e)
         {
+            ProgressBarTime.Value = 0;
+            timeNow = 0;
+
+            ProgressBarTime.Visibility = Visibility.Visible;
+
             timer = new System.Windows.Threading.DispatcherTimer();
             timer.Tick += new EventHandler(timer_Tick);
             timer.Interval = new TimeSpan(0, 0, 1);
