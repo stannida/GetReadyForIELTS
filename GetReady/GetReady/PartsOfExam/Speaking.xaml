@@ -36,16 +36,21 @@
         <RadioButton x:Name="RadioButtonPart2" Content="Part 2" FontFamily="Levenim MT" FontWeight="Bold" HorizontalAlignment="Left" Margin="37,313,0,0" VerticalAlignment="Top" Background="#FFFCFDAC" FontSize="22" Checked="CheckedPart2"/>
         <RadioButton x:Name="RadioButtonPart3" Content="Part 3" FontFamily="Levenim MT" FontWeight="Bold" HorizontalAlignment="Left" Margin="37,375,0,0" VerticalAlignment="Top" Background="#FFFCFDAC" FontSize="22" Checked="CheckedPart3"/>
         <ContentControl Margin="278,22,68,542.5" Content="{StaticResource IconConfused}" RenderTransformOrigin="13.318,1.191" Grid.Column="1" MouseEnter="MouseEnter" MouseLeave="MouseLeave"  />
-        <Label x:Name="LabelTime" HorizontalAlignment="Left" Margin="148,522,0,0" VerticalAlignment="Top" Width="237" FontSize="18" Height="30" FontFamily="Levenim MT"/>
-        <Button x:Name="ButtonTime" HorizontalAlignment="Left" Margin="37,522,0,0" VerticalAlignment="Top" Width="80" Height="68" BorderBrush="White" Click="ButtonTime_Click">
+        <Label x:Name="LabelTime" HorizontalAlignment="Left" Margin="148,513,0,0" VerticalAlignment="Top" Width="237" FontSize="18" Height="30" FontFamily="Levenim MT"/>
+        <Button x:Name="ButtonTime" HorizontalAlignment="Left" Margin="37,513,0,0" VerticalAlignment="Top" Width="80" Height="59" BorderBrush="White" Click="ButtonTime_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/GetReady;component/timer.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <ProgressBar x:Name="ProgressBarTime" HorizontalAlignment="Left" Height="13" Margin="148,577,0,0" VerticalAlignment="Top" Width="504" Grid.ColumnSpan="2" Background="#FFB2F0C5"/>
-        <Button x:Name="ButtonPause" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="278,534,0,0" VerticalAlignment="Top" Width="81" Height="56">
+        <ProgressBar x:Name="ProgressBarTime" HorizontalAlignment="Left" Height="13" Margin="148,559,0,0" VerticalAlignment="Top" Width="504" Grid.ColumnSpan="2" Background="#FFB2F0C5"/>
+        <Button x:Name="ButtonPause" Grid.Column="1" HorizontalAlignment="Left" Margin="262,548,0,0" VerticalAlignment="Top" Width="35" Height="35" BorderBrush="White" Click="ButtonPause_Click">
             <Button.Background>
-                <ImageBrush ImageSource=""/>
+                <ImageBrush ImageSource="Pause.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="ButtonStop" Grid.Column="1" HorizontalAlignment="Left" Margin="297,548,0,0" VerticalAlignment="Top" Width="35" Height="35" BorderBrush="White" RenderTransformOrigin="0.375,-2.018" Click="ButtonStop_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Stop.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
 

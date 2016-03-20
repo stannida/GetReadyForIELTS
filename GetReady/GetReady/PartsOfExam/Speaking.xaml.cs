@@ -33,6 +33,7 @@ namespace GetReady.PartsOfExam
         int TheEndOf2;
         int timeNow = 0;
         System.Windows.Threading.DispatcherTimer timer;
+        int PausePlay = 0;
 
         public Speaking()
         {
@@ -54,6 +55,8 @@ namespace GetReady.PartsOfExam
 
             ButtonTime.Visibility = Visibility.Hidden;
             ProgressBarTime.Visibility = Visibility.Hidden;
+            ButtonPause.Visibility = Visibility.Hidden;
+            ButtonStop.Visibility = Visibility.Hidden;
 
             using (StreamReader sr1 = new StreamReader("../../../Speaking_Var1.txt"))
                 Variant1 = sr1.ReadToEnd();
@@ -311,34 +314,100 @@ namespace GetReady.PartsOfExam
                 timeNow = timeNow + 1;
                 ProgressBarTime.Value += 1;
 
-                if (timeNow < 60)
+                if (timeNow == 1)
+                {
+                    LabelTime.Content = "1 second";
+                    return;
+                }
+
+                if ((timeNow < 60) && (timeNow != 1))
+                {
                     LabelTime.Content = timeNow + " seconds";
+                    return;
+                }
 
-                if (timeNow == 60)              
+                if (timeNow == 60)
+                {
                     LabelTime.Content = "1 minute";
+                    return;
+                }
 
-                if (timeNow > 60)
-                    timeNow = timeNow + 1;
+                if (timeNow == 61)
+                {
+                    LabelTime.Content = "1 minute 1 second";
+                    return;
+                }
+
+                if ((timeNow > 60) && (timeNow != 61) && (timeNow != 120))
+                {
                     LabelTime.Content = "1 minute " + (timeNow - 60) + " seconds";
+                    return;
+                }
             }
             else
             {
                 timer.Stop();
-                ProgressBarTime.Visibility = Visibility.Hidden;
+                LabelTime.Content = "2 minutes";
             }
         }
 
         private void ButtonTime_Click(object sender, RoutedEventArgs e)
         {
+            PausePlay = 1;
+
             ProgressBarTime.Value = 0;
             timeNow = 0;
 
-            ProgressBarTime.Visibility = Visibility.Visible;
+            if (ProgressBarTime.Visibility == Visibility.Hidden)
+            {
+                ProgressBarTime.Visibility = Visibility.Visible;
+                ButtonPause.Visibility = Visibility.Visible;
+                ButtonStop.Visibility = Visibility.Visible;
 
-            timer = new System.Windows.Threading.DispatcherTimer();
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Start();
+                timer = new System.Windows.Threading.DispatcherTimer();
+                timer.Tick += new EventHandler(timer_Tick);
+                timer.Interval = new TimeSpan(0, 0, 1);
+                timer.Start();
+            }
+            else
+            {
+                ProgressBarTime.Visibility = Visibility.Hidden;
+                ButtonPause.Visibility = Visibility.Hidden;
+                ButtonStop.Visibility = Visibility.Hidden;
+
+                TimerClearAll();
+            }
+        }
+
+        private void ButtonPause_Click(object sender, RoutedEventArgs e)
+        {
+            if (timeNow != 120)
+            {
+                if (PausePlay == 1)
+                {
+                    timer.Stop();
+                    PausePlay = 0;
+                }
+                else
+                {
+                    timer.Start();
+                    PausePlay = 1;
+                }
+            }
+        }
+
+        private void ButtonStop_Click(object sender, RoutedEventArgs e)
+        {
+            TimerClearAll();        
+        }
+
+        private void TimerClearAll()
+        {
+            timer.Stop();
+            ProgressBarTime.Value = 0;
+            PausePlay = 0;
+            timeNow = 0;
+            LabelTime.Content = "";
         }
     }
 }
