@@ -157,7 +157,7 @@ namespace GetReady.PartsOfExam
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
-            ReadingPassage RP = new ReadingPassage();
+            ReadingPassage RP = new ReadingPassage(VarNum);
             RP.Show();
         }
 
