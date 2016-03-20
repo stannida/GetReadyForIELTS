@@ -23,9 +23,9 @@ namespace GetReady.PartsOfExam
         int _variant = 0;
         int _checkedPart = 0; 
 
-        private string Var1;
-        private string Var2;
-        private string Var3;
+        private string Variant1;
+        private string Variant2;
+        private string Variant3;
 
         int TheEndOf1;
         int TheEndOf2;
@@ -39,22 +39,26 @@ namespace GetReady.PartsOfExam
         private void SpeakingLoad()
         {
             using (StreamReader sr = new StreamReader("../../../taskSpeaking.txt"))
-            {
                 TaskDescription.Text = sr.ReadToEnd();
-            }
-
+            
             RadioButtonPart1.Visibility = Visibility.Hidden;
             RadioButtonPart2.Visibility = Visibility.Hidden;
             RadioButtonPart3.Visibility = Visibility.Hidden;
+
+            using (StreamReader sr1 = new StreamReader("../../../Speaking_Var1.txt"))
+                Variant1 = sr1.ReadToEnd();
+
+            using (StreamReader sr2 = new StreamReader("../../../Speaking_Var2.txt"))
+                Variant2 = sr2.ReadToEnd();
+
+            using (StreamReader sr3 = new StreamReader("../../../Speaking_Var3.txt"))
+                Variant3 = sr3.ReadToEnd();
         }
 
         private void FirstVariant_Click(object sender, RoutedEventArgs e)
         {
-            
-            if (_variant == 0)
-                TextBlockTask.Text = "";
-
             _variant = 1;
+            TextBlockTask.Text = "";
 
             TaskDescription.Visibility = Visibility.Hidden;
 
@@ -64,8 +68,44 @@ namespace GetReady.PartsOfExam
 
             FirstVariant.Background = System.Windows.Media.Brushes.PaleTurquoise;
 
-            using (StreamReader sr = new StreamReader("../../../Speaking_Var1.txt"))
-                Var1 = sr.ReadToEnd();
+            if (_checkedPart == 0)
+            {
+                RadioButtonPart1.IsChecked = true;
+                _checkedPart = 1;
+            }
+
+            for (int i = 0; i < Variant1.Length; i++)
+                if (Variant1[i] == ';')
+                {
+                    TheEndOf1 = i;
+                    break;
+                }
+
+            for (int i=TheEndOf1+1; i<Variant1.Length; i++)
+                if (Variant1[i] == ';')
+                {
+                    TheEndOf2 = i;
+                    break;
+                }
+
+            if (_checkedPart == 1)
+                Variant1Part1();
+            if (_checkedPart == 2)
+                Variant1Part2();
+            if (_checkedPart == 3)
+                Variant1Part3();
+        }
+
+        private void SecondVariant_Click(object sender, RoutedEventArgs e)
+        {
+            _variant = 2;
+            TextBlockTask.Text = "";
+
+            TaskDescription.Visibility = Visibility.Hidden;
+
+            RadioButtonPart1.Visibility = Visibility.Visible;
+            RadioButtonPart2.Visibility = Visibility.Visible;
+            RadioButtonPart3.Visibility = Visibility.Visible;
 
             if (_checkedPart == 0)
             {
@@ -73,39 +113,32 @@ namespace GetReady.PartsOfExam
                 _checkedPart = 1;
             }
 
-            for (int i = 0; i < Var1.Length; i++)
-                if (Var1[i] == ';')
+            for (int i = 0; i < Variant2.Length; i++)
+                if (Variant2[i] == ';')
                 {
                     TheEndOf1 = i;
                     break;
                 }
 
-            for (int i=TheEndOf1+1; i<Var1.Length; i++)
-                if (Var1[i] == ';')
+            for (int i = TheEndOf1 + 1; i < Variant2.Length; i++)
+                if (Variant2[i] == ';')
                 {
                     TheEndOf2 = i;
                     break;
                 }
 
-            
-        }
-
-        private void SecondVariant_Click(object sender, RoutedEventArgs e)
-        {
-            _variant = 2;
-
-            TaskDescription.Visibility = Visibility.Hidden;
-
-            RadioButtonPart1.Visibility = Visibility.Visible;
-            RadioButtonPart2.Visibility = Visibility.Visible;
-            RadioButtonPart3.Visibility = Visibility.Visible;
-
-
+            if (_checkedPart == 1)
+                Variant2Part1();
+            if (_checkedPart == 2)
+                Variant2Part2();
+            if (_checkedPart == 3)
+                Variant2Part3();
         }
 
         private void ThirdVariant_Click(object sender, RoutedEventArgs e)
         {
             _variant = 3;
+            TextBlockTask.Text = "";
 
             TaskDescription.Visibility = Visibility.Hidden;
 
@@ -113,49 +146,77 @@ namespace GetReady.PartsOfExam
             RadioButtonPart2.Visibility = Visibility.Visible;
             RadioButtonPart3.Visibility = Visibility.Visible;
 
-        }
+            if (_checkedPart == 0)
+            {
+                RadioButtonPart1.IsChecked = true;
+                _checkedPart = 1;
+            }
 
-        private void ButtonPart1_Click(object sender, RoutedEventArgs e)
-        {
+            for (int i = 0; i < Variant3.Length; i++)
+                if (Variant3[i] == ';')
+                {
+                    TheEndOf1 = i;
+                    break;
+                }
 
-        }
+            for (int i = TheEndOf1 + 1; i < Variant3.Length; i++)
+                if (Variant3[i] == ';')
+                {
+                    TheEndOf2 = i;
+                    break;
+                }
 
-        private void ButtonPart2_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonPart3_Click(object sender, RoutedEventArgs e)
-        {
-
+            if (_checkedPart == 1)
+                Variant3Part1();
+            if (_checkedPart == 2)
+                Variant3Part2();
+            if (_checkedPart == 3)
+                Variant3Part3();
         }
 
         private void CheckedPart1(object sender, RoutedEventArgs e)
         {
             _checkedPart = 1;
-
             TextBlockTask.Text = "";
-            for (int i = 0; i < TheEndOf1; i++)
-                TextBlockTask.Text += Var1[i];
+
+            if (_variant == 1)
+                Variant1Part1();
+
+            if (_variant == 2)
+                Variant2Part1();
+
+            if (_variant == 3)
+                Variant3Part1();
         }
 
         private void CheckedPart2(object sender, RoutedEventArgs e)
         {
             _checkedPart = 2;
-
             TextBlockTask.Text = "";
-            for (int i = TheEndOf1+1; i < TheEndOf2; i++)
-                TextBlockTask.Text += Var1[i];
 
+            if (_variant == 1)
+                Variant1Part2();
+
+            if (_variant == 2)
+                Variant2Part2();
+
+            if (_variant == 3)
+                Variant3Part2();
         }
 
         private void CheckedPart3(object sender, RoutedEventArgs e)
         {
             _checkedPart = 3;
-
             TextBlockTask.Text = "";
-            for (int i = TheEndOf2 + 1; i < Var1.Length; i++)
-                TextBlockTask.Text += Var1[i];
+
+            if (_variant == 1)
+                Variant1Part3();
+
+            if (_variant == 2)
+                Variant2Part3();
+
+            if (_variant == 3)
+                Variant3Part3();
         }
 
         private void MouseEnter(object sender, MouseEventArgs e)
@@ -174,6 +235,60 @@ namespace GetReady.PartsOfExam
             RadioButtonPart2.Visibility = Visibility.Visible;
             RadioButtonPart3.Visibility = Visibility.Visible;
             TaskDescription.Visibility = Visibility.Hidden;
+        }
+
+        private void Variant1Part1()
+        {
+            for (int i = 0; i < TheEndOf1; i++)
+                TextBlockTask.Text += Variant1[i];
+        }
+
+        private void Variant1Part2()
+        {
+            for (int i = TheEndOf1 + 1; i < TheEndOf2; i++)
+                TextBlockTask.Text += Variant1[i]; 
+        }
+
+        private void Variant1Part3()
+        {
+            for (int i = TheEndOf2 + 1; i < Variant1.Length; i++)
+                TextBlockTask.Text += Variant1[i];
+        }
+
+        private void Variant2Part1()
+        {
+            for (int i = 0; i < TheEndOf1; i++)
+                TextBlockTask.Text += Variant2[i];
+        }
+
+        private void Variant2Part2()
+        {
+            for (int i = TheEndOf1 + 1; i < TheEndOf2; i++)
+                TextBlockTask.Text += Variant2[i];
+        }
+
+        private void Variant2Part3()
+        {
+            for (int i = TheEndOf2 + 1; i < Variant2.Length; i++)
+                TextBlockTask.Text += Variant2[i];
+        }
+
+        private void Variant3Part1()
+        {
+            for (int i = 0; i < TheEndOf1; i++)
+                TextBlockTask.Text += Variant3[i];
+        }
+
+        private void Variant3Part2()
+        {
+            for (int i = TheEndOf1 + 1; i < TheEndOf2; i++)
+                TextBlockTask.Text += Variant3[i];
+        }
+
+        private void Variant3Part3()
+        {
+            for (int i = TheEndOf2 + 1; i < Variant3.Length; i++)
+                TextBlockTask.Text += Variant3[i];
         }
     }
 }

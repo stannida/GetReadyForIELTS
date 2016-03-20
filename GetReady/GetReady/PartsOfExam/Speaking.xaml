@@ -30,8 +30,8 @@
             </Button.Clip>
         </Button>
         <Label x:Name="label" Content="Speaking" HorizontalAlignment="Center" Margin="288,34,287,0" VerticalAlignment="Top" Width="216" FontFamily="Aharoni" FontSize="32" Foreground="White" Height="42" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="TaskDescription" Height="300" Margin="68,203,68,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" TextAlignment="Justify" FontFamily="Levenim MT" FontSize="18" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
-        <TextBlock x:Name="TextBlockTask" HorizontalAlignment="Left" Margin="148,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="300" Width="575" FontFamily="Levenim MT" FontSize="18" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
+        <TextBlock x:Name="TaskDescription" Height="300" Margin="68,203,51,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" TextAlignment="Justify" FontFamily="Levenim MT" FontSize="18" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
+        <TextBlock x:Name="TextBlockTask" HorizontalAlignment="Left" Margin="148,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="300" Width="592" FontFamily="Levenim MT" FontSize="18" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
         <RadioButton x:Name="RadioButtonPart1" FontFamily="Levenim MT" FontWeight="Bold" Content="Part 1" HorizontalAlignment="Left" Margin="37,253,0,0" VerticalAlignment="Top" Background="#FFFCFDAC" FontSize="22" RenderTransformOrigin="0.5,0.5" Checked="CheckedPart1"/>
         <RadioButton x:Name="RadioButtonPart2" Content="Part 2" FontFamily="Levenim MT" FontWeight="Bold" HorizontalAlignment="Left" Margin="37,313,0,0" VerticalAlignment="Top" Background="#FFFCFDAC" FontSize="22" Checked="CheckedPart2"/>
         <RadioButton x:Name="RadioButtonPart3" Content="Part 3" FontFamily="Levenim MT" FontWeight="Bold" HorizontalAlignment="Left" Margin="37,375,0,0" VerticalAlignment="Top" Background="#FFFCFDAC" FontSize="22" Checked="CheckedPart3"/>
