@@ -10,6 +10,7 @@
         <Rectangle Fill="#FF2DB458" HorizontalAlignment="Center" Height="70" Stroke="#00000000" VerticalAlignment="Top" Width="602" IsHitTestVisible="False" Margin="-7,-1,0,0" Grid.ColumnSpan="2"/>
         <Label x:Name="label" Content="My answers" Margin="175,12,173,0" VerticalAlignment="Top" FontFamily="Aharoni" FontSize="32" Foreground="White" Height="42" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
         <Image x:Name="Image_Variant1" Margin="26,74,143,25.5" Source="/GetReady;component/Listening_Var1_1.png" Stretch="Uniform" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="textBoxAnswers" Grid.Column="1" HorizontalAlignment="Left" Height="91" Margin="185,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
 
     </Grid>
 </Window>

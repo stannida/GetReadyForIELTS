@@ -22,7 +22,6 @@ namespace GetReady
         public ListeningAnswerBox()
         {
             InitializeComponent();
-
         }
     }
 }
