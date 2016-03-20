@@ -275,8 +275,8 @@ namespace GetReady.PartsOfExam
         private void GoTask2_Click(object sender, RoutedEventArgs e)
         {
             WritingTask2 WritingTask2 = new WritingTask2();
-            WritingTask2.Show();
             this.Close();
+            WritingTask2.Show();
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)

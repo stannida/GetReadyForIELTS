@@ -36,11 +36,9 @@
         </Button>
         <TextBlock x:Name="_task" HorizontalAlignment="Center" Margin="128,205,124,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="346" Width="697" FontFamily="Levenim MT" FontSize="13.333" TextAlignment="Justify" Padding="4,0"/>
         <TextBlock x:Name="var1Task" HorizontalAlignment="Center" Height="173" Margin="122,205,115,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="654" Grid.ColumnSpan="2" TextAlignment="Justify" FontFamily="Levenim MT" FontSize="16" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
-
-        
         <Button x:Name="next" Content="I want to try" Grid.Column="1" HorizontalAlignment="Center" Height="35" Margin="242,563,100,0" VerticalAlignment="Top" Width="122" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Padding="1" Click="next_Click" Visibility="Hidden"/>
         <TextBox x:Name="UserText" HorizontalAlignment="Center" Height="362" Margin="110,196,104,0" TextWrapping="Wrap" Text="Here you can write your essay. The file will be automatically created on your computer and named 'Writing_Task2_Var1'. You can click on the button '1' to see the task again." VerticalAlignment="Top" Width="694" Grid.ColumnSpan="2" FontFamily="Levenim MT" Padding="2,0" Visibility="Hidden" GotFocus="UserText_GotFocus" TextChanged="UserText_TextChanged"/>
-        <TextBlock x:Name="counter" HorizontalAlignment="Center" Text ="Number of words" Margin="276,581,45,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="17" Width="156" FontFamily="Levenim MT" Visibility="Hidden"/>
+        
         <Button 
             x:Name="Help"
             HorizontalAlignment="Center" 
@@ -51,6 +49,6 @@
             </StackPanel>
         </Button>
         <Button x:Name="GoBack" Content="Go to the start page" HorizontalAlignment="Center" Margin="110,563,214,0" VerticalAlignment="Top" Width="146" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000" Click="GoBack_Click"/>
-
+        
     </Grid>
 </Window>
