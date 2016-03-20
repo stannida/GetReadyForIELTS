@@ -33,7 +33,7 @@ namespace GetReady.PartsOfExam
         }
 
 
-        private TextBox[] createAnswerBoxes(int NumQuest)
+        public TextBox[] createAnswerBoxes(int NumQuest)
         {
             TextBox[] answerBoxes = new TextBox[NumQuest];
             try

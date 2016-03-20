@@ -6,19 +6,25 @@
         xmlns:local="clr-namespace:GetReady"
         mc:Ignorable="d"
         Title="MainWindow" Height="646.154" Width="795.727" WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,0,-21,-3">
-        <Rectangle Fill="#FF2DB458" HorizontalAlignment="Center" Height="97" Stroke="#00000000" VerticalAlignment="Top" Width="796" IsHitTestVisible="False" Margin="-3,0,16,0"/>
-        <Label x:Name="label" Content="Get Ready for IELTS" HorizontalAlignment="Center" Margin="241,42,241,0" VerticalAlignment="Top" Width="304" FontFamily="Aharoni" FontSize="32" Foreground="White"/>
-        <Button x:Name="SignUp" Content="Sign Up" HorizontalAlignment="Center" Height="63" Margin="274,167,275,0" VerticalAlignment="Top" Width="247" Click="SignUp_Click" FontSize="24" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2"/>
-        <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Center" Height="63" Margin="274,263,275,0" VerticalAlignment="Top" Width="248" Click="SignIn_Click" FontSize="24" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2"/>
-        <Button x:Name="Rules" Content="What is it about?" HorizontalAlignment="Center" Height="53" Margin="269,482,270,0" VerticalAlignment="Center" Width="247" BorderBrush="White" Background="White" FontSize="24"/>
-        <TextBlock x:Name="name" HorizontalAlignment="Center" Margin="145,223,468,0" TextWrapping="Wrap" Text="Enter username" VerticalAlignment="Top" Height="30" Width="175" FontFamily="Levenim MT" FontSize="21.333" Visibility="Hidden"/>
-        <TextBlock x:Name="password" HorizontalAlignment="Center" Margin="145,271,468,0" TextWrapping="Wrap" Text="Enter password" VerticalAlignment="Top" Height="30" Width="175" FontFamily="Levenim MT" FontSize="21.333" Visibility="Hidden"/>
-        <TextBox x:Name="CheckUsername" HorizontalAlignment="Center" Height="30" Margin="405,223,144,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" FontSize="16" FontFamily="Levenim MT" Visibility="Hidden"/>
-        <PasswordBox x:Name="CheckPassword" HorizontalAlignment="Center" Margin="405,271,144,0" VerticalAlignment="Top" Width="238" Height="30" Visibility="Hidden"/>
-        <Button x:Name="LetsStart" Grid.ColumnSpan="2" Content="Let's start!" HorizontalAlignment="Center" Height="66" Margin="239,388,235,0" VerticalAlignment="Top" Width="314" FontFamily="Levenim MT" FontSize="29.333" Background="#FFB2F0C5" BorderThickness="2" Visibility="Hidden"/>
-        <TextBox x:Name="New_username" HorizontalAlignment="Center" Height="28" Margin="303,199,300,0" TextWrapping="Wrap" Text="Pick a username" VerticalAlignment="Top" Width="185" FontSize="16" FontFamily="Levenim MT" Grid.ColumnSpan="2" GotFocus="GotFocusUsername" LostFocus="LostFocusUsername" Visibility="Hidden"/>
-        <TextBox x:Name="New_password" HorizontalAlignment="Center" Height="28" Margin="303,244,300,0" TextWrapping="Wrap" Text="Choose a password" VerticalAlignment="Top" Width="185" Grid.ColumnSpan="2" FontSize="16" FontFamily="Levenim MT" GotFocus="GotFocusPassword" LostFocus="LostFocusPassword" Visibility="Hidden"/>
+    <Grid Margin="-21,0,-39,-3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="405*"/>
+            <ColumnDefinition Width="404*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FF2DB458" HorizontalAlignment="Center" Height="97" Stroke="#00000000" VerticalAlignment="Top" Width="796" IsHitTestVisible="False" Margin="-3,0,16,0" Grid.ColumnSpan="2"/>
+        <Label x:Name="label" Content="Get Ready for IELTS" HorizontalAlignment="Center" Margin="252,42,253,0" VerticalAlignment="Top" Width="304" FontFamily="Aharoni" FontSize="32" Foreground="White" Grid.ColumnSpan="2" Height="42"/>
+        <Button x:Name="SignUp" Content="Sign Up" HorizontalAlignment="Center" Height="63" Margin="280,167,281,0" VerticalAlignment="Top" Width="248" Click="SignUp_Click" FontSize="24" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="SignIn" Content="Sign In" HorizontalAlignment="Center" Height="63" Margin="280,263,281,0" VerticalAlignment="Top" Width="248" Click="SignIn_Click" FontSize="24" FontFamily="Levenim MT" Background="#FFB2F0C5" BorderBrush="#FF020000" BorderThickness="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="Rules" Content="What is it about?" HorizontalAlignment="Center" Height="52" Margin="280,524,281,42" VerticalAlignment="Center" Width="248" BorderBrush="White" Background="White" FontSize="24" Click="Rules_Click" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="name" HorizontalAlignment="Center" Margin="154,223,77,0" TextWrapping="Wrap" Text="Enter username" VerticalAlignment="Top" Height="30" Width="174" FontFamily="Levenim MT" FontSize="21.333" Visibility="Hidden"/>
+        <TextBlock x:Name="password" HorizontalAlignment="Center" Margin="154,271,77,0" TextWrapping="Wrap" Text="Enter password" VerticalAlignment="Top" Height="30" Width="174" FontFamily="Levenim MT" FontSize="21.333" Visibility="Hidden"/>
+        <TextBox x:Name="CheckUsername" HorizontalAlignment="Center" Height="30" Margin="9,223,157,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" FontSize="16" FontFamily="Levenim MT" Visibility="Hidden" Grid.Column="1"/>
+        <PasswordBox x:Name="CheckPassword" HorizontalAlignment="Center" Margin="9,271,157,0" VerticalAlignment="Top" Width="238" Height="30" Visibility="Hidden" Grid.Column="1"/>
+        <Button x:Name="LetsStart" Grid.ColumnSpan="2" Content="Let's start!" HorizontalAlignment="Center" Height="66" Margin="250,388,245,0" VerticalAlignment="Top" Width="314" FontFamily="Levenim MT" FontSize="29.333" Background="#FFB2F0C5" BorderThickness="2" Visibility="Hidden"/>
+        <TextBox x:Name="New_username" HorizontalAlignment="Center" Height="28" Margin="314,199,311,0" TextWrapping="Wrap" Text="Pick a username" VerticalAlignment="Top" Width="184" FontSize="16" FontFamily="Levenim MT" Grid.ColumnSpan="2" GotFocus="GotFocusUsername" LostFocus="LostFocusUsername" Visibility="Hidden"/>
+        <TextBox x:Name="New_password" HorizontalAlignment="Center" Height="28" Margin="314,244,311,0" TextWrapping="Wrap" Text="Choose a password" VerticalAlignment="Top" Width="184" Grid.ColumnSpan="2" FontSize="16" FontFamily="Levenim MT" GotFocus="GotFocusPassword" LostFocus="LostFocusPassword" Visibility="Hidden"/>
+        <Button x:Name="change" Content="Already have an account?" HorizontalAlignment="Center" Height="24" Margin="311,480,310,114" VerticalAlignment="Center" Width="188" BorderBrush="White" Background="White" FontSize="16" Grid.ColumnSpan="2" Click="change_Click" Visibility="Hidden"/>
+
 
     </Grid>
 </Window>

@@ -25,11 +25,7 @@ namespace GetReady
             InitializeComponent();
         }
 
-
-
-
-
-        private void SignIn_Click(object sender, RoutedEventArgs e)
+        private void SigningIn()
         {
             SignIn.Visibility = Visibility.Hidden;
             SignUp.Visibility = Visibility.Hidden;
@@ -40,9 +36,24 @@ namespace GetReady
             LetsStart.Visibility = Visibility.Visible;
             LetsStart.Click -= LetsStart_Click1;
             LetsStart.Click += LetsStart_Click;
+            change.Content = "Don't have an account?";
+            change.Visibility = Visibility.Visible;
+            change.Click -= change_Click;
+            change.Click += change_Click1;
+        }
+
+
+
+        private void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            SigningIn();
         }
 
         private void SignUp_Click(object sender, RoutedEventArgs e)
+        {
+            SigningUp();
+        }
+        private void SigningUp()
         {
             SignIn.Visibility = Visibility.Hidden;
             SignUp.Visibility = Visibility.Hidden;
@@ -51,6 +62,10 @@ namespace GetReady
             LetsStart.Visibility = Visibility.Visible;
             LetsStart.Click -= LetsStart_Click;
             LetsStart.Click += LetsStart_Click1;
+            change.Content = "Already have an account?";
+            change.Visibility = Visibility.Visible;
+            change.Click += change_Click;
+            change.Click -= change_Click1;
         }
 
         private void LetsStart_Click1(object sender, RoutedEventArgs e)
@@ -102,6 +117,28 @@ namespace GetReady
             if (New_password.Text == "")
                 New_password.Text = "Choose a password";
         }
+
+        private void Rules_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("This application will assist you on your way of preparing to IELTS exam. You need to register as your progress will be saved only if you have an account. Once you did this, you will see the start page with four main sections of IELTS exam: Listening, Reading, Writing and Speaking. Each section contains main rules and 3 variants to practice your skills. Writing section saves everything you write there on your computer, named 'Writing_Task#_Var#'. For Reading and Listening tasks you get scores which will be saved in your account. Good luck!");
+        }
+
+        private void change_Click(object sender, RoutedEventArgs e)
+        {
+            New_password.Visibility = Visibility.Hidden;
+            New_username.Visibility = Visibility.Hidden;
+            SigningIn();
+        }
+        private void change_Click1(object sender, RoutedEventArgs e)
+        {
+            CheckPassword.Visibility = Visibility.Hidden;
+            CheckUsername.Visibility = Visibility.Hidden;
+            name.Visibility = Visibility.Hidden;
+            password.Visibility = Visibility.Hidden;
+            SigningUp();
+        }
+
+
         //    UsersEntities db = new UsersEntities();
 
         //    db.UserTable.Add(new UserTable

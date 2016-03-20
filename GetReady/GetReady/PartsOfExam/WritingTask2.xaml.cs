@@ -24,7 +24,6 @@ namespace GetReady.PartsOfExam
         {
             InitializeComponent();
             UserText.Visibility = Visibility.Hidden;
-            counter.Visibility = Visibility.Hidden;
             _task.Visibility = Visibility.Visible;
             GettingData();
         }
@@ -98,17 +97,9 @@ namespace GetReady.PartsOfExam
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show("File with writing rask not found");
+                MessageBox.Show("File with writing task not found");
             }
-            if (UserText.Text != "")
-            {
-                char[] delimiters = new char[] { ' ', ',', '.', '\n' };
-                string count = UserText.Text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length.ToString();
-                counter.Visibility = Visibility.Visible;
-                counter.Text = "Number of words: " + count;
-            }
-            else
-                counter.Visibility = Visibility.Hidden;
+            
         }
 
         private void UserText_GotFocus(object sender, RoutedEventArgs e)
@@ -164,15 +155,7 @@ namespace GetReady.PartsOfExam
             {
                 MessageBox.Show("File with writing task not found");
             }
-            if (UserText.Text != "")
-            {
-                char[] delimiters = new char[] { ' ', ',', '.', '\n' };
-                string count = UserText.Text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length.ToString();
-                counter.Visibility = Visibility.Visible;
-                counter.Text = "Number of words: " + count;
-            }
-            else
-                counter.Visibility = Visibility.Hidden;
+            
         }
 
 
@@ -224,15 +207,7 @@ namespace GetReady.PartsOfExam
             {
                 MessageBox.Show("File with writing task not found");
             }
-            if (UserText.Text != "")
-            {
-                char[] delimiters = new char[] { ' ', ',', '.', '\n' };
-                string count = UserText.Text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length.ToString();
-                counter.Visibility = Visibility.Visible;
-                counter.Text = "Number of words: " + count;
-            }
-            else
-                counter.Visibility = Visibility.Hidden;
+            
         }
 
 
