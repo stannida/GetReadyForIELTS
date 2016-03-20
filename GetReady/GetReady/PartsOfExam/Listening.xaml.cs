@@ -24,7 +24,22 @@ namespace GetReady.PartsOfExam
             InitializeComponent();
         }
 
+        private void ListeningLoad()
+        {
+            
+        }
+
         private void FirstVariant_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SecondVariant_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ThirdVariant_Click(object sender, RoutedEventArgs e)
         {
 
         }

@@ -7,16 +7,30 @@
         mc:Ignorable="d"
         Title="Listening" Height="646.154" Width="795.727" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="FirstVariant" Content="1" HorizontalAlignment="Center" Margin="191.25,127,538.25,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" Click="FirstVariant_Click" FontFamily="Levenim MT" FontWeight="Bold">
-            <Button.Clip>
-                <RectangleGeometry RadiusX="30" 
-    				RadiusY="30" 
-    				Rect="4,4,50,50"/>
-            </Button.Clip>
-        </Button>
         <Rectangle Fill="#FF2DB458" HorizontalAlignment="Center" Height="97" Stroke="#00000000" VerticalAlignment="Top" Width="800" IsHitTestVisible="False" Margin="-7,0,-2.5,0"/>
         <Label x:Name="label" Content="Listening" Margin="255.25,42,231.25,0" VerticalAlignment="Top" Width="304" FontFamily="Aharoni" FontSize="32" Foreground="White" Height="42" HorizontalContentAlignment="Center"/>
-        <Label Content="Questions 1-10" HorizontalAlignment="Left" Margin="77,224,0,0" VerticalAlignment="Top" Height="32" Width="187"/>
+        <Button x:Name="SecondVariant" Content="2" HorizontalAlignment="Center" Margin="367,127,363.5,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Click="SecondVariant_Click">
+            <Button.Clip>
+                <RectangleGeometry RadiusX="30" 
+        			RadiusY="30" 
+        			Rect="4,4,50,50"/>
+            </Button.Clip>
+        </Button>
+        <Button x:Name="ThirdVariant" Content="3" Margin="580,127,150.5,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Click="ThirdVariant_Click">
+            <Button.Clip>
+                <RectangleGeometry RadiusX="30" 
+        			RadiusY="30" 
+        			Rect="4,4,50,50"/>
+            </Button.Clip>
+        </Button>
+        <Button x:Name="FirstVariant" Content="1" Margin="148,127,580.5,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="#FF020000" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Click="FirstVariant_Click">
+            <Button.Clip>
+                <RectangleGeometry RadiusX="30" 
+        			RadiusY="30" 
+        			Rect="4,4,50,50"/>
+            </Button.Clip>
+        </Button>
+        <TextBlock x:Name="TaskDescription" Height="300" Margin="68,203,50.5,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Justify" FontFamily="Levenim MT" FontSize="18" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
 
     </Grid>
 </Window>

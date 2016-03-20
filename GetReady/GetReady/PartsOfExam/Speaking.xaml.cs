@@ -43,7 +43,7 @@ namespace GetReady.PartsOfExam
 
         private void SpeakingLoad()
         {
-            using (StreamReader sr = new StreamReader("../../../taskSpeaking.txt"))
+            using (StreamReader sr = new StreamReader("../../../Speaking/taskSpeaking.txt"))
                 TaskDescription.Text = sr.ReadToEnd();
             
             RadioButtonPart1.Visibility = Visibility.Hidden;
@@ -57,13 +57,13 @@ namespace GetReady.PartsOfExam
             ButtonPause.Visibility = Visibility.Hidden;
             ButtonStop.Visibility = Visibility.Hidden;
 
-            using (StreamReader sr1 = new StreamReader("../../../Speaking_Var1.txt"))
+            using (StreamReader sr1 = new StreamReader("../../../Speaking/Speaking_Var1.txt"))
                 Variant1 = sr1.ReadToEnd();
 
-            using (StreamReader sr2 = new StreamReader("../../../Speaking_Var2.txt"))
+            using (StreamReader sr2 = new StreamReader("../../../Speaking/Speaking_Var2.txt"))
                 Variant2 = sr2.ReadToEnd();
 
-            using (StreamReader sr3 = new StreamReader("../../../Speaking_Var3.txt"))
+            using (StreamReader sr3 = new StreamReader("../../../Speaking/Speaking_Var3.txt"))
                 Variant3 = sr3.ReadToEnd();
         }
 

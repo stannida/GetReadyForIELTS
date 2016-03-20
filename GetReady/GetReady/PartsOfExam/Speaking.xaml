@@ -39,18 +39,18 @@
         <Label x:Name="LabelTime" HorizontalAlignment="Left" Margin="148,513,0,0" VerticalAlignment="Top" Width="237" FontSize="18" Height="30" FontFamily="Levenim MT"/>
         <Button x:Name="ButtonTime" HorizontalAlignment="Left" Margin="37,513,0,0" VerticalAlignment="Top" Width="80" Height="59" BorderBrush="White" Click="ButtonTime_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/GetReady;component/timer.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="SpeakingFiles/Timer.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <ProgressBar x:Name="ProgressBarTime" HorizontalAlignment="Left" Height="13" Margin="148,559,0,0" VerticalAlignment="Top" Width="504" Grid.ColumnSpan="2" Background="#FFB2F0C5"/>
         <Button x:Name="ButtonPause" Grid.Column="1" HorizontalAlignment="Left" Margin="262,548,0,0" VerticalAlignment="Top" Width="35" Height="35" BorderBrush="White" Click="ButtonPause_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Pause.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="SpeakingFiles/Pause.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Button x:Name="ButtonStop" Grid.Column="1" HorizontalAlignment="Left" Margin="297,548,0,0" VerticalAlignment="Top" Width="35" Height="35" BorderBrush="White" RenderTransformOrigin="0.375,-2.018" Click="ButtonStop_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Stop.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="SpeakingFiles/Stop.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
 
