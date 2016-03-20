@@ -46,9 +46,9 @@ namespace GetReady.PartsOfExam
                 string Name = "AnswerNum" + i.ToString();
                 answerBoxes[i].Name = Name;
                 if(i==0)
-                    answerBoxes[0].Margin = new Thickness(20, 60, 20, 0);
+                    answerBoxes[0].Margin = new Thickness(20, 60, 3, 0);
                 else
-                    answerBoxes[i].Margin = new Thickness(20, 20, 20, 0);
+                    answerBoxes[i].Margin = new Thickness(20, 20, 3, 0);
                 answerBoxes[i].Visibility = Visibility.Visible;
                 this.SP.Children.Add(answerBoxes[i]);
                 if ((answerBoxes[i].IsFocused == true) && (answerBoxes[i].Text == i.ToString()))

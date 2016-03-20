@@ -37,12 +37,12 @@
             </Button.Clip>
         </Button>
         <TextBlock x:Name="_task" HorizontalAlignment="Center" Margin="51,205,47,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="346" Width="698" FontFamily="Levenim MT" FontSize="16" TextAlignment="Justify" Padding="4,2"/>
-        <TextBlock x:Name="VarTask" HorizontalAlignment="Center" Margin="51,205,47,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="346" Width="698" FontFamily="Levenim MT" TextAlignment="Justify" Padding="4,2" FontSize="13.333"/>
+        <TextBlock x:Name="VarTask" HorizontalAlignment="Center" Margin="51,201,47,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="350" Width="698" FontFamily="Levenim MT" TextAlignment="Justify" Padding="4,2"/>
 
         <Button 
             x:Name="Help"
             HorizontalAlignment="Center" 
-            VerticalAlignment="Center" Grid.Column="1" Margin="244,22,86,527" Height="66" Width="66" Background="#FF2DB458" MouseEnter="Help_MouseEnter" >
+            VerticalAlignment="Center" Grid.Column="1" Margin="246,24,86,528" Height="66" Width="66" Background="#FF2DB458" MouseEnter="Help_MouseEnter" >
             <StackPanel Orientation="Horizontal" Height="56" Width="56">
                 <ContentControl Width="50" Margin="1,1,1,1" Content="{StaticResource IconConfused}"  />
 

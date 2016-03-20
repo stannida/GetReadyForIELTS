@@ -20,15 +20,15 @@ namespace GetReady.PartsOfExam
     /// </summary>
     public partial class ReadingPassage : Window
     {
-        public ReadingPassage()
+        public ReadingPassage(int VarNum)
         {
             InitializeComponent();
-            OpeningData();
+            OpeningData(VarNum);
         }
 
-        private async void OpeningData()
+        private async void OpeningData(int VarNum)
         {
-            using (StreamReader sr = new StreamReader("../../../Reading/TextPassage1_1.txt"))
+            using (StreamReader sr = new StreamReader("../../../Reading/TextPassage" + VarNum + ".txt"))
             {
                 headline.Text = sr.ReadLine();
                 string line = await sr.ReadToEndAsync();
