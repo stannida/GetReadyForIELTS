@@ -205,7 +205,12 @@
     <Resource Include="PartsOfExam\SpeakingFiles\Stop.png" />
     <Resource Include="PartsOfExam\SpeakingFiles\Pause.png" />
     <Resource Include="PartsOfExam\ListeningFiles\Listening_Var1_1.png" />
-    <Resource Include="Listening_Var1_1.png" />
+    <Resource Include="PartsOfExam\ListeningFiles\Listening_Var1_2.png" />
+    <Resource Include="PartsOfExam\ListeningFiles\Listening_Var1_3.jpg" />
+    <Resource Include="PartsOfExam\ListeningFiles\Listening_Var1_4.jpg" />
+    <Resource Include="PartsOfExam\ListeningFiles\Listening_Var1_5.jpg" />
+    <Resource Include="PartsOfExam\ListeningFiles\Listening_Var1_6.jpg" />
+    <Resource Include="PartsOfExam\ListeningFiles\Listening_Var1_7.jpg" />
     <Content Include="Usersdb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Usersdb.edmx</DependentUpon>

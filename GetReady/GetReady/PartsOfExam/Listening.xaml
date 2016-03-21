@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Listening" Height="646.154" Width="795.727" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Rectangle Fill="#FF2DB458" HorizontalAlignment="Center" Height="97" Stroke="#00000000" VerticalAlignment="Top" Width="800" IsHitTestVisible="False" Margin="-7,-1,-2.5,0"/>
+        <Rectangle Fill="#FF2DB458" Stroke="#00000000" IsHitTestVisible="False" Margin="-7,-1,-2.5,0" Height="97" VerticalAlignment="Top" HorizontalAlignment="Left" Width="800"/>
         <Label x:Name="label" Content="Listening" Margin="255.25,42,231.25,0" VerticalAlignment="Top" Width="304" FontFamily="Aharoni" FontSize="32" Foreground="White" Height="42" HorizontalContentAlignment="Center"/>
         <Button x:Name="SecondVariant" Content="2" HorizontalAlignment="Center" Margin="367,127,363.5,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.5,0.5" Height="57" Background="#FFB2F0C5" BorderBrush="White" FontSize="24" FontFamily="Levenim MT" FontWeight="Bold" Click="SecondVariant_Click">
             <Button.Clip>
@@ -31,11 +31,16 @@
         			Rect="4,4,50,50"/>
             </Button.Clip>
         </Button>
-        <TextBlock x:Name="textBlockQuestions" HorizontalAlignment="Left" Margin="255,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="470" FontFamily="Levenim MT" FontSize="21" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
-        <ComboBox x:Name="comboBoxSections" HorizontalAlignment="Left" Margin="43,221,0,0" VerticalAlignment="Top" Width="146" Height="32" FontSize="21" FontFamily="Levenim MT" SelectionChanged="SelectionChanged"/>
-        <Button x:Name="GoBack" Content="Go to the start page" HorizontalAlignment="Center" Margin="37,546,595.5,0" VerticalAlignment="Top" Width="146" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000" Click="GoBack_Click"/>
+        <TextBlock x:Name="textBlockQuestions" HorizontalAlignment="Left" Margin="227,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="506" FontFamily="Levenim MT" FontSize="21" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="3,0"/>
+        <ComboBox x:Name="comboBoxSections" HorizontalAlignment="Left" Margin="43,209,0,0" VerticalAlignment="Top" Width="146" Height="32" FontSize="21" FontFamily="Levenim MT" SelectionChanged="SelectionChanged"/>
+        <Button x:Name="GoBack" Content="Go to the start page" HorizontalAlignment="Center" Margin="30,555,580.5,0" VerticalAlignment="Top" Width="146" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000" Click="GoBack_Click"/>
         <Button x:Name="buttonAnswer" Content="Answer" HorizontalAlignment="Center" Margin="587,546,57.5,0" VerticalAlignment="Top" Width="146" FontFamily="Levenim MT" Background="#FFB2F0C5" Height="35" BorderThickness="2" Padding="1" BorderBrush="#FF020000" Click="buttonAnswer_Click"/>
-        <TextBlock x:Name="textBlockTask" HorizontalAlignment="Left" Margin="255,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="238" Width="478" FontFamily="Levenim MT" FontSize="16"/>
-
+        <TextBlock x:Name="textBlockTask" HorizontalAlignment="Left" Margin="227,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="275" Width="506" FontFamily="Levenim MT" FontSize="16"/>
+        <Button x:Name="buttonNext"  Grid.Column="1" HorizontalAlignment="Center" Margin="166,556,115,0" VerticalAlignment="Top" Width="34" Height="35" Background="#FFB2F0C5" BorderThickness="2" BorderBrush="#FF020000" Click="buttonNext_Click">
+            <ContentControl Width="30" Content="{StaticResource ArrowNext}"  />
+        </Button>
+        <Button x:Name="buttonPrev"  Grid.Column="1" HorizontalAlignment="Center" Margin="100,556,158,0" VerticalAlignment="Top" Width="34" Height="35" Background="#FFB2F0C5" BorderThickness="2" BorderBrush="#FF020000" Click="buttonPrev_Click">
+            <ContentControl Width="30" Content="{StaticResource ArrowPrev}"  />
+        </Button>
     </Grid>
 </Window>

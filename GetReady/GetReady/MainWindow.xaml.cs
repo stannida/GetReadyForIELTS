@@ -40,9 +40,7 @@ namespace GetReady
             change.Content = "Don't have an account?";
             change.Visibility = Visibility.Visible;
             change.Click -= change_Click;
-            change.Click += change_Click1;
-            
-            
+            change.Click += change_Click1;    
         }
 
 
@@ -72,26 +70,26 @@ namespace GetReady
             
         }
         
-        public string GetHash(string password)
-        {
-            System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
-            string hash = String.Empty; byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(password), 0, Encoding.ASCII.GetByteCount(password));
-            foreach (byte theByte in crypto)
-            { hash += theByte.ToString("x2"); }
-            return hash;
-        }
-    
+        //public string GetHash(string password)
+        //{
+        //    System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
+        //    string hash = String.Empty; byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(password), 0, Encoding.ASCII.GetByteCount(password));
+        //    foreach (byte theByte in crypto)
+        //    { hash += theByte.ToString("x2"); }
+        //    return hash;
+        //}
+
 
         private void LetsStart_Click1(object sender, RoutedEventArgs e)
         {
-            UsersEntities db = new UsersEntities();
+            //UsersEntities db = new UsersEntities();
 
-            db.UserTable.Add(new UserTable
-            {
-                username = New_username.Text,
-                hash = GetHash(New_password.Text)
-            });
-            db.SaveChanges();
+            //db.UserTable.Add(new UserTable
+            //{
+            //    username = New_username.Text,
+            //    hash = GetHash(New_password.Text)
+            //});
+            //db.SaveChanges();
 
             if ((New_username.Text == "") || (New_password.Text == "") || (New_username.Text == "Pick a username") || (New_password.Text == "Choose a password"))
                 MessageBox.Show("Please enter username and password");
@@ -106,12 +104,12 @@ namespace GetReady
 
         private void LetsStart_Click(object sender, RoutedEventArgs e)
         {
-            UsersEntities db = new UsersEntities();
+            //UsersEntities db = new UsersEntities();
 
-            if (db.UserTable.Any(f => f.username == name.Text))
-                MessageBox.Show("Invalid username");
-            else
-            {
+            //if (db.UserTable.Any(f => f.username == name.Text))
+            //    MessageBox.Show("Invalid username");
+            //else
+            //{
                 if ((CheckPassword.Password == "") || (CheckUsername.Text == ""))
                     MessageBox.Show("Please enter username and password");
                 else
@@ -122,7 +120,7 @@ namespace GetReady
                     this.Close();
                     StartPage.Show();
                 }
-            }
+            //}
         }
         private void GotFocusUsername(object sender, RoutedEventArgs e)
         {
