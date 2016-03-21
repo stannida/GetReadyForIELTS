@@ -20,6 +20,7 @@ namespace GetReady
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string USERname;
         public MainWindow()
         {
             InitializeComponent();
@@ -86,21 +87,30 @@ namespace GetReady
         {
             UsersEntities db = new UsersEntities();
 
-            db.UserTable.Add(new UserTable
-            {
-                username = New_username.Text,
-                hash = GetHash(New_password.Text)
-            });
-            db.SaveChanges();
-
+            
+            
             if ((New_username.Text == "") || (New_password.Text == "") || (New_username.Text == "Pick a username") || (New_password.Text == "Choose a password"))
                 MessageBox.Show("Please enter username and password");
             else
             {
-                StartPage Startpage = new StartPage();
-                Startpage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-                this.Close();
-                Startpage.Show();
+                if (db.UserTable.Any(f => f.username == New_username.Text))
+                    MessageBox.Show("Please choose another username");
+                else
+                {
+                    db.UserTable.Add(new UserTable
+                    {
+                        username = New_username.Text,
+                        hash = GetHash(New_password.Text)
+                        
+                    });
+                    
+                    db.SaveChanges();
+                    
+                    StartPage Startpage = new StartPage();
+                    Startpage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                    this.Close();
+                    Startpage.Show();
+                }
             }
         }
 
@@ -108,19 +118,33 @@ namespace GetReady
         {
             UsersEntities db = new UsersEntities();
 
-            if (db.UserTable.Any(f => f.username == name.Text))
+
+            if (!db.UserTable.Any(f => f.username == CheckUsername.Text))
                 MessageBox.Show("Invalid username");
             else
             {
-                if ((CheckPassword.Password == "") || (CheckUsername.Text == ""))
-                    MessageBox.Show("Please enter username and password");
+                var query =
+                from User in db.UserTable
+                where User.username == CheckUsername.Text
+                select User.hash;
+                List<string> Password = new List<string>();
+                Password = query.Select(a => a).ToList();
+
+                if (Password[0] == GetHash(CheckPassword.Password))
+                    MessageBox.Show("Invalid username or password");
+
                 else
                 {
-
-                    StartPage StartPage = new StartPage();
-                    StartPage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-                    this.Close();
-                    StartPage.Show();
+                    if ((CheckPassword.Password == "") || (CheckUsername.Text == ""))
+                        MessageBox.Show("Please enter username and password");
+                    else
+                    {
+                        
+                        StartPage StartPage = new StartPage();
+                        StartPage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                        this.Close();
+                        StartPage.Show();
+                    }
                 }
             }
         }
