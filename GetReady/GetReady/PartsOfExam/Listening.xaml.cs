@@ -52,13 +52,15 @@ namespace GetReady.PartsOfExam
             }
 
             textBlockQuestions.Visibility = Visibility.Hidden;
-
             comboBoxSections.Visibility = Visibility.Hidden;
             for (int i = 1; i < 5; i++)
                 comboBoxSections.Items.Add("Section " + i);
             comboBoxSections.SelectedIndex = 0;
 
             textBlockTask.Visibility = Visibility.Hidden;
+            buttonPrev.Visibility = Visibility.Hidden;
+            buttonNext.Visibility = Visibility.Hidden;
+            buttonAnswer.Visibility = Visibility.Hidden;
 
             //SoundPlayer player = new SoundPlayer();
             //player.SoundLocation = "../../../Listening/Listening_Var1.wav";
@@ -91,7 +93,7 @@ namespace GetReady.PartsOfExam
 
             if (section == 1)
                 for (int i = 0; i < TheEndOf1; i++)
-                {
+                {       
                     textBlockTask.Text += variant1[i];
                 }
 
@@ -129,11 +131,7 @@ namespace GetReady.PartsOfExam
             
             variant = 1;
 
-            comboBoxSections.Visibility = Visibility.Visible;
-            taskDescription.Visibility = Visibility.Hidden;
-            textBlockQuestions.Visibility = Visibility.Visible;
-
-            textBlockTask.Visibility = Visibility.Visible;
+            ChangeInterface();
 
             FirstVariant.IsEnabled = false;
             SecondVariant.IsEnabled = true;
@@ -142,11 +140,7 @@ namespace GetReady.PartsOfExam
 
         private void SecondVariant_Click(object sender, RoutedEventArgs e)
         {
-            comboBoxSections.Visibility = Visibility.Visible;
-            taskDescription.Visibility = Visibility.Hidden;
-            textBlockQuestions.Visibility = Visibility.Visible;
-
-            textBlockTask.Visibility = Visibility.Visible;
+            ChangeInterface();
 
             FirstVariant.IsEnabled = true;
             SecondVariant.IsEnabled = false;
@@ -155,16 +149,11 @@ namespace GetReady.PartsOfExam
 
         private void ThirdVariant_Click(object sender, RoutedEventArgs e)
         {
-            comboBoxSections.Visibility = Visibility.Visible;
-            taskDescription.Visibility = Visibility.Hidden;
-            textBlockQuestions.Visibility = Visibility.Visible;
-
-            textBlockTask.Visibility = Visibility.Visible;
+            ChangeInterface();
 
             FirstVariant.IsEnabled = true;
             SecondVariant.IsEnabled = true;
             ThirdVariant.IsEnabled = false;
-
         }
 
         private void SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -199,6 +188,19 @@ namespace GetReady.PartsOfExam
                 TheFirstDownload();  
         }
 
+        private void ChangeInterface()
+        {
+            comboBoxSections.Visibility = Visibility.Visible;
+            taskDescription.Visibility = Visibility.Hidden;
+            textBlockQuestions.Visibility = Visibility.Visible;
+
+            textBlockTask.Visibility = Visibility.Visible;
+
+            buttonPrev.Visibility = Visibility.Visible;
+            buttonNext.Visibility = Visibility.Visible;
+            buttonAnswer.Visibility = Visibility.Visible;
+        }
+
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {
             StartPage StartPage = new StartPage();
@@ -210,8 +212,19 @@ namespace GetReady.PartsOfExam
         private void buttonAnswer_Click(object sender, RoutedEventArgs e)
         {
             ListeningAnswerBox answerbox = new ListeningAnswerBox();
+            ListeningAnswerBox answerItems = new ListeningAnswerBox(variant, section);
             answerbox.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             answerbox.Show();
+        }
+
+        private void buttonPrev_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void buttonNext_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
     }

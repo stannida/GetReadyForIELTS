@@ -19,9 +19,61 @@ namespace GetReady
     /// </summary>
     public partial class ListeningAnswerBox : Window
     {
+        private int variant;
+        private int section;
+
         public ListeningAnswerBox()
         {
             InitializeComponent();
+            this.MinHeight = 400;
+            this.MinWidth = 600;
+        }
+
+        public ListeningAnswerBox(int variant, int section)
+        {
+            this.variant = variant;
+            this.section = section;
+
+            ListeningDownloadImages();
+        }
+
+        private void ListeningDownloadImages()
+        {
+            imageVariant1Part1.Visibility = Visibility.Hidden;
+            imageVariant1Part2_1.Visibility = Visibility.Hidden;
+            imageVariant1Part2_2.Visibility = Visibility.Hidden;
+            imageVariant1Part3_1.Visibility = Visibility.Hidden;
+            imageVariant1Part3_2.Visibility = Visibility.Hidden;
+            imageVariant1Part4_1.Visibility = Visibility.Hidden;
+            imageVariant1Part4_2.Visibility = Visibility.Hidden;
+
+            if (variant == 1)
+            {
+                switch (section)
+                {
+                    case 1:
+                        imageVariant1Part1.Visibility = Visibility.Visible;
+                        break;
+                    case 2:
+                        imageVariant1Part2_1.Visibility = Visibility.Visible;
+                        imageVariant1Part2_2.Visibility = Visibility.Visible;
+                        break;
+                    case 3:
+                        imageVariant1Part3_1.Visibility = Visibility.Visible;
+                        imageVariant1Part3_2.Visibility = Visibility.Visible;
+                        break;
+                    case 4:
+                        imageVariant1Part4_1.Visibility = Visibility.Visible;
+                        imageVariant1Part4_2.Visibility = Visibility.Visible;
+                        break;
+                    default:
+                        MessageBox.Show("Error!");
+                        break;
+                }
+            }
+
+
+           
         }
     }
 }
