@@ -9,13 +9,6 @@
         </Grid.ColumnDefinitions>
         <Rectangle Fill="#FF2DB458" HorizontalAlignment="Center" Height="70" Stroke="#00000000" VerticalAlignment="Top" Width="602" IsHitTestVisible="False" Margin="-7,-1,0,0" Grid.ColumnSpan="2"/>
         <Label x:Name="label" Content="My answers" Margin="175,12,173,0" VerticalAlignment="Top" FontFamily="Aharoni" FontSize="32" Foreground="White" Height="42" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <Image x:Name="imageVariant1Part1" Margin="26,74,143,25.5" Source="/GetReady;component/Listening_Var1_1.png" Stretch="Uniform" Grid.ColumnSpan="2" Visibility="Hidden"/>
-        <Image x:Name="imageVariant1Part2_1" Margin="10,102,233,67.5" Source="/GetReady;component/Listening_Var1_2.png" Stretch="Uniform" Grid.ColumnSpan="2"/>
-        <Image x:Name="imageVariant1Part2_2" Margin="70,74,63,54.5" Source="/GetReady;component/Listening_Var1_3.jpg" Stretch="Uniform" Grid.Column="1"/>
-        <Image x:Name="imageVariant1Part3_1" Margin="0,198,150,25.5" Source="/GetReady;component/Listening_Var1_4.jpg" Stretch="Uniform" Grid.ColumnSpan="2"/>
-        <Image x:Name="imageVariant1Part3_2" Margin="52,102,0,125.5" Source="/GetReady;component/Listening_Var1_5.jpg" Stretch="Uniform"/>
-        <Image x:Name="imageVariant1Part4_1" Margin="230,252,112,10.5" Source="/GetReady;component/Listening_Var1_6.jpg" Stretch="Uniform" Grid.ColumnSpan="2"/>
-        <Image x:Name="imageVariant1Part4_2" Margin="47,215,-24,25.5" Source="/GetReady;component/Listening_Var1_7.jpg" Stretch="Uniform" Grid.Column="1"/>
-
+        <Image x:Name="imageVar1Part1" Margin="92,86,92,30.5" Source="/GetReady;component/Listening_Var1_1.png" Stretch="Uniform" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

@@ -211,6 +211,7 @@
     <Resource Include="PartsOfExam\ListeningFiles\Listening_Var1_5.jpg" />
     <Resource Include="PartsOfExam\ListeningFiles\Listening_Var1_6.jpg" />
     <Resource Include="PartsOfExam\ListeningFiles\Listening_Var1_7.jpg" />
+    <Resource Include="Listening_Var1_1.png" />
     <Content Include="Usersdb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Usersdb.edmx</DependentUpon>

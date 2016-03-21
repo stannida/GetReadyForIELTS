@@ -68,78 +68,78 @@ namespace GetReady
             change.Click += change_Click;
             change.Click -= change_Click1;  
         }
-        
-        //public string GetHash(string password)
-        //{
-        //    System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
-        //    string hash = String.Empty; byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(password), 0, Encoding.ASCII.GetByteCount(password));
-        //    foreach (byte theByte in crypto)
-        //    { hash += theByte.ToString("x2"); }
-        //    return hash;
-        //}
+
+        public string GetHash(string password)
+        {
+            System.Security.Cryptography.SHA256Managed crypt = new System.Security.Cryptography.SHA256Managed();
+            string hash = String.Empty; byte[] crypto = crypt.ComputeHash(Encoding.ASCII.GetBytes(password), 0, Encoding.ASCII.GetByteCount(password));
+            foreach (byte theByte in crypto)
+            { hash += theByte.ToString("x2"); }
+            return hash;
+        }
 
         private void LetsStart_Click1(object sender, RoutedEventArgs e)
         {
-            //UsersEntities db = new UsersEntities();
+            UsersEntities db = new UsersEntities();
             
-            //if ((New_username.Text == "") || (New_password.Text == "") || (New_username.Text == "Pick a username") || (New_password.Text == "Choose a password"))
-            //    MessageBox.Show("Please enter username and password");
-            //else
-            //{
-            //    if (db.UserTable.Any(f => f.username == New_username.Text))
-            //        MessageBox.Show("Please choose another username");
-            //    else
-            //    {
-            //        db.UserTable.Add(new UserTable
-            //        {
-            //            username = New_username.Text,
-            //            hash = GetHash(New_password.Text)
+            if ((New_username.Text == "") || (New_password.Text == "") || (New_username.Text == "Pick a username") || (New_password.Text == "Choose a password"))
+                MessageBox.Show("Please enter username and password");
+            else
+            {
+                if (db.UserTable.Any(f => f.username == New_username.Text))
+                    MessageBox.Show("Please choose another username");
+                else
+                {
+                    db.UserTable.Add(new UserTable
+                    {
+                        username = New_username.Text,
+                        hash = GetHash(New_password.Text)
                         
-            //        });
+                    });
                     
-            //        db.SaveChanges();
+                    db.SaveChanges();
                     
                     StartPage Startpage = new StartPage();
                     Startpage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                     this.Close();
                     Startpage.Show();
-            //    }
-            //}
+                }
+            }
         }
 
         private void LetsStart_Click(object sender, RoutedEventArgs e)
         {
-            //UsersEntities db = new UsersEntities();
+            UsersEntities db = new UsersEntities();
 
 
-            //if (!db.UserTable.Any(f => f.username == CheckUsername.Text))
-            //    MessageBox.Show("Invalid username");
-            //else
-            //{
-            //    var query =
-            //    from User in db.UserTable
-            //    where User.username == CheckUsername.Text
-            //    select User.hash;
-            //    List<string> Password = new List<string>();
-            //    Password = query.Select(a => a).ToList();
+            if (!db.UserTable.Any(f => f.username == CheckUsername.Text))
+                MessageBox.Show("Invalid username");
+            else
+            {
+                var query =
+                from User in db.UserTable
+                where User.username == CheckUsername.Text
+                select User.hash;
+                List<string> Password = new List<string>();
+                Password = query.Select(a => a).ToList();
 
-            //    if (Password[0] != GetHash(CheckPassword.Password))
-            //        MessageBox.Show("Invalid username or password");
+                if (Password[0] != GetHash(CheckPassword.Password))
+                    MessageBox.Show("Invalid username or password");
 
-            //    else
-            //    {
-            //        if ((CheckPassword.Password == "") || (CheckUsername.Text == ""))
-            //            MessageBox.Show("Please enter username and password");
-            //        else
-            //        {
+                else
+                {
+                    if ((CheckPassword.Password == "") || (CheckUsername.Text == ""))
+                        MessageBox.Show("Please enter username and password");
+                    else
+                    {
                         
                         StartPage StartPage = new StartPage();
                         StartPage.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                         this.Close();
                         StartPage.Show();
-            //        }
-            //    }
-            //}
+                    }
+                }
+            }
         }
         private void GotFocusUsername(object sender, RoutedEventArgs e)
         {
