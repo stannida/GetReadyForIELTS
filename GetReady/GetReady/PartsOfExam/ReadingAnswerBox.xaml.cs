@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace GetReady.PartsOfExam
 {
@@ -23,11 +24,11 @@ namespace GetReady.PartsOfExam
         public TextBox[] answerBoxes;
         public int j, VarNum;
         public string[] R_answers = new string[15];
-        public ReadingAnswerBox(int NumQuest, int j1, int VarNum1)
+        public ReadingAnswerBox(int NumQuest, int _j, int _VarNum)
         {
             InitializeComponent();
-            j = j1;
-            VarNum = VarNum1;
+            j = _j;
+            VarNum = _VarNum;
             answerBoxes = createAnswerBoxes(NumQuest);
             
         }
@@ -81,12 +82,18 @@ namespace GetReady.PartsOfExam
                 for (int i = 0; i < answerBoxes.Length; i++)  
                     R_answers[i] = sr.ReadLine();
                 }
-            
+            UsersEntities db = new UsersEntities();
+
+
             for (int i = 0; i < answerBoxes.Length; i++)
             {
                 string U_answer = answerBoxes[i].Text;
-                if(U_answer==R_answers[i])
+                if (U_answer == R_answers[i])
+                {
                     answerBoxes[i].Background = Brushes.Green;
+                    
+                }
+
                 else
                     answerBoxes[i].Background = Brushes.Red;                  
             }
