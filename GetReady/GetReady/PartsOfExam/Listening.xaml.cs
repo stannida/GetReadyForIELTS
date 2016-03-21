@@ -43,7 +43,6 @@ namespace GetReady.PartsOfExam
             {
                 using (StreamReader sr = new StreamReader("../../../Listening/taskListening.txt"))
                     taskDescription.Text = sr.ReadToEnd();
-
                 using (StreamReader sr1 = new StreamReader("../../../Listening/Listening_Var1.txt"))
                     variant1 = sr1.ReadToEnd();
             }
@@ -276,7 +275,6 @@ namespace GetReady.PartsOfExam
             {
                 buttonPrev.IsEnabled = false;
                 buttonNext.IsEnabled = true;
-
                 textBlockTask.Text = listFirst[0];
             }   
         }
@@ -287,7 +285,6 @@ namespace GetReady.PartsOfExam
             {
                 buttonPrev.IsEnabled = true;
                 buttonNext.IsEnabled = false;
-
                 textBlockTask.Text = listFirst[1];
             }   
         }

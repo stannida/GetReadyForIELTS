@@ -123,7 +123,7 @@ namespace GetReady
             //    List<string> Password = new List<string>();
             //    Password = query.Select(a => a).ToList();
 
-            //    if (Password[0] == GetHash(CheckPassword.Password))
+            //    if (Password[0] != GetHash(CheckPassword.Password))
             //        MessageBox.Show("Invalid username or password");
 
             //    else
