@@ -168,6 +168,7 @@ namespace GetReady.PartsOfExam
 
         private void FirstVariant_Click(object sender, RoutedEventArgs e)
         {
+            variant = 1;
             textBlockTask.Text = "";
 
             try
@@ -179,8 +180,6 @@ namespace GetReady.PartsOfExam
                 MessageBox.Show("Error!" + ex);
             }  
             
-            variant = 1;
-
             ChangeInterface();
 
             FirstVariant.IsEnabled = false;
@@ -236,8 +235,15 @@ namespace GetReady.PartsOfExam
                 section = 4;
             }
 
-            if (variant == 1)
-                TheFirstDownload();  
+            try
+            {
+                if (variant == 1)
+                    TheFirstDownload();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error!" + ex);
+            }  
         }
 
         private void ChangeInterface()
