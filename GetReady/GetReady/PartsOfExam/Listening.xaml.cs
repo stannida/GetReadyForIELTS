@@ -35,6 +35,8 @@ namespace GetReady.PartsOfExam
         int TheEndOf2;
         int TheEndOf3;
 
+        List<string> listFirst;
+
         private void ListeningLoad()
         {
             try
@@ -62,6 +64,10 @@ namespace GetReady.PartsOfExam
             buttonNext.Visibility = Visibility.Hidden;
             buttonAnswer.Visibility = Visibility.Hidden;
 
+            listFirst = new List<string>();
+            listFirst.Add("");
+            listFirst.Add("");
+
             //SoundPlayer player = new SoundPlayer();
             //player.SoundLocation = "../../../Listening/Listening_Var1.wav";
             //player.Load();
@@ -69,7 +75,7 @@ namespace GetReady.PartsOfExam
         }
 
         private void TheFirstDownload()
-        {
+        {          
             for (int i = 0; i < variant1.Length; i++)
                 if (variant1[i] == ';')
                 {
@@ -91,29 +97,74 @@ namespace GetReady.PartsOfExam
                     break;
                 }
 
+            int itemQ = 0;
             if (section == 1)
+            {
+                buttonPrev.IsEnabled = false;
+                buttonNext.IsEnabled = false;
                 for (int i = 0; i < TheEndOf1; i++)
-                {       
                     textBlockTask.Text += variant1[i];
-                }
+            }
 
             if (section == 2)
+            {
+                listFirst[0] = "";
+                listFirst[1] = "";
+                itemQ = 0;
+                buttonPrev.IsEnabled = false;
+                buttonNext.IsEnabled = true;
+
                 for (int i = TheEndOf1 + 1; i < TheEndOf2; i++)
-                {
-                    textBlockTask.Text += variant1[i];
-                }
+                    if (variant1[i] == 'Q')
+                        itemQ = i;
+
+                for (int i = TheEndOf1 + 1; i < itemQ; i++)
+                    listFirst[0] += variant1[i];
+                for (int i = itemQ; i < TheEndOf2; i++)
+                    listFirst[1] += variant1[i];
+                
+                textBlockTask.Text = listFirst[0];
+            }
 
             if (section == 3)
+            {
+                listFirst[0] = "";
+                listFirst[1] = "";
+                itemQ = 0;
+                buttonPrev.IsEnabled = false;
+                buttonNext.IsEnabled = true;
+
                 for (int i = TheEndOf2 + 1; i < TheEndOf3; i++)
-                {
-                    textBlockTask.Text += variant1[i];
-                }
+                    if (variant1[i] == 'Q')
+                        itemQ = i;
+
+                for (int i = TheEndOf2 + 1; i < itemQ; i++)
+                    listFirst[0] += variant1[i];
+                for (int i = itemQ; i < TheEndOf3; i++)
+                    listFirst[1] += variant1[i];
+
+                textBlockTask.Text = listFirst[0];
+            }
 
             if (section == 4)
+            {
+                listFirst[0] = "";
+                listFirst[1] = "";
+                itemQ = 0;
+                buttonPrev.IsEnabled = false;
+                buttonNext.IsEnabled = true;
+
                 for (int i = TheEndOf3 + 1; i < variant1.Length; i++)
-                {
-                    textBlockTask.Text += variant1[i];
-                }
+                    if (variant1[i] == 'Q')
+                        itemQ = i;
+
+                for (int i = TheEndOf3 + 1; i < itemQ; i++)
+                    listFirst[0] += variant1[i];
+                for (int i = itemQ; i < variant1.Length; i++)
+                    listFirst[1] += variant1[i];
+
+                textBlockTask.Text = listFirst[0];
+            }
         }
 
         private void FirstVariant_Click(object sender, RoutedEventArgs e)
@@ -158,6 +209,8 @@ namespace GetReady.PartsOfExam
 
         private void SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            buttonPrev.IsEnabled = false;
+            buttonNext.IsEnabled = true;
             textBlockTask.Text = "";
 
             if (comboBoxSections.SelectedIndex == 0)
@@ -195,10 +248,10 @@ namespace GetReady.PartsOfExam
             textBlockQuestions.Visibility = Visibility.Visible;
 
             textBlockTask.Visibility = Visibility.Visible;
+            buttonAnswer.Visibility = Visibility.Visible;
 
             buttonPrev.Visibility = Visibility.Visible;
             buttonNext.Visibility = Visibility.Visible;
-            buttonAnswer.Visibility = Visibility.Visible;
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
@@ -219,12 +272,24 @@ namespace GetReady.PartsOfExam
 
         private void buttonPrev_Click(object sender, RoutedEventArgs e)
         {
+            if ((variant == 1) && (section != 1))
+            {
+                buttonPrev.IsEnabled = false;
+                buttonNext.IsEnabled = true;
 
+                textBlockTask.Text = listFirst[0];
+            }   
         }
 
         private void buttonNext_Click(object sender, RoutedEventArgs e)
         {
+            if ((variant == 1) && (section != 1))
+            {
+                buttonPrev.IsEnabled = true;
+                buttonNext.IsEnabled = false;
 
+                textBlockTask.Text = listFirst[1];
+            }   
         }
 
     }
